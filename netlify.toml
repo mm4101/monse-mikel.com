@@ -1,0 +1,13 @@
+# Netlify configuration for continuous deployment from GitHub.
+# This is a plain static site (HTML/CSS/JS at the repo root), so there is
+# no build step - Netlify publishes the repository root as-is.
+#
+# Deploy source: GitHub repo mm4101/monse-mikel.com, branch `main`.
+# Clean URLs (e.g. /informacion -> informacion.html) are handled by
+# Netlify's default "Pretty URLs" post-processing.
+
+[build]
+  # No build command for a static site.
+  command = ""
+  # Publish the repository root, where index.html lives.
+  publish = "."
