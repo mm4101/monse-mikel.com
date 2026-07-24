@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flights · Monse & Mikel</title>
+  <meta name="description" content="Getting to Jalisco — flight routes and live prices from Europe." />
+  <!-- Social link previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Monse &amp; Mikel" />
+  <meta property="og:url" content="https://monse-mikel.com/vuelos" />
+  <meta property="og:title" content="Flights · Monse &amp; Mikel" />
+  <meta property="og:description" content="Getting to Jalisco — flight routes and live prices from Europe." />
+  <meta property="og:image" content="https://monse-mikel.com/images/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flights · Monse &amp; Mikel" />
+  <meta name="twitter:description" content="Getting to Jalisco — flight routes and live prices from Europe." />
+  <meta name="twitter:image" content="https://monse-mikel.com/images/og-card.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav__inner">
+      <a class='topnav__brand' href='/'>Monse <em>&</em> Mikel</a>
+      <button class="topnav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="topnav__links">
+        <a data-i18n='nav_home' data-page='index.html' href='/'>Home</a>
+        <a data-i18n='nav_flights' data-page='vuelos.html' href='/vuelos'>Flights</a>
+        <a data-i18n='nav_info' data-page='informacion.html' href='/informacion'>Information</a>
+        <a data-i18n='nav_rsvp' data-page='rsvp.html' href='/rsvp'>RSVP</a>
+        <a data-i18n='nav_recos' data-page='recomendaciones.html' href='/recomendaciones'>Recommendations</a>
+        <a data-i18n='nav_gifts' data-page='lista-de-regalos.html' href='/lista-de-regalos'>Gifts</a>
+        <div class="lang-switch">
+          <button data-lang="en" class="active">EN</button>
+          <span>·</span><button data-lang="es">ES</button>
+          <span>·</span><button data-lang="fr">FR</button>
+          <span>·</span><button data-lang="de">DE</button>
+        </div>
+      </div>
+      <div class="topnav__lang lang-switch">
+        <button data-lang="en" class="active">EN</button>
+        <span>·</span><button data-lang="es">ES</button>
+        <span>·</span><button data-lang="fr">FR</button>
+        <span>·</span><button data-lang="de">DE</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <header class="page__header">
+      <p class="page__label" data-i18n="flights_label">Getting to Jalisco</p>
+      <h1 class="page__title" data-i18n="flights_title">Flights from Europe</h1>
+      <p class="page__lead" data-i18n="flights_lead">Route ideas and live prices for the wedding week — pick your city below.</p>
+    </header>
+
+    <div class="divider">
+      <svg viewBox="0 0 180 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+        <line x1="0" y1="12" x2="68" y2="12"/>
+        <line x1="112" y1="12" x2="180" y2="12"/>
+        <path d="M90 4 L90 20"/>
+        <path d="M90 8 C 86 7 82 9 80 12"/>
+        <path d="M90 8 C 94 7 98 9 100 12"/>
+        <path d="M90 14 C 86 13 82 15 80 18" opacity="0.6"/>
+        <path d="M90 14 C 94 13 98 15 100 18" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="flights">
+        <div class="skyband">
+          <p class="skyband__label" data-i18n="sky_label">Live prices · around the wedding week</p>
+          <div class="sky-tabs" id="skyTabs">
+            <button class="sky-tab active" data-panel="sky-zrh-cun">Zurich → Cancún</button>
+            <button class="sky-tab" data-panel="sky-zrh-gdl">Zurich → Guadalajara</button>
+            <button class="sky-tab" data-panel="sky-fra-cun">Frankfurt → Cancún</button>
+            <button class="sky-tab" data-panel="sky-fra-gdl">Frankfurt → Guadalajara</button>
+            <button class="sky-tab" data-panel="sky-par-cun">Paris → Cancún</button>
+            <button class="sky-tab" data-panel="sky-par-gdl">Paris → Guadalajara</button>
+            <button class="sky-tab" data-panel="sky-mad-gdl">Madrid → Guadalajara</button>
+          </div>
+          <div class="sky-panel" id="sky-zrh-cun">
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="CH" data-currency="CHF"
+                 data-origin-name="Zurich" data-destination-name="Cancun"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+          <div class="sky-panel" id="sky-zrh-gdl" hidden>
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="CH" data-currency="CHF"
+                 data-origin-name="Zurich" data-destination-name="Guadalajara"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+          <div class="sky-panel" id="sky-fra-cun" hidden>
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="DE" data-currency="EUR"
+                 data-origin-name="Frankfurt" data-destination-name="Cancun"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+          <div class="sky-panel" id="sky-fra-gdl" hidden>
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="DE" data-currency="EUR"
+                 data-origin-name="Frankfurt" data-destination-name="Guadalajara"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+          <div class="sky-panel" id="sky-par-cun" hidden>
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="FR" data-currency="EUR"
+                 data-origin-name="Paris" data-destination-name="Cancun"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+          <div class="sky-panel" id="sky-par-gdl" hidden>
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="FR" data-currency="EUR"
+                 data-origin-name="Paris" data-destination-name="Guadalajara"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+          <div class="sky-panel" id="sky-mad-gdl" hidden>
+            <div data-skyscanner-widget="SearchWidget" data-locale="en-GB" data-market="ES" data-currency="EUR"
+                 data-origin-name="Madrid" data-destination-name="Guadalajara"
+                 data-flight-outbound-date="2027-04-06" data-flight-inbound-date="2027-04-28"></div>
+          </div>
+        </div>
+        <article class="flight">
+          <h3 data-i18n="flight0_title">Via Cancún (CUN)</h3>
+          <p data-i18n="flight0_desc">Cancún has the most direct flights from Europe — Edelweiss from Zurich, Condor and Discover from Frankfurt, Air France from Paris. From there it's a domestic hop to Guadalajara (about 3h), or start with a few days at the beach.</p>
+          <p class="reco__meta" data-i18n="flight0_meta">Most nonstops from Europe · combine with a beach stay</p>
+        </article>
+        <article class="flight">
+          <h3 data-i18n="flight1_title">Via Mexico City (MEX)</h3>
+          <p data-i18n="flight1_desc">Lufthansa, Aeroméxico, Air France, KLM and Iberia fly daily from Frankfurt, Munich, Paris, Amsterdam and Madrid to Mexico City, with short onward hops to Guadalajara (about 1h 20).</p>
+          <p class="reco__meta" data-i18n="flight1_meta">Most choice · from most European hubs</p>
+        </article>
+        <article class="flight">
+          <h3 data-i18n="flight2_title">Via Madrid</h3>
+          <p data-i18n="flight2_desc">Usually the quickest way from Europe — Aeroméxico and Iberia offer fast one-stop itineraries, and Aeroméxico flies Madrid → Guadalajara direct on several days a week.</p>
+          <p class="reco__meta" data-i18n="flight2_meta">Fastest · check Aeroméxico for nonstops</p>
+        </article>
+        <article class="flight">
+          <h3 data-i18n="flight3_title">Via the US</h3>
+          <p data-i18n="flight3_desc">American, United and Delta connect through Dallas, Houston or Atlanta with many daily flights into Guadalajara. Remember: transiting the US requires an ESTA.</p>
+          <p class="reco__meta" data-i18n="flight3_meta">Most connections · ESTA required</p>
+        </article>
+        <div class="flight-visa">
+          <h3 data-i18n="visa_title">Visas &amp; transit</h3>
+          <p data-i18n="visa_desc">Most European passports don't need a visa for Mexico — but if you connect through the United States you'll need an ESTA (apply online before flying). Some nationalities do need a visa for Mexico and/or a US transit visa: please check with the authorities in your own country well in advance.</p>
+        </div>
+        <div class="flight-visa flight-plan">
+          <h3 data-i18n="plan_title">Travel with us — Mikel's family plan</h3>
+          <p data-i18n="plan_desc">Mikel's family lands in Cancún on April 5 or 6 at the latest, and arrives in Guadalajara by Friday, April 9 at the latest — the day before the wedding. On Monday we'll all do a day trip to Tequila, and on Tuesday or Wednesday the family flies back to Cancún to explore from there. Join for any part of it!</p>
+        </div>
+        <p class="flights__tip" data-i18n="flights_tip">April is high season — book by January if you can. Arrive Thursday or Friday; the airport sits on the road to the lake.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__names">Monse <em>&</em> Mikel</p>
+        <p class="footer__tag" data-i18n="footer_tag">Saturday, April 10, 2027 — Quinta San Carlos, Mexico.</p>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer_links">Explore</h4>
+        <ul class="footer__links">
+          <li><a data-i18n='nav_home' href='/'>Home</a></li>
+          <li><a data-i18n='nav_flights' href='/vuelos'>Flights</a></li>
+          <li><a data-i18n='nav_info' href='/informacion'>Information</a></li>
+          <li><a data-i18n='nav_rsvp' href='/rsvp'>RSVP</a></li>
+          <li><a data-i18n='nav_recos' href='/recomendaciones'>Recommendations</a></li>
+          <li><a data-i18n='nav_gifts' href='/lista-de-regalos'>Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__contact">
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <p data-i18n="footer_email_label">Write us at</p>
+        <p class="footer__person">Mikel</p>
+        <p><a href="mailto:hello@mikelmangold.com">hello@mikelmangold.com</a></p>
+        <p><a href="https://wa.me/4915780586586">+49 157 80586586</a> <span class="footer__hint" data-i18n="footer_whatsapp">(WhatsApp preferred)</span></p>
+        <p class="footer__person">Monse</p>
+        <p><a href="mailto:monserratcardegalindo@gmail.com">monserratcardegalindo@gmail.com</a></p>
+        <p><a href="https://wa.me/491605955115">+49 160 5955115</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer_copy">© 2027 Monse & Mikel</span>
+      <span>10 · 04 · 2027</span>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('skyTabs').addEventListener('click', function(e){
+      var btn = e.target.closest('.sky-tab'); if(!btn) return;
+      document.querySelectorAll('.sky-tab').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      document.querySelectorAll('.sky-panel').forEach(function(p){ p.hidden = (p.id !== btn.dataset.panel); });
+    });
+  </script>
+</body>
+</html>

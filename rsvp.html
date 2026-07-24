@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP · Monse & Mikel</title>
+  <meta name="description" content="Confirm your attendance for Monse & Mikel's wedding." />
+  <!-- Social link previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Monse &amp; Mikel" />
+  <meta property="og:url" content="https://monse-mikel.com/rsvp" />
+  <meta property="og:title" content="RSVP · Monse &amp; Mikel" />
+  <meta property="og:description" content="Confirm your attendance for Monse &amp; Mikel&#x27;s wedding." />
+  <meta property="og:image" content="https://monse-mikel.com/images/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RSVP · Monse &amp; Mikel" />
+  <meta name="twitter:description" content="Confirm your attendance for Monse &amp; Mikel&#x27;s wedding." />
+  <meta name="twitter:image" content="https://monse-mikel.com/images/og-card.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav__inner">
+      <a class='topnav__brand' href='/'>Monse <em>&</em> Mikel</a>
+      <button class="topnav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="topnav__links">
+        <a data-i18n='nav_home' data-page='index.html' href='/'>Home</a>
+        <a data-i18n='nav_flights' data-page='vuelos.html' href='/vuelos'>Flights</a>
+        <a data-i18n='nav_info' data-page='informacion.html' href='/informacion'>Information</a>
+        <a data-i18n='nav_rsvp' data-page='rsvp.html' href='/rsvp'>RSVP</a>
+        <a data-i18n='nav_recos' data-page='recomendaciones.html' href='/recomendaciones'>Recommendations</a>
+        <a data-i18n='nav_gifts' data-page='lista-de-regalos.html' href='/lista-de-regalos'>Gifts</a>
+        <div class="lang-switch">
+          <button data-lang="en" class="active">EN</button>
+          <span>·</span><button data-lang="es">ES</button>
+          <span>·</span><button data-lang="fr">FR</button>
+          <span>·</span><button data-lang="de">DE</button>
+        </div>
+      </div>
+      <div class="topnav__lang lang-switch">
+        <button data-lang="en" class="active">EN</button>
+        <span>·</span><button data-lang="es">ES</button>
+        <span>·</span><button data-lang="fr">FR</button>
+        <span>·</span><button data-lang="de">DE</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <header class="page__header">
+      <p class="page__label" data-i18n="rsvp_label">Please respond</p>
+      <h1 class="page__title" data-i18n="rsvp_title">RSVP</h1>
+      <p class="page__lead" data-i18n="rsvp_lead">We can't wait to celebrate with you. Please confirm your presence below.</p>
+    </header>
+
+    <div class="divider">
+      <svg viewBox="0 0 180 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+        <line x1="0" y1="12" x2="68" y2="12"/>
+        <line x1="112" y1="12" x2="180" y2="12"/>
+        <path d="M90 4 L90 20"/>
+        <path d="M90 8 C 86 7 82 9 80 12"/>
+        <path d="M90 8 C 94 7 98 9 100 12"/>
+        <path d="M90 14 C 86 13 82 15 80 18" opacity="0.6"/>
+        <path d="M90 14 C 94 13 98 15 100 18" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <div class="container container--narrow">
+      <div class="rsvp-wrap rsvp-wrap--luma">
+        <iframe
+          src="https://luma.com/embed/event/evt-xOJuqX0aSGCWujB/simple"
+          class="luma-embed"
+          allow="fullscreen; payment"
+          aria-label="RSVP — Wedding Monse & Mikel on Luma"
+          frameborder="0"
+        ></iframe>
+        <p class="rsvp-fallback">
+          <a href="https://luma.com/shx73m6c" target="_blank" rel="noopener" data-i18n="rsvp_open">Trouble with the form? Open the RSVP page directly →</a>
+        </p>
+      </div>
+      <p class="rsvp-deadline" data-i18n="rsvp_deadline">Kindly respond by January 15, 2027.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__names">Monse <em>&</em> Mikel</p>
+        <p class="footer__tag" data-i18n="footer_tag">Saturday, April 10, 2027 — Quinta San Carlos, Mexico.</p>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer_links">Explore</h4>
+        <ul class="footer__links">
+          <li><a data-i18n='nav_home' href='/'>Home</a></li>
+          <li><a data-i18n='nav_flights' href='/vuelos'>Flights</a></li>
+          <li><a data-i18n='nav_info' href='/informacion'>Information</a></li>
+          <li><a data-i18n='nav_rsvp' href='/rsvp'>RSVP</a></li>
+          <li><a data-i18n='nav_recos' href='/recomendaciones'>Recommendations</a></li>
+          <li><a data-i18n='nav_gifts' href='/lista-de-regalos'>Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__contact">
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <p data-i18n="footer_email_label">Write us at</p>
+        <p class="footer__person">Mikel</p>
+        <p><a href="mailto:hello@mikelmangold.com">hello@mikelmangold.com</a></p>
+        <p><a href="https://wa.me/4915780586586">+49 157 80586586</a> <span class="footer__hint" data-i18n="footer_whatsapp">(WhatsApp preferred)</span></p>
+        <p class="footer__person">Monse</p>
+        <p><a href="mailto:monserratcardegalindo@gmail.com">monserratcardegalindo@gmail.com</a></p>
+        <p><a href="https://wa.me/491605955115">+49 160 5955115</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer_copy">© 2027 Monse & Mikel</span>
+      <span>10 · 04 · 2027</span>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monse & Mikel</title>
+  <meta name="description" content="Monse & Mikel — April 10, 2027 · Quinta San Carlos, Mexico" />
+  <!-- Social link previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Monse &amp; Mikel" />
+  <meta property="og:url" content="https://monse-mikel.com/" />
+  <meta property="og:title" content="Monse &amp; Mikel" />
+  <meta property="og:description" content="Monse &amp; Mikel — April 10, 2027 · Quinta San Carlos, Mexico" />
+  <meta property="og:image" content="https://monse-mikel.com/images/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Monse &amp; Mikel" />
+  <meta name="twitter:description" content="Monse &amp; Mikel — April 10, 2027 · Quinta San Carlos, Mexico" />
+  <meta name="twitter:image" content="https://monse-mikel.com/images/og-card.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="topnav">
+    <div class="topnav__inner">
+      <a class='topnav__brand' href='/'>Monse <em>&</em> Mikel</a>
+      <button class="topnav__toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topnav__links">
+        <a class='active' data-i18n='nav_home' data-page='index.html' href='/'>Home</a>
+        <a data-i18n='nav_flights' data-page='vuelos.html' href='/vuelos'>Flights</a>
+        <a data-i18n='nav_info' data-page='informacion.html' href='/informacion'>Information</a>
+        <a data-i18n='nav_rsvp' data-page='rsvp.html' href='/rsvp'>RSVP</a>
+        <a data-i18n='nav_recos' data-page='recomendaciones.html' href='/recomendaciones'>Recommendations</a>
+        <a data-i18n='nav_gifts' data-page='lista-de-regalos.html' href='/lista-de-regalos'>Gifts</a>
+        <div class="lang-switch">
+          <button data-lang="en" class="active">EN</button>
+          <span>·</span><button data-lang="es">ES</button>
+          <span>·</span><button data-lang="fr">FR</button>
+          <span>·</span><button data-lang="de">DE</button>
+        </div>
+      </div>
+      <div class="topnav__lang lang-switch">
+        <button data-lang="en" class="active">EN</button>
+        <span>·</span><button data-lang="es">ES</button>
+        <span>·</span><button data-lang="fr">FR</button>
+        <span>·</span><button data-lang="de">DE</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (cinematic landing) -->
+  <section id="hero" class="hero">
+    <!-- Animated background: Guadalajara aerial -->
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <p class="hero__kicker" data-i18n="welcome_kicker">The wedding of</p>
+
+      <h1 class="hero__names">
+        <span>Monse</span>
+        <em data-i18n="and">&</em>
+        <span>Mikel</span>
+      </h1>
+
+      <!-- Couple portrait card (replace src with your photo) -->
+      <div class="hero__portrait">
+        <div class="hero__portrait-frame">
+          <img src="images/couple-portrait.jpg" alt="Monse and Mikel"
+               onerror="this.style.display='none'" />
+        </div>
+      </div>
+
+      <!-- Countdown to April 10, 2027 -->
+      <div class="countdown" data-target="2027-04-10T16:00:00">
+        <div class="countdown__unit"><span class="countdown__num" data-unit="d">—</span><span class="countdown__label" data-i18n="days">days</span></div>
+        <span class="countdown__sep">·</span>
+        <div class="countdown__unit"><span class="countdown__num" data-unit="h">—</span><span class="countdown__label" data-i18n="hours">hours</span></div>
+        <span class="countdown__sep">·</span>
+        <div class="countdown__unit"><span class="countdown__num" data-unit="m">—</span><span class="countdown__label" data-i18n="minutes">min</span></div>
+        <span class="countdown__sep">·</span>
+        <div class="countdown__unit"><span class="countdown__num" data-unit="s">—</span><span class="countdown__label" data-i18n="seconds">sec</span></div>
+      </div>
+
+      <p class="hero__date" data-i18n="welcome_date">10 · 04 · 2027</p>
+      <p class="hero__place" data-i18n="welcome_place">Mexico</p>
+      <a href="#venue" class="hero__start" data-i18n="start">Start</a>
+    </div>
+  </section>
+
+  <!-- Botanical divider -->
+  <div class="divider divider--lg">
+    <svg viewBox="0 0 260 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+      <line x1="0" y1="16" x2="100" y2="16"/>
+      <line x1="160" y1="16" x2="260" y2="16"/>
+      <path d="M130 6 L130 26"/>
+      <path d="M130 11 C 125 10 120 12 118 16"/>
+      <path d="M130 11 C 135 10 140 12 142 16"/>
+      <path d="M130 18 C 125 17 120 19 118 23" opacity="0.6"/>
+      <path d="M130 18 C 135 17 140 19 142 23" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- VENUE -->
+  <section id="venue" class="venue">
+    <div class="venue__title">
+      <p class="venue__label" data-i18n="venue_label">The Venue</p>
+      <h2 class="venue__name">Quinta San Carlos</h2>
+      <p class="venue__location" data-i18n="venue_location">Lake Chapala · Jalisco · Mexico</p>
+    </div>
+
+    <div class="venue__strip">
+      <div class="venue-img venue-img--tall"><img src="images/venue-1.jpg" alt="Quinta San Carlos pool and gardens" loading="lazy" /></div>
+      <div class="venue-img venue-img--wide"><img src="images/venue-4.jpg" alt="Quinta San Carlos garden courtyard" loading="lazy" /></div>
+      <div class="venue-img venue-img--tall"><img src="images/venue-3.jpg" alt="Floral ceremony arch over the lake" loading="lazy" /></div>
+    </div>
+
+    <div class="venue__body">
+      <div class="venue__text">
+        <p data-i18n="venue_p1">A boutique estate on the shores of Lake Chapala — Mexico's largest lake — wrapped in gardens, mountains, and the warm light of Jalisco.</p>
+        <p data-i18n="venue_p2">We chose Quinta San Carlos for its open gardens and quiet beauty. A place to bring our worlds together and share a weekend of Mexican warmth, music, and good company.</p>
+      </div>
+      <div class="venue-img venue-img--square"><img src="images/venue-2.jpg" alt="Quinta San Carlos suite interior" loading="lazy" /></div>
+    </div>
+
+    <div class="venue__map">
+      <p class="venue__label venue__label--center" data-i18n="map_label">How to find us</p>
+      <div class="map-frame">
+        <iframe
+          src="https://maps.google.com/maps?q=Quinta%20San%20Carlos%2C%20San%20Pedro%20Tesist%C3%A1n%2C%20Jalisco%2C%20Mexico&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+      <a href="https://maps.app.goo.gl/8WsZzF38iSG434b2A" target="_blank" rel="noopener" class="venue__directions" data-i18n="directions">Open in Google Maps</a>
+      <div class="venue__postcard">
+        <img src="images/chapala-sign.png" alt="The colorful Chapala letters on the lakeside promenade at sunset" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CELEBRATION IN MEXICO (editorial section with map illustration) -->
+  <section class="celebration">
+    <div class="celebration__bg"></div>
+    <div class="celebration__overlay"></div>
+    <div class="celebration__inner">
+      <div class="celebration__text">
+        <h2 class="celebration__headline" data-i18n-html="celebration_headline">
+          A celebration<br>on the shores<br>of Lake Chapala
+        </h2>
+        <p class="celebration__sub" data-i18n="celebration_sub">Jalisco · Mexico</p>
+      </div>
+
+      <div class="celebration__map">
+        <svg class="mex-map" viewBox="0 0 1111.1 727.2" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Mexico with Guadalajara marked">
+          <path class="mex-map__land" d="M55.5 43.5 L65.0 42.7 L74.4 41.9 L83.8 41.2 L93.3 40.4 L102.7 39.6 L112.1 38.9 L121.5 38.1 L131.0 37.3 L134.7 36.9 L132.6 42.3 L131.1 44.4 L146.7 49.7 L162.3 55.0 L177.9 60.3 L193.6 65.7 L209.2 71.0 L224.8 76.3 L240.4 81.6 L256.0 87.0 L267.7 86.9 L279.3 86.9 L291.0 86.9 L302.6 86.9 L314.3 86.8 L325.9 86.8 L337.5 86.8 L349.2 86.8 L349.2 82.7 L349.2 78.7 L349.3 74.6 L349.3 70.6 L356.5 70.6 L363.8 70.7 L371.0 70.7 L378.2 70.8 L385.5 70.8 L392.7 70.8 L400.0 70.9 L407.2 70.9 L407.5 71.0 L407.8 71.1 L410.7 74.2 L413.7 79.0 L417.3 82.4 L421.3 84.3 L428.3 89.9 L438.1 99.3 L446.0 105.5 L451.8 108.7 L455.8 111.3 L457.8 113.6 L460.5 118.5 L465.6 129.7 L465.6 134.9 L467.5 139.8 L471.4 146.2 L474.8 149.9 L477.7 151.0 L480.9 153.3 L484.4 156.6 L488.4 158.9 L492.9 160.1 L499.1 163.1 L507.0 168.0 L512.5 170.5 L515.4 170.6 L518.0 169.0 L520.2 165.8 L522.4 163.7 L524.5 162.7 L525.4 161.2 L525.0 159.2 L526.4 154.6 L529.7 147.4 L533.6 143.5 L538.2 142.9 L541.2 141.5 L542.6 139.4 L545.0 139.2 L548.5 140.9 L554.2 141.9 L562.1 142.4 L566.7 142.2 L568.1 141.4 L568.8 141.5 L568.9 142.4 L570.1 142.7 L572.3 142.6 L574.3 143.8 L576.8 147.7 L585.6 154.0 L585.6 154.0 L586.3 156.1 L589.3 159.2 L594.9 164.0 L598.1 168.1 L598.8 171.5 L601.7 176.9 L606.6 184.4 L608.9 188.4 L608.3 189.0 L608.7 191.1 L610.0 194.7 L612.5 197.8 L616.1 200.3 L619.7 204.8 L623.4 211.3 L627.9 216.2 L633.1 219.6 L636.1 222.7 L636.8 225.6 L636.7 228.1 L635.9 230.2 L636.3 232.2 L637.7 234.0 L638.2 236.3 L637.7 239.5 L637.7 240.4 L637.7 240.4 L638.1 241.1 L642.8 246.6 L645.2 251.0 L647.1 258.0 L647.1 258.1 L649.2 262.3 L652.2 264.0 L656.9 264.7 L660.5 266.2 L662.9 268.5 L666.0 269.8 L669.7 270.3 L673.2 271.8 L676.6 274.4 L682.9 276.1 L692.2 276.9 L699.3 279.0 L704.1 282.3 L706.2 283.0 L706.8 283.1 L707.1 282.5 L707.5 281.6 L709.3 280.5 L713.8 279.8 L713.2 287.2 L711.2 293.3 L704.6 306.0 L701.9 313.8 L696.6 336.3 L695.0 351.0 L694.6 357.9 L694.1 358.9 L694.7 359.9 L693.4 375.3 L694.1 388.3 L693.6 390.4 L691.7 394.3 L690.4 399.8 L690.9 402.2 L690.9 403.9 L692.8 412.2 L693.5 418.4 L699.3 429.1 L702.7 432.8 L706.7 436.1 L708.3 437.9 L707.5 442.4 L705.8 444.7 L705.1 448.4 L704.3 445.4 L704.6 441.4 L705.9 439.3 L706.0 437.8 L703.6 436.2 L699.2 430.8 L693.8 421.3 L697.6 436.5 L698.9 438.9 L699.9 439.9 L701.7 441.0 L702.1 442.6 L702.1 443.9 L706.8 454.4 L712.2 465.4 L712.5 468.4 L714.6 472.0 L728.2 487.4 L736.5 498.8 L739.4 509.7 L741.2 513.1 L742.0 517.7 L747.5 522.9 L749.1 526.3 L752.1 528.2 L754.4 533.8 L758.9 537.1 L757.8 537.1 L753.9 535.5 L754.2 536.6 L757.4 538.9 L763.8 541.2 L765.4 541.2 L762.9 540.0 L760.8 538.4 L761.5 538.2 L766.0 540.2 L778.5 540.9 L784.0 545.5 L791.1 547.5 L795.0 553.5 L799.4 559.8 L802.3 560.1 L804.5 560.1 L811.2 559.0 L821.6 555.1 L825.2 553.2 L832.2 550.6 L842.9 550.1 L846.2 550.8 L854.2 549.2 L858.0 547.2 L859.3 545.4 L859.9 544.1 L867.3 542.1 L868.8 541.8 L876.3 541.4 L879.9 540.7 L884.2 540.3 L887.3 543.1 L887.3 544.5 L885.2 545.8 L886.2 547.0 L889.8 549.1 L896.5 550.0 L898.7 549.6 L901.8 546.6 L907.2 543.6 L907.1 540.1 L906.1 538.2 L904.5 538.1 L904.1 537.1 L905.3 534.5 L905.0 533.7 L901.6 536.1 L900.8 536.1 L901.2 535.0 L901.9 534.1 L911.8 528.7 L914.3 526.6 L917.7 524.6 L924.9 517.4 L926.4 503.8 L927.8 501.5 L932.5 497.3 L933.0 496.1 L933.3 493.2 L933.2 486.1 L933.4 480.5 L933.3 474.1 L934.1 468.5 L934.9 466.9 L937.6 457.8 L943.2 453.8 L952.9 449.1 L955.1 448.3 L986.1 443.3 L990.5 442.1 L995.8 438.8 L999.7 437.7 L1006.8 437.8 L1009.0 437.4 L1009.4 436.9 L1009.4 436.5 L1010.8 436.0 L1014.9 436.5 L1022.5 438.4 L1025.3 438.9 L1032.2 441.2 L1039.8 442.1 L1040.9 441.7 L1041.9 441.0 L1042.6 439.7 L1041.8 438.5 L1041.1 438.6 L1039.8 439.2 L1038.3 439.3 L1035.3 438.4 L1035.9 437.6 L1038.9 437.6 L1040.9 437.2 L1043.8 435.8 L1046.9 436.9 L1050.9 441.5 L1053.8 443.0 L1054.1 449.8 L1054.5 451.0 L1055.5 452.8 L1054.1 458.0 L1052.5 462.3 L1050.5 465.9 L1046.1 471.4 L1040.7 475.9 L1034.2 485.8 L1032.6 490.5 L1032.7 494.2 L1033.8 497.8 L1033.5 499.1 L1032.7 500.5 L1031.3 500.3 L1028.7 502.1 L1025.4 507.2 L1025.3 508.7 L1026.8 510.2 L1028.7 509.5 L1031.2 509.4 L1032.6 509.0 L1034.0 509.1 L1033.7 512.1 L1032.1 514.1 L1031.1 514.8 L1029.4 515.1 L1027.4 516.3 L1026.3 517.4 L1026.4 520.8 L1027.5 521.1 L1029.9 518.6 L1031.2 518.7 L1031.5 519.7 L1028.5 528.4 L1026.5 537.3 L1023.9 542.5 L1022.9 550.0 L1021.5 553.2 L1019.9 556.4 L1019.0 556.2 L1016.4 550.2 L1013.8 548.7 L1013.2 547.2 L1014.7 539.9 L1014.0 535.9 L1012.7 536.0 L1010.9 538.3 L1008.6 540.2 L1008.7 542.9 L1006.0 547.5 L1005.4 549.1 L1002.8 548.7 L999.9 548.9 L997.9 550.0 L995.8 555.6 L990.6 563.5 L988.5 567.3 L986.8 568.6 L985.5 569.1 L984.0 568.2 L980.5 566.1 L977.7 567.1 L976.8 569.6 L976.8 572.7 L969.9 572.7 L958.1 572.7 L943.2 572.7 L928.7 572.7 L916.6 572.7 L916.6 579.7 L916.5 585.9 L916.5 592.9 L909.8 592.9 L902.8 592.8 L903.3 593.5 L905.7 594.8 L908.9 598.0 L912.6 602.9 L917.1 606.8 L922.3 609.7 L925.8 612.5 L927.5 615.3 L928.3 617.6 L928.3 619.6 L930.2 621.1 L933.7 622.2 L935.5 623.9 L935.5 625.3 L934.4 628.6 L934.1 632.1 L934.5 635.3 L932.0 635.4 L926.0 635.4 L916.9 635.4 L908.6 635.4 L902.0 635.4 L892.0 635.4 L889.3 640.4 L884.7 648.6 L880.6 656.1 L877.2 662.4 L876.6 664.0 L876.6 665.4 L880.9 671.3 L880.1 673.0 L878.6 673.9 L878.1 675.2 L878.2 677.5 L877.2 680.5 L877.5 682.5 L878.1 685.0 L877.2 687.2 L876.4 689.3 L875.6 690.3 L874.6 689.5 L865.8 679.7 L856.7 668.9 L853.1 665.4 L849.6 662.8 L844.9 657.8 L832.6 646.9 L826.2 642.0 L820.2 636.0 L814.8 632.7 L809.5 630.6 L807.2 629.4 L805.1 627.7 L804.0 627.6 L803.4 629.8 L805.2 630.9 L807.5 631.9 L809.2 631.9 L811.1 632.7 L816.5 635.7 L817.4 637.3 L801.9 631.3 L795.6 630.7 L795.0 629.8 L798.1 626.6 L797.1 625.5 L796.0 625.3 L792.6 627.5 L791.4 627.6 L791.2 626.2 L791.3 624.9 L789.2 622.9 L787.8 623.0 L786.6 624.3 L783.7 627.0 L783.8 628.0 L789.6 629.1 L791.6 629.7 L791.1 630.4 L786.2 630.4 L780.1 631.6 L769.2 638.9 L759.1 642.0 L744.5 649.0 L738.1 649.4 L734.7 650.5 L724.9 647.8 L712.5 641.2 L693.7 639.2 L681.1 630.5 L668.5 627.0 L660.6 618.7 L655.8 618.4 L652.7 617.1 L641.3 614.1 L630.0 612.1 L619.0 604.9 L611.8 602.6 L605.6 599.7 L591.9 594.8 L586.8 592.1 L582.0 587.9 L574.1 583.5 L570.8 579.9 L567.1 578.6 L561.7 571.7 L558.9 568.8 L556.6 567.5 L554.1 567.0 L546.8 567.6 L535.9 564.6 L530.9 563.8 L520.4 559.3 L506.4 554.4 L501.8 548.6 L497.9 543.3 L490.9 536.3 L486.5 533.3 L478.9 529.7 L474.7 526.8 L468.2 524.6 L457.1 519.0 L453.6 514.2 L451.5 509.9 L445.6 504.7 L439.2 495.0 L437.5 491.4 L436.3 485.9 L434.8 482.8 L433.0 480.3 L433.9 478.5 L437.2 476.2 L442.7 475.7 L446.5 473.3 L447.0 471.3 L446.8 470.1 L444.3 467.1 L441.2 466.3 L438.9 466.2 L438.3 465.1 L440.0 463.8 L442.1 460.8 L445.1 457.2 L447.3 453.9 L447.7 449.2 L447.4 444.5 L448.2 440.5 L440.9 435.9 L440.0 434.0 L437.7 428.8 L433.7 422.7 L433.8 410.5 L429.0 399.7 L424.0 394.3 L421.4 392.4 L414.4 384.1 L408.9 379.2 L403.5 370.1 L398.1 364.3 L391.3 354.6 L386.4 349.7 L364.0 333.3 L365.3 333.3 L371.8 337.4 L372.9 337.0 L373.1 335.1 L372.3 332.7 L371.1 332.2 L369.4 332.7 L367.0 332.2 L365.8 331.4 L362.3 330.9 L357.9 328.2 L356.0 325.4 L355.8 322.1 L349.4 315.3 L347.0 311.4 L348.2 311.7 L349.9 313.2 L351.6 313.7 L353.6 313.7 L355.1 313.1 L354.6 311.9 L353.2 311.0 L343.9 307.4 L340.9 304.8 L333.3 300.6 L331.5 299.1 L330.3 295.0 L328.5 294.8 L326.8 296.0 L322.4 297.1 L321.2 295.8 L321.1 294.5 L324.2 293.2 L327.1 289.3 L327.0 288.0 L325.4 289.5 L323.0 291.3 L320.5 292.2 L316.8 293.0 L314.9 292.5 L313.3 291.6 L310.6 288.2 L309.3 277.2 L311.6 273.4 L314.4 269.7 L316.7 267.4 L318.1 269.1 L319.5 269.3 L318.5 267.4 L316.2 265.6 L315.4 263.8 L315.3 262.2 L314.2 259.2 L307.4 252.9 L301.0 253.3 L298.4 253.1 L296.0 250.7 L294.0 246.6 L292.9 243.2 L292.8 241.4 L292.2 239.6 L281.2 236.6 L277.9 234.0 L274.6 230.8 L273.3 228.2 L271.9 226.3 L270.8 222.9 L270.1 218.9 L271.3 213.8 L272.9 211.4 L265.4 209.5 L262.4 209.4 L260.0 210.5 L257.9 209.1 L253.4 207.7 L248.1 202.3 L241.9 192.7 L235.0 189.6 L232.8 186.2 L230.0 183.2 L227.5 179.4 L227.2 177.8 L226.4 176.9 L223.0 174.3 L219.2 169.8 L218.2 166.3 L217.1 160.8 L214.6 158.9 L212.0 158.0 L211.5 155.4 L211.7 154.0 L210.8 151.2 L205.6 144.7 L203.0 139.2 L201.5 137.6 L200.2 135.1 L199.5 130.0 L197.3 123.8 L193.1 116.2 L189.6 111.2 L187.9 106.0 L188.7 100.8 L188.1 97.6 L187.6 96.9 L188.0 95.8 L189.1 96.4 L190.1 95.5 L190.0 92.2 L188.8 91.2 L185.4 90.1 L183.9 89.4 L175.7 88.1 L171.0 86.2 L170.7 81.8 L168.5 79.8 L166.5 78.6 L160.3 76.0 L159.3 77.3 L158.5 79.7 L155.9 80.3 L153.7 80.4 L149.9 78.7 L140.5 72.2 L138.5 71.2 L135.6 70.7 L134.2 69.6 L127.8 66.2 L129.1 68.0 L130.9 69.9 L132.6 75.3 L130.7 79.3 L129.6 93.0 L130.8 95.7 L133.5 100.1 L135.4 107.1 L136.0 112.2 L137.7 116.3 L137.2 126.0 L137.8 128.9 L140.5 133.8 L145.3 138.3 L146.3 140.7 L152.7 144.1 L156.6 148.6 L164.2 154.7 L166.7 157.3 L173.6 166.8 L173.8 169.7 L175.1 173.2 L179.0 172.4 L180.7 175.1 L180.5 176.3 L181.0 177.2 L183.0 177.0 L184.8 177.8 L188.5 188.1 L190.4 189.5 L193.0 190.1 L195.8 191.2 L196.0 193.9 L195.9 196.0 L198.3 199.0 L197.9 203.2 L199.8 206.7 L199.5 210.1 L200.3 212.7 L206.3 218.8 L213.6 223.6 L215.2 229.9 L218.2 235.7 L221.3 237.2 L224.4 239.6 L224.0 242.1 L224.2 243.6 L228.3 248.2 L229.0 254.0 L232.6 257.8 L233.6 258.1 L234.4 257.5 L231.8 253.7 L230.5 251.2 L230.4 247.3 L231.2 246.8 L238.7 253.0 L239.4 257.6 L241.9 260.2 L242.1 263.7 L243.6 265.8 L244.1 268.9 L246.5 273.9 L246.5 280.9 L247.8 286.0 L252.5 293.8 L256.3 295.4 L257.0 299.2 L260.9 309.2 L265.5 314.5 L267.7 319.1 L268.1 322.0 L266.4 326.2 L266.2 329.1 L268.6 338.0 L272.4 342.6 L276.5 343.7 L277.2 344.4 L276.9 345.6 L278.3 346.7 L279.8 345.3 L280.6 343.3 L279.8 341.0 L279.7 339.3 L280.4 338.1 L281.7 337.9 L289.6 344.0 L290.9 346.4 L293.9 349.1 L296.6 352.5 L297.7 355.2 L299.9 357.4 L301.0 362.5 L306.5 364.8 L309.4 369.0 L309.6 371.7 L308.2 378.5 L307.0 380.5 L302.5 383.4 L299.3 386.9 L296.2 389.1 L292.9 390.4 L290.2 390.1 L287.5 386.1 L284.4 374.0 L282.3 371.4 L280.9 367.7 L278.4 364.5 L269.6 359.8 L265.2 354.7 L260.9 351.4 L256.2 346.5 L243.6 338.5 L238.4 334.4 L234.9 330.3 L232.7 330.4 L231.0 330.8 L230.3 329.7 L230.2 327.6 L229.5 326.2 L222.1 320.1 L220.6 316.7 L220.3 312.8 L221.9 302.7 L222.6 296.8 L222.2 293.8 L221.4 293.3 L220.7 291.7 L220.5 286.8 L218.8 281.5 L212.1 270.7 L207.2 268.6 L202.8 267.0 L190.9 257.4 L187.6 252.6 L186.8 249.9 L186.4 244.4 L184.8 247.6 L182.6 250.0 L177.5 249.8 L171.8 252.5 L168.4 249.9 L166.6 247.1 L163.8 243.6 L160.7 243.0 L158.7 242.9 L155.0 238.6 L152.0 237.3 L147.6 236.8 L143.9 234.6 L142.8 232.2 L142.2 228.9 L140.8 226.9 L135.0 223.0 L130.3 218.7 L125.9 216.0 L124.6 213.7 L124.5 212.2 L131.5 212.6 L139.8 214.3 L143.8 213.8 L146.3 212.2 L148.7 211.0 L149.1 212.3 L148.6 214.5 L150.9 216.6 L154.1 218.3 L156.3 218.1 L154.2 216.3 L152.8 212.6 L153.4 211.2 L153.4 209.4 L150.3 209.8 L149.8 208.8 L152.5 206.0 L155.5 198.5 L157.0 191.2 L153.8 184.7 L148.4 180.2 L136.7 167.1 L129.7 160.4 L127.7 157.9 L125.9 156.7 L120.2 155.2 L115.4 151.4 L107.0 146.1 L103.5 143.3 L101.0 136.9 L99.0 136.0 L99.6 131.5 L98.8 123.7 L97.4 121.6 L92.9 119.7 L91.8 114.3 L91.6 109.2 L90.7 105.7 L83.0 99.7 L82.5 96.8 L82.5 94.0 L81.7 91.3 L77.6 85.6 L72.6 80.7 L70.9 78.3 L70.7 73.5 L68.9 72.2 L69.6 71.9 L71.2 72.0 L72.2 71.4 L72.3 68.0 L64.8 62.7 L62.6 55.5 L58.6 51.7 L57.7 50.3 L55.5 43.5 Z" />
+          <circle class="mex-map__halo" cx="509.4" cy="470.0" r="22" stroke-dasharray="3 5" />
+          <circle class="mex-map__dot" cx="509.4" cy="470.0" r="7" />
+          <text class="mex-map__country" x="570.4" y="343.1" text-anchor="middle">México</text>
+          <text class="mex-map__label" x="509.4" y="436.0" text-anchor="middle">Guadalajara</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY: Guadalajara -> Quinta San Carlos route map (real geography) -->
+  <section class="journey">
+    <p class="venue__label venue__label--center" data-i18n="journey_label">Getting there</p>
+    <h2 class="journey__title" data-i18n="journey_title">From Guadalajara to the celebration</h2>
+    <div class="journey__map">
+      <svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Route map from Guadalajara to Quinta San Carlos on Lake Chapala">
+        <!-- Lake Chapala: real shoreline (Natural Earth 10m) -->
+        <path class="jmap-lake" d="M777.4 504.5 L813.4 500.2 L821.4 505.5 L818.2 517.5 L810.1 529.8 L803.1 536.7 L797.3 538.7 L781.4 541.2 L759.8 549.3 L753.8 550.5 L754.5 554.2 L749 561.6 L742.1 566.3 L738.7 562.2 L736.5 562 L731.8 555.9 L725.9 546.1 L701.7 529.7 L678.3 524.4 L623.1 523 L596.8 508.8 L582.4 505.3 L576.2 516.5 L570.1 521 L541.8 523 L510.4 521.8 L394.2 483.3 L381.1 482.2 L375.5 480.6 L367.5 476.9 L360.5 471.6 L357.5 465.9 L359.9 459.4 L365.7 456.6 L402.3 448 L431.2 444.9 L490.1 445.7 L509.6 450 L515.7 449.8 L519.3 447.2 L527.8 438.2 L531 436.2 L540.5 433.7 L576.2 418 L602.9 413.5 L687.1 418 L719.7 429.8 L730.1 436.2 L748 429.8 L762.1 430.2 L774.7 436.2 L788.2 447.8 L795.6 462.9 L789.6 476.9 L764.7 504.3 L777.4 504.5 Z" />
+        <text class="jmap-lakelbl" x="612.5" y="490" text-anchor="middle">Lago de Chapala</text>
+
+        <!-- Driving route along the Guadalajara–Jocotepec highway -->
+        <path class="jmap-route" d="M406.5 185.5 L365.7 236.7 L337.5 296.7 L325 356.7 L340.7 403.3 L356.3 440 L387.5 445.3" />
+        <!-- Airport connections -->
+        <path class="jmap-route jmap-route--alt" d="M427 280 L419 243 L410 205 L407 194" />
+        <path class="jmap-route jmap-route--alt" d="M427 297 L410 332 L379 374 L352 398" />
+        <text class="jmap-time" x="434" y="238">≈ 25 min</text>
+        <text class="jmap-time" x="416" y="352">≈ 45 min</text>
+
+        <!-- Guadalajara -->
+        <circle class="jmap-dot" cx="406.5" cy="185.5" r="7" />
+        <text class="jmap-city" x="406.5" y="158" text-anchor="middle">Guadalajara</text>
+
+        <!-- Chapala town -->
+        <circle class="jmap-dot" cx="506.2" cy="440" r="3.5" opacity="0.55" />
+        <text class="jmap-town" x="506.2" y="424" text-anchor="middle">Chapala</text>
+
+        <!-- Guadalajara Airport (GDL), Miguel Hidalgo Intl. -->
+        <circle class="jmap-dot" cx="430.6" cy="288.8" r="4.5" />
+        <g class="jmap-cart" transform="translate(448,278) scale(0.8)">
+          <path d="M22 2L11 13" />
+          <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+        </g>
+        <text class="jmap-town" x="474" y="296" text-anchor="start" data-i18n="journey_airport">Guadalajara Airport (GDL)</text>
+
+        <!-- Venue -->
+        <circle class="jmap-halo" cx="387.5" cy="445.3" r="17" stroke-dasharray="3 5" />
+        <circle class="jmap-dot jmap-dot--venue" cx="387.5" cy="445.3" r="6.5" />
+        <text class="jmap-city" x="300" y="502" text-anchor="middle">Quinta San Carlos</text>
+
+        <!-- Travel-time badge -->
+        <g>
+          <rect class="jmap-badge" x="62" y="278" width="252" height="44" rx="22" />
+          <g class="jmap-cart" transform="translate(80,289)">
+            <path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13" />
+            <path d="M3 13h18v4H3z" />
+            <circle cx="7" cy="19" r="1.6" />
+            <circle cx="17" cy="19" r="1.6" />
+          </g>
+          <text class="jmap-badge-txt" x="114" y="307">≈ 50 min · 55 km</text>
+        </g>
+
+        <!-- Scale + north -->
+        <line class="jmap-scale" x1="60" y1="645" x2="119.8" y2="645" />
+        <line class="jmap-scale" x1="60" y1="640" x2="60" y2="650" />
+        <line class="jmap-scale" x1="119.8" y1="640" x2="119.8" y2="650" />
+        <text class="jmap-scaletxt" x="90" y="632" text-anchor="middle">10 km</text>
+        <line class="jmap-scale" x1="940" y1="95" x2="940" y2="68" />
+        <path class="jmap-scale" d="M934 74 L940 65 L946 74" fill="none" />
+        <text class="jmap-scaletxt" x="940" y="115" text-anchor="middle">N</text>
+      </svg>
+    </div>
+    <p class="journey__note" data-i18n="journey_note">About 50 minutes by car — 55 km from Guadalajara to Quinta San Carlos, on the western shore of Lake Chapala. From Guadalajara Airport (GDL): about 25 minutes to the city centre and 45 minutes to the venue.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__names">Monse <em>&</em> Mikel</p>
+        <p class="footer__tag" data-i18n="footer_tag">Saturday, April 10, 2027 — Quinta San Carlos, Mexico.</p>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer_links">Explore</h4>
+        <ul class="footer__links">
+          <li><a data-i18n='nav_home' href='/'>Home</a></li>
+          <li><a data-i18n='nav_flights' href='/vuelos'>Flights</a></li>
+          <li><a data-i18n='nav_info' href='/informacion'>Information</a></li>
+          <li><a data-i18n='nav_rsvp' href='/rsvp'>RSVP</a></li>
+          <li><a data-i18n='nav_recos' href='/recomendaciones'>Recommendations</a></li>
+          <li><a data-i18n='nav_gifts' href='/lista-de-regalos'>Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__contact">
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <p data-i18n="footer_email_label">Write us at</p>
+        <p class="footer__person">Mikel</p>
+        <p><a href="mailto:hello@mikelmangold.com">hello@mikelmangold.com</a></p>
+        <p><a href="https://wa.me/4915780586586">+49 157 80586586</a> <span class="footer__hint" data-i18n="footer_whatsapp">(WhatsApp preferred)</span></p>
+        <p class="footer__person">Monse</p>
+        <p><a href="mailto:monserratcardegalindo@gmail.com">monserratcardegalindo@gmail.com</a></p>
+        <p><a href="https://wa.me/491605955115">+49 160 5955115</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span data-i18n="footer_copy">© 2027 Monse & Mikel</span>
+      <span>10 · 04 · 2027</span>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
