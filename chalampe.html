@@ -21,6 +21,46 @@
       height: auto;
       margin: 0 auto;
     }
+    /* Photo inside an info-card (e.g. the ceremony venue) */
+    .info-card__photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 2px 0 16px;
+    }
+    /* Highlighted "top tip" banner spanning the full grid width */
+    .tip-card {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: linear-gradient(135deg, #6b5334, #4c3922);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 32px 40px;
+    }
+    .tip-card__icon {
+      flex: 0 0 auto;
+      width: 46px;
+      height: 46px;
+      color: var(--wood-light);
+    }
+    .tip-card__icon svg { width: 100%; height: 100%; }
+    .tip-card h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      line-height: 1.15;
+      color: var(--cream-warm);
+      margin-bottom: 8px;
+    }
+    .tip-card p {
+      color: rgba(236, 232, 224, 0.82);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    @media (max-width: 600px) {
+      .tip-card { flex-direction: column; text-align: center; padding: 28px 24px; gap: 18px; }
+    }
   </style>
 </head>
 <body>
@@ -100,6 +140,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
           </div>
           <h3>The ceremony</h3>
+          <img class="info-card__photo" src="images/mairie-printemps-2-1-768x576.webp" alt="The Mairie de Chalampé in spring, with tulips in bloom and the French flag" loading="lazy" />
           <p><strong>Mariage civil · Mairie de Chalampé</strong></p>
           <p>9 Espace Centre-Village<br />68490 Chalampé, France</p>
           <p>Saturday 5 September, <strong>15h00</strong></p>
@@ -146,6 +187,17 @@
           <h3>Getting there · by car</h3>
           <p>Chalampé sits right on the Rhine - the German town of <strong>Neuenburg am Rhein</strong> is just across the bridge.</p>
           <p>Roughly <strong>15 min from Mulhouse</strong> and <strong>40 min from Basel / the EuroAirport</strong>.</p>
+        </article>
+
+        <!-- TOP TIP: RENT A CAR (highlighted, full-width) -->
+        <article class="tip-card">
+          <div class="tip-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M5 11l1.6-4.2A2 2 0 018.5 5.5h7a2 2 0 011.9 1.3L19 11"/><path d="M3.5 11h17v5h-17z"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>
+          </div>
+          <div class="tip-card__body">
+            <h3>Our top tip: rent a car</h3>
+            <p>However you arrive - plane, train or car - our honest advice is to <strong style="color:var(--wood-light)">rent a car</strong>. It's by far the easiest way to reach Chalampé, and it lets you explore Alsace, the Black Forest and the Swiss border over a few days. Well worth it.</p>
+          </div>
         </article>
 
         <!-- WHERE TO STAY -->
