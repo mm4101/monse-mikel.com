@@ -14,51 +14,59 @@
   <style>
     /* Chalampé hero banner (scoped to this page) */
     .ch-hero { background: var(--cream); }
-    .ch-hero__img {
-      display: block;
-      width: 100%;
-      max-width: 1600px;
-      height: auto;
-      margin: 0 auto;
-    }
+    .ch-hero__img { display: block; width: 100%; max-width: 1600px; height: auto; margin: 0 auto; }
+
     /* Photo inside an info-card (e.g. the ceremony venue) */
-    .info-card__photo {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      margin: 2px 0 16px;
-    }
-    /* Highlighted "top tip" banner spanning the full grid width */
+    .info-card__photo { display: block; width: 100%; height: auto; border-radius: 4px; margin: 2px 0 16px; }
+
+    /* "The day" - full-width timeline card */
+    .ch-day { grid-column: 1 / -1; }
+    .ch-day__date { margin-bottom: 18px; }
+    .ch-day__timeline { display: flex; flex-wrap: wrap; gap: 20px 48px; }
+    .ch-day__slot { display: flex; flex-direction: column; gap: 4px; }
+    .ch-day__time { font-family: var(--serif); font-size: 22px; color: var(--wood); }
+    .ch-day__label { font-size: 14px; color: var(--forest-soft); }
+
+    /* Section heading */
+    .ch-secheading { font-family: var(--serif); font-size: 32px; text-align: center; margin: 72px 0 4px; }
+    .ch-secsub { text-align: center; color: var(--forest-soft); font-size: 15px; margin-bottom: 4px; }
+
+    /* Embedded maps */
+    .ch-mapsec { max-width: 1100px; margin: 40px auto 0; padding: 0 24px; }
+    .ch-map { position: relative; width: 100%; aspect-ratio: 16 / 8; border: 1px solid rgba(150, 120, 78, 0.22); border-radius: 4px; overflow: hidden; }
+    .ch-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* Getting-there cards: three across, tip banner spans full width below */
+    .ch-travel { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 32px; }
+
+    /* Highlighted "top tip" banner spanning the full width */
     .tip-card {
       grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      gap: 28px;
+      display: flex; align-items: center; gap: 28px;
       background: linear-gradient(135deg, #6b5334, #4c3922);
       border: 1px solid rgba(0, 0, 0, 0.12);
       padding: 32px 40px;
     }
-    .tip-card__icon {
-      flex: 0 0 auto;
-      width: 46px;
-      height: 46px;
-      color: var(--wood-light);
-    }
+    .tip-card__icon { flex: 0 0 auto; width: 46px; height: 46px; color: var(--wood-light); }
     .tip-card__icon svg { width: 100%; height: 100%; }
-    .tip-card h3 {
-      font-family: var(--serif);
-      font-size: 26px;
-      line-height: 1.15;
-      color: var(--cream-warm);
-      margin-bottom: 8px;
+    .tip-card h3 { font-family: var(--serif); font-size: 26px; line-height: 1.15; color: var(--cream-warm); margin-bottom: 8px; }
+    .tip-card p { color: rgba(236, 232, 224, 0.82); font-size: 15px; line-height: 1.65; }
+
+    /* Where to stay - text beside an embedded hotels map */
+    .ch-staysec { max-width: 1100px; margin: 8px auto 0; padding: 0 24px; }
+    .ch-stay { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 28px; }
+    .ch-stay__text p { color: var(--forest-soft); font-size: 15px; line-height: 1.65; }
+    .ch-stay__text p + p { margin-top: 12px; }
+    .ch-stay__text strong { color: var(--forest); font-weight: 500; }
+    .ch-stay__best {
+      display: inline-block; font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--wood); border: 1px solid rgba(150,120,78,0.4);
+      border-radius: 999px; padding: 4px 12px; margin-bottom: 14px;
     }
-    .tip-card p {
-      color: rgba(236, 232, 224, 0.82);
-      font-size: 15px;
-      line-height: 1.65;
-    }
-    @media (max-width: 600px) {
+    .ch-map--stay { aspect-ratio: 4 / 3; }
+
+    @media (max-width: 900px) {
+      .ch-stay { grid-template-columns: 1fr; gap: 22px; }
       .tip-card { flex-direction: column; text-align: center; padding: 28px 24px; gap: 18px; }
     }
   </style>
@@ -119,19 +127,22 @@
       </svg>
     </div>
 
+    <!-- PROGRAMME -->
     <div class="container">
       <div class="info-grid">
 
-        <!-- THE DAY -->
-        <article class="info-card">
+        <!-- THE DAY (full-width timeline) -->
+        <article class="info-card ch-day">
           <div class="info-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           </div>
           <h3>The day</h3>
-          <p><strong>Saturday, 5 September 2026</strong></p>
-          <p><strong>15h00</strong> · Civil ceremony at the Mairie de Chalampé</p>
-          <p><strong>17h00</strong> · Vin d'honneur under the marquee</p>
-          <p><strong>Dinner</strong> · right after, at the same place</p>
+          <p class="ch-day__date"><strong>Saturday, 5 September 2026</strong></p>
+          <div class="ch-day__timeline">
+            <div class="ch-day__slot"><span class="ch-day__time">15h00</span><span class="ch-day__label">Civil ceremony · Mairie de Chalampé</span></div>
+            <div class="ch-day__slot"><span class="ch-day__time">17h00</span><span class="ch-day__label">Vin d'honneur · under the marquee</span></div>
+            <div class="ch-day__slot"><span class="ch-day__time">Dinner</span><span class="ch-day__label">right after, at the same place</span></div>
+          </div>
         </article>
 
         <!-- THE CEREMONY -->
@@ -159,35 +170,52 @@
           <p><a href="https://www.google.com/maps/search/?api=1&query=57+avenue+de+la+Paix%2C+68490+Chalamp%C3%A9" target="_blank" rel="noopener">Open in Google Maps</a></p>
         </article>
 
-        <!-- GETTING THERE · BY PLANE -->
+      </div>
+    </div>
+
+    <!-- WHERE IS CHALAMPÉ? (embedded map) -->
+    <section class="ch-mapsec">
+      <h2 class="ch-secheading">Where is Chalampé?</h2>
+      <p class="ch-secsub">On the Rhine in Alsace, right on the French–German border.</p>
+      <div class="ch-map" style="margin-top:24px">
+        <iframe src="https://maps.google.com/maps?q=Chalamp%C3%A9%2068490%20France&t=&z=11&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing the location of Chalampé, Alsace"></iframe>
+      </div>
+    </section>
+
+    <!-- GETTING THERE -->
+    <div class="container">
+      <h2 class="ch-secheading">Getting there</h2>
+      <p class="ch-secsub">However you arrive, our honest advice is to rent a car.</p>
+      <div class="ch-travel">
+
+        <!-- BY PLANE -->
         <article class="info-card">
           <div class="info-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M2 12l8-3 4-5 2 1-2 5 7-2 1 2-7 4 2 5-2 1-4-4-8 3z"/></svg>
           </div>
-          <h3>Getting there · by plane</h3>
+          <h3>By plane</h3>
           <p>The closest airport is <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, about <strong>40 min by car</strong> from Chalampé.</p>
           <p>Also within reach: <strong>Strasbourg (SXB)</strong> ~1h20 and <strong>Zürich (ZRH)</strong> ~1h15 by car.</p>
         </article>
 
-        <!-- GETTING THERE · BY TRAIN -->
+        <!-- BY TRAIN -->
         <article class="info-card">
           <div class="info-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14"/><circle cx="8.5" cy="13.5" r="1"/><circle cx="15.5" cy="13.5" r="1"/><path d="M8 20l2-3M16 20l-2-3"/></svg>
           </div>
-          <h3>Getting there · by train</h3>
-          <p>Closest stations to Chalampé, in order of preference:</p>
-          <p><strong>1 · Müllheim (Baden)</strong>, Germany - the nearest station, a short drive away. Neuenburg am Rhein is even closer, but usually needs one extra change.</p>
-          <p><strong>2 · Mulhouse</strong>, France - a bigger hub with TGV to Paris, Strasbourg and Basel, about 15 min by car.</p>
-          <p><strong>3 · Basel</strong>, Switzerland - well connected internationally, about 40 min by car.</p>
-          <p>From any of them it's a quick hop - taxi, or let us know and we'll help with a lift.</p>
+          <h3>By train</h3>
+          <p>Closest stations, in order of preference:</p>
+          <p><strong>1 · Müllheim (Baden)</strong>, Germany - the nearest, a short drive away. Neuenburg am Rhein is even closer, but usually needs one extra change.</p>
+          <p><strong>2 · Mulhouse</strong>, France - TGV hub (Paris, Strasbourg, Basel), ~15 min by car.</p>
+          <p><strong>3 · Basel</strong>, Switzerland - well connected internationally, ~40 min by car.</p>
         </article>
 
-        <!-- GETTING THERE · BY CAR -->
+        <!-- BY CAR -->
         <article class="info-card">
           <div class="info-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M5 11l1.6-4.2A2 2 0 018.5 5.5h7a2 2 0 011.9 1.3L19 11"/><path d="M3.5 11h17v5h-17z"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>
           </div>
-          <h3>Getting there · by car</h3>
+          <h3>By car</h3>
           <p>Chalampé sits right on the Rhine - the German town of <strong>Neuenburg am Rhein</strong> is just across the bridge.</p>
           <p>Roughly <strong>15 min from Mulhouse</strong> and <strong>40 min from Basel / the EuroAirport</strong>.</p>
         </article>
@@ -203,15 +231,32 @@
           </div>
         </article>
 
-        <!-- WHERE TO STAY -->
-        <article class="info-card">
-          <div class="info-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7"/></svg>
-          </div>
-          <h3>Where to stay</h3>
-          <p>Handy bases nearby: <strong>Mulhouse</strong> (~15 min, most hotels), <strong>Neuenburg am Rhein</strong> just over the German border, and the villages around <strong>Ottmarsheim</strong> and <strong>Bantzenheim</strong> closer by.</p>
-          <p>Tell us if you'd like a tip - happy to point you to a good spot.</p>
-        </article>
+      </div>
+    </div>
+
+    <!-- WHERE TO STAY -->
+    <section class="ch-staysec">
+      <h2 class="ch-secheading">Where to stay</h2>
+      <div class="ch-stay">
+        <div class="ch-stay__text">
+          <span class="ch-stay__best">Best option</span>
+          <p><strong>Neuenburg am Rhein</strong> (Germany) - just across the Rhine bridge from Chalampé.</p>
+          <p>If you stay in Neuenburg, <strong>we'll pick you up by car</strong> for the celebration. It's also where <strong>Monse's family will be based</strong>, so you'll be in good company.</p>
+          <p>
+            <a href="https://www.booking.com/searchresults.html?ss=Neuenburg+am+Rhein" target="_blank" rel="noopener">Browse hotels on Booking.com</a><br />
+            <a href="https://www.google.com/maps/search/?api=1&query=hotels+in+Neuenburg+am+Rhein%2C+Germany" target="_blank" rel="noopener">See hotels on Google Maps</a>
+          </p>
+          <p>Also possible: <strong>Mulhouse</strong> (France, ~15 min) or the villages of <strong>Ottmarsheim</strong> and <strong>Bantzenheim</strong> closer by. Tell us if you'd like a tip.</p>
+        </div>
+        <div class="ch-map ch-map--stay">
+          <iframe src="https://maps.google.com/maps?q=hotels%20Neuenburg%20am%20Rhein%20Germany&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hotels in Neuenburg am Rhein, Germany"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOD TO KNOW -->
+    <div class="container">
+      <div class="info-grid" style="margin-top:32px">
 
         <!-- WHAT TO EXPECT -->
         <article class="info-card">
