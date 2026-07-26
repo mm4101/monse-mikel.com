@@ -210,11 +210,11 @@ const translations = {
     // GIFTS PAGE
     gifts_label: "Thank you",
     gifts_title: "Gifts",
-    gifts_lead: "Your presence is the greatest gift. For those who'd like to give a little more, here are a few ways.",
+    gifts_lead: "Honestly, we don't need any gifts and we're not expecting a thing. You being here with us is the greatest gift of all. But if you'd still like to give something, here are a few of our current priorities.",
     reg_label: "Registry",
     reg_title: "Choose a Gift",
     reg_lead: "Pick something you'd like to help us with. Give any amount - the bar shows how close each gift is to being fully funded.",
-    reg_secure: "Card payments are handled securely by Stripe. You can also use the bank transfer above.",
+    reg_secure: "Card payments are handled securely by Stripe. You can also use the bank transfer below.",
 
     gift1_title: "Honeymoon Fund",
     gift1_desc: "Help us start married life with a trip we'll never forget.",
@@ -439,11 +439,11 @@ const translations = {
 
     gifts_label: "Gracias",
     gifts_title: "Regalos",
-    gifts_lead: "Tu presencia es el mejor regalo. Para quienes quieran dar un poco más, aquí algunas opciones.",
+    gifts_lead: "De verdad, no necesitamos ningún regalo y no esperamos nada. Que vengáis y nos acompañéis es el mejor regalo de todos. Pero si aun así queréis regalarnos algo, estas son algunas de nuestras prioridades actuales.",
     reg_label: "Lista de regalos",
     reg_title: "Elige un regalo",
     reg_lead: "Elige algo con lo que quieras ayudarnos. Da la cantidad que desees - la barra muestra cuánto falta para completar cada regalo.",
-    reg_secure: "Los pagos con tarjeta se procesan de forma segura con Stripe. También puedes usar la transferencia bancaria de arriba.",
+    reg_secure: "Los pagos con tarjeta se procesan de forma segura con Stripe. También puedes usar la transferencia bancaria de abajo.",
 
     gift1_title: "Fondo Luna de Miel",
     gift1_desc: "Ayúdanos a comenzar la vida de casados con un viaje inolvidable.",
@@ -667,11 +667,11 @@ const translations = {
 
     gifts_label: "Merci",
     gifts_title: "Cadeaux",
-    gifts_lead: "Votre présence est le plus beau des cadeaux. Pour ceux qui souhaitent donner un peu plus, voici quelques options.",
+    gifts_lead: "Sincèrement, nous n'avons besoin d'aucun cadeau et nous n'attendons rien. Votre présence à nos côtés est le plus beau des cadeaux. Mais si vous souhaitez tout de même offrir quelque chose, voici quelques-unes de nos priorités du moment.",
     reg_label: "Liste de cadeaux",
     reg_title: "Choisissez un cadeau",
     reg_lead: "Choisissez quelque chose pour nous aider. Donnez le montant que vous souhaitez - la barre indique où en est chaque cadeau.",
-    reg_secure: "Les paiements par carte sont sécurisés par Stripe. Vous pouvez aussi utiliser le virement bancaire ci-dessus.",
+    reg_secure: "Les paiements par carte sont sécurisés par Stripe. Vous pouvez aussi utiliser le virement bancaire ci-dessous.",
 
     gift1_title: "Cagnotte Lune de Miel",
     gift1_desc: "Aidez-nous à commencer notre vie de mariés avec un voyage inoubliable.",
@@ -895,11 +895,11 @@ const translations = {
 
     gifts_label: "Danke",
     gifts_title: "Geschenke",
-    gifts_lead: "Eure Anwesenheit ist das größte Geschenk. Für alle, die noch etwas mehr geben möchten, hier ein paar Möglichkeiten.",
+    gifts_lead: "Ehrlich gesagt brauchen wir keine Geschenke und erwarten auch nichts. Dass ihr kommt und mit uns feiert, ist das schönste Geschenk überhaupt. Wenn ihr uns trotzdem etwas schenken möchtet, hier ein paar unserer aktuellen Prioritäten.",
     reg_label: "Geschenkeliste",
     reg_title: "Wählt ein Geschenk",
     reg_lead: "Sucht euch etwas aus, womit ihr uns helfen möchtet. Gebt einen beliebigen Betrag - der Balken zeigt, wie weit jedes Geschenk finanziert ist.",
-    reg_secure: "Kartenzahlungen werden sicher über Stripe abgewickelt. Ihr könnt auch die Banküberweisung oben nutzen.",
+    reg_secure: "Kartenzahlungen werden sicher über Stripe abgewickelt. Ihr könnt auch die Banküberweisung unten nutzen.",
 
     gift1_title: "Flitterwochen-Kasse",
     gift1_desc: "Helft uns, das Eheleben mit einer unvergesslichen Reise zu beginnen.",
