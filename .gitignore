@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Local tooling
+.claude/
+
+# Large source image kept locally only - the web-optimized chalampe-hero.jpg is what ships
+images/chalampe-annotated.png
