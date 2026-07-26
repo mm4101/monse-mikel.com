@@ -91,7 +91,16 @@
     /* Dress code - palette graphic */
     .ch-dresssec { max-width: 760px; margin: 8px auto 0; padding: 0 24px; text-align: center; }
     .ch-dresssec p { color: var(--forest-soft); font-size: 15px; line-height: 1.65; margin-bottom: 24px; }
-    .ch-dresssec img { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; border-radius: 6px; border: 1px solid rgba(150, 120, 78, 0.18); }
+    .ch-dresssec img { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto; border-radius: 6px; border: 1px solid rgba(150, 120, 78, 0.18); }
+
+    /* Things to do around the wedding */
+    .ch-todo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px; }
+    .ch-todo__card { background: var(--cream-warm); border: 1px solid rgba(150, 120, 78, 0.15); padding: 26px 26px; }
+    .ch-todo__card h3 { font-family: var(--serif); font-size: 21px; line-height: 1.2; margin-bottom: 8px; }
+    .ch-todo__card > p { color: var(--forest-soft); font-size: 14px; line-height: 1.6; margin-bottom: 14px; }
+    .ch-todo__links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+    .ch-todo__links a { color: var(--wood); font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(150, 120, 78, 0.3); }
+    .ch-todo__links a:hover { border-bottom-color: var(--wood); }
 
     @media (max-width: 900px) {
       .ch-stay { grid-template-columns: 1fr; gap: 22px; }
@@ -168,7 +177,7 @@
           <p class="ch-day__date"><strong>Saturday, 5 September 2026</strong></p>
           <div class="ch-day__timeline">
             <div class="ch-day__slot"><span class="ch-day__time">15h00</span><span class="ch-day__label">Civil ceremony · Mairie de Chalampé</span></div>
-            <div class="ch-day__slot"><span class="ch-day__time">17h00</span><span class="ch-day__label">Vin d'honneur · under the marquee</span></div>
+            <div class="ch-day__slot"><span class="ch-day__time">17h00</span><span class="ch-day__label">Vin d'honneur · “l'apéro”</span></div>
             <div class="ch-day__slot"><span class="ch-day__time">Dinner</span><span class="ch-day__label">right after, at the same place</span></div>
           </div>
         </article>
@@ -294,7 +303,7 @@
           <p>Browse gîtes and rooms in the area on Gîtes de France or Booking.com →</p>
           <figure class="ch-village">
             <img src="images/village-nearby.jpg" alt="Aerial view of a village near Chalampé, with the Vosges mountains behind" loading="lazy" />
-            <figcaption>One of the villages a five-minute drive from Chalampé, where Mikel's brother lives.</figcaption>
+            <figcaption><strong>Rumersheim-le-Haut</strong> - one of the villages a five-minute drive from Chalampé, where Mikel's brother lives.</figcaption>
           </figure>
         </div>
         <div class="ch-book">
@@ -340,6 +349,102 @@
           <p><a href="https://wa.me/4915780586586">+49 157 80586586</a> <span style="opacity:.6">(WhatsApp preferred)</span></p>
           <p class="footer__person">Monse</p>
           <p><a href="https://wa.me/491605955115">+49 160 5955115</a></p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- THINGS TO DO -->
+    <div class="container">
+      <h2 class="ch-secheading">Before or after the wedding</h2>
+      <p class="ch-secsub">This corner of Europe is spectacular - if you're coming a few days early or staying on, here are some ideas.</p>
+      <div class="ch-todo">
+
+        <article class="ch-todo__card">
+          <h3>🍷 Alsace Wine Route</h3>
+          <p>Storybook villages, vineyards and tastings along one of France's prettiest drives - right on our doorstep.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://shortgirlontour.com/itinerary-for-3-days-on-the-alsace-wine-route-travel-guide/" target="_blank" rel="noopener">3-day itinerary</a></li>
+            <li><a href="https://travelfrancebucketlist.com/wine-route-of-alsace-itinerary-map/" target="_blank" rel="noopener">itinerary &amp; map</a></li>
+            <li><a href="https://thetravellingtedaldi.com/3-days-in-the-alsace-wine-route-itinerary/" target="_blank" rel="noopener">3 days</a></li>
+            <li><a href="https://www.france-justforyou.com/blog/alsace-road-trip" target="_blank" rel="noopener">road trip</a></li>
+            <li><a href="https://blog.ruedesvignerons.com/en/travel-guide/alsace-wine-route/" target="_blank" rel="noopener">wine guide</a></li>
+            <li><a href="https://www.winalist.com/blog/travel-france/alsace/alsace-wine-route" target="_blank" rel="noopener">winalist</a></li>
+          </ul>
+        </article>
+
+        <article class="ch-todo__card">
+          <h3>🇨🇭 Basel</h3>
+          <p>Switzerland's art city on the Rhine - museums, medieval old town, and summer Rhine swimming. About 40 min away.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://happytowander.com/things-to-do-in-basel-switzerland/" target="_blank" rel="noopener">things to do</a></li>
+            <li><a href="https://alexjessicamills.com/the-best-things-to-do-see-in-basel-switzerland/" target="_blank" rel="noopener">best of Basel</a></li>
+            <li><a href="https://www.aswesawit.com/things-to-do-in-basel-switzerland/" target="_blank" rel="noopener">guide</a></li>
+            <li><a href="https://www.viator.com/blog/Basel/d5010/How-to-Spend-1-Day-in-Basel/i27653" target="_blank" rel="noopener">1 day</a></li>
+            <li><a href="https://www.basel.com/en/activities-excursions/swimming-rhine" target="_blank" rel="noopener">Rhine swimming</a></li>
+          </ul>
+        </article>
+
+        <article class="ch-todo__card">
+          <h3>🇨🇭 Lauterbrunnen</h3>
+          <p>The jaw-dropping Swiss valley of 72 waterfalls, deep in the Alps. A longer trip, but unforgettable.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://thetravellingtedaldi.com/lauterbrunnen-itinerary/" target="_blank" rel="noopener">itinerary</a></li>
+            <li><a href="https://inoldcities.com/one-day-in-lauterbrunnen/" target="_blank" rel="noopener">one day</a></li>
+            <li><a href="https://maycausewanderlust.com/lauterbrunnen/" target="_blank" rel="noopener">guide</a></li>
+            <li><a href="https://johnnyafrica.com/lauterbrunnen-travel-guide/" target="_blank" rel="noopener">travel guide</a></li>
+            <li><a href="https://thedanaedition.com/travel/traveldestinations/europe/switzerland/1-day-in-lauterbrunnen-switzerland-best-things-to-do-and-must-see-attractions/" target="_blank" rel="noopener">must-sees</a></li>
+          </ul>
+        </article>
+
+        <article class="ch-todo__card">
+          <h3>⛰️ Vosges / Grand Ballon</h3>
+          <p>Hike the highest peak of the Vosges, with sweeping views over Alsace and the Black Forest.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://frenchmoments.eu/grand-ballon-vosges/" target="_blank" rel="noopener">overview</a></li>
+            <li><a href="https://www.rando-grandballon.fr/en/" target="_blank" rel="noopener">hikes</a></li>
+            <li><a href="https://www.visit.alsace/en/239006906-hike-the-grand-ballon-the-highest-peak-of-the-vosges/" target="_blank" rel="noopener">visit alsace</a></li>
+            <li><a href="https://www.cimalp.com/en/blogs/the-cimalp-blog/hiking-vosges-routes" target="_blank" rel="noopener">routes</a></li>
+            <li><a href="https://www.tourisme-guebwiller.fr/en/discover/hiking-alsace-vosges-grandballon/" target="_blank" rel="noopener">trails</a></li>
+            <li><a href="https://www.summitpost.org/grand-ballon/152052" target="_blank" rel="noopener">summitpost</a></li>
+          </ul>
+        </article>
+
+        <article class="ch-todo__card">
+          <h3>🏛️ Freiburg</h3>
+          <p>A sunny, canal-laced university town on the edge of the Black Forest, just across the German border.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://thetravelbunny.com/things-to-do-in-freiburg-germany/" target="_blank" rel="noopener">things to do</a></li>
+            <li><a href="https://www.ytravelblog.com/what-to-see-in-freiburg-germany/" target="_blank" rel="noopener">what to see</a></li>
+            <li><a href="https://www.bigworldsmallpockets.com/things-to-do-in-freiburg/" target="_blank" rel="noopener">guide</a></li>
+            <li><a href="https://emmasroadmap.com/weekend-in-freiburg-im-breisgau-things-to-do/" target="_blank" rel="noopener">a weekend</a></li>
+            <li><a href="https://harmonizingthechaos.com/things-to-do-in-freiburg/" target="_blank" rel="noopener">highlights</a></li>
+            <li><a href="https://www.wanderingermany.com/things-to-do-in-freiburg-im-breisgau-germany/" target="_blank" rel="noopener">wandering</a></li>
+          </ul>
+        </article>
+
+        <article class="ch-todo__card">
+          <h3>♨️ Thermal baths</h3>
+          <p>Unwind in the Black Forest's thermal spas - the perfect reward after the celebration.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://visit.freiburg.de/en/discover/wellness-well-being/relax-and-spas" target="_blank" rel="noopener">Freiburg spas</a></li>
+            <li><a href="https://www.sncf-connect.com/en-en/article/wellness-get-away-weekend-in-freiburg" target="_blank" rel="noopener">wellness weekend</a></li>
+            <li><a href="https://www.black-forest-travel.com/leisure/thermal-baths.html" target="_blank" rel="noopener">thermal baths</a></li>
+            <li><a href="https://www.schwarzwaldportal.com/en/_thermalbaeder-Schwarzwald.html" target="_blank" rel="noopener">Schwarzwald baths</a></li>
+          </ul>
+        </article>
+
+        <article class="ch-todo__card">
+          <h3>🌲 Black Forest hikes</h3>
+          <p>Deep forests, lakes and trails right across the Rhine in Germany.</p>
+          <ul class="ch-todo__links">
+            <li><a href="https://thedailypackers.com/black-forest-travel-guide/" target="_blank" rel="noopener">travel guide</a></li>
+            <li><a href="https://www.alpinetrek.co.uk/blog/hiking-in-the-black-forest/" target="_blank" rel="noopener">hiking</a></li>
+            <li><a href="https://www.komoot.com/guide/37/hiking-in-the-black-forest" target="_blank" rel="noopener">komoot</a></li>
+            <li><a href="https://www.komoot.com/guide/23751/hiking-around-feldberg" target="_blank" rel="noopener">Feldberg</a></li>
+            <li><a href="https://www.blackforestgermany.com/hiking.php" target="_blank" rel="noopener">trails</a></li>
+            <li><a href="https://petromax.com/blogs/advisor/the-other-hiking-trails-in-the-black-forest-experience-pure-nature" target="_blank" rel="noopener">hidden trails</a></li>
+          </ul>
         </article>
 
       </div>
