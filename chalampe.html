@@ -67,6 +67,22 @@
     .ch-stay__best--alt { color: var(--wood); background: transparent; border-color: rgba(150,120,78,0.5); }
     .ch-map--stay { aspect-ratio: 4 / 3; }
 
+    /* "Find a gîte" booking panel (replaces a map where sites can't be iframed) */
+    .ch-book {
+      display: flex; flex-direction: column; justify-content: center; gap: 12px;
+      background: var(--cream-warm); border: 1px solid rgba(150, 120, 78, 0.18);
+      border-radius: 4px; padding: 36px 30px; min-height: 240px; text-align: center;
+    }
+    .ch-book__eyebrow { font-family: var(--serif); font-size: 22px; color: var(--forest); margin-bottom: 4px; }
+    .ch-book__btn {
+      display: block; text-decoration: none; font-size: 15px; padding: 13px 20px;
+      border-radius: 999px; background: var(--wood); color: var(--cream-warm) !important;
+      border: 1px solid var(--wood); transition: opacity .2s ease;
+    }
+    .ch-book__btn:hover { opacity: 0.88; }
+    .ch-book__btn--alt { background: transparent; color: var(--wood) !important; }
+    .ch-book__note { font-size: 13px; color: var(--forest-soft); margin-top: 4px; }
+
     @media (max-width: 900px) {
       .ch-stay { grid-template-columns: 1fr; gap: 22px; }
       .tip-card { flex-direction: column; text-align: center; padding: 28px 24px; gap: 18px; }
@@ -263,14 +279,13 @@
         <div class="ch-stay__text">
           <span class="ch-stay__best ch-stay__best--alt">Only if you rent a car</span>
           <p>Prefer the French side? Stay in one of the villages right around Chalampé - <strong>Chalampé</strong>, <strong>Ottmarsheim</strong> or <strong>Rumersheim-le-Haut</strong>. Lovely and close, but you'll <strong>need a car</strong> to get around.</p>
-          <p>Look for a gîte or a room here:</p>
-          <p>
-            <a href="https://www.gites-de-france-alsace.com/" target="_blank" rel="noopener">Gîtes de France (Alsace)</a><br />
-            <a href="https://www.booking.com/searchresults.html?ss=Chalamp%C3%A9%2C+France" target="_blank" rel="noopener">Booking.com</a>
-          </p>
+          <p>Browse gîtes and rooms in the area on Gîtes de France or Booking.com →</p>
         </div>
-        <div class="ch-map ch-map--stay">
-          <iframe src="https://maps.google.com/maps?q=Ottmarsheim%2068490%20France&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villages around Chalampé: Chalampé, Ottmarsheim, Rumersheim-le-Haut"></iframe>
+        <div class="ch-book">
+          <p class="ch-book__eyebrow">Find a gîte or a room</p>
+          <a class="ch-book__btn" href="https://www.gites-de-france-alsace.com/" target="_blank" rel="noopener">Gîtes de France · Alsace ↗</a>
+          <a class="ch-book__btn ch-book__btn--alt" href="https://www.booking.com/searchresults.html?ss=Rumersheim-le-Haut%2C+France" target="_blank" rel="noopener">Booking.com · Rumersheim &amp; around ↗</a>
+          <p class="ch-book__note">Chalampé · Ottmarsheim · Rumersheim-le-Haut</p>
         </div>
       </div>
     </section>
