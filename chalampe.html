@@ -55,14 +55,16 @@
     /* Where to stay - text beside an embedded hotels map */
     .ch-staysec { max-width: 1100px; margin: 8px auto 0; padding: 0 24px; }
     .ch-stay { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 28px; }
+    .ch-stay + .ch-stay { margin-top: 44px; }
     .ch-stay__text p { color: var(--forest-soft); font-size: 15px; line-height: 1.65; }
     .ch-stay__text p + p { margin-top: 12px; }
     .ch-stay__text strong { color: var(--forest); font-weight: 500; }
     .ch-stay__best {
       display: inline-block; font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--wood); border: 1px solid rgba(150,120,78,0.4);
-      border-radius: 999px; padding: 4px 12px; margin-bottom: 14px;
+      text-transform: uppercase; color: var(--cream-warm); background: var(--wood);
+      border: 1px solid var(--wood); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px;
     }
+    .ch-stay__best--alt { color: var(--wood); background: transparent; border-color: rgba(150,120,78,0.5); }
     .ch-map--stay { aspect-ratio: 4 / 3; }
 
     @media (max-width: 900px) {
@@ -228,6 +230,7 @@
           <div class="tip-card__body">
             <h3>Our top tip: rent a car</h3>
             <p>However you arrive - plane, train or car - our honest advice is to <strong style="color:var(--wood-light)">rent a car</strong>. It's by far the easiest way to reach Chalampé, and it lets you explore Alsace, the Black Forest and the Swiss border over a few days. Well worth it.</p>
+            <p>You can pick one up in <strong style="color:var(--wood-light)">Freiburg</strong>, right at the <strong style="color:var(--wood-light)">EuroAirport (Basel–Mulhouse)</strong>, or in <strong style="color:var(--wood-light)">Basel</strong> or <strong style="color:var(--wood-light)">Mulhouse</strong> - with the usual companies like Sixt, Europcar and Enterprise.</p>
           </div>
         </article>
 
@@ -237,19 +240,37 @@
     <!-- WHERE TO STAY -->
     <section class="ch-staysec">
       <h2 class="ch-secheading">Where to stay</h2>
+      <p class="ch-secsub">Two options, depending on whether you'll have a car.</p>
+
+      <!-- Option 1: Neuenburg - best if no car -->
       <div class="ch-stay">
         <div class="ch-stay__text">
-          <span class="ch-stay__best">Best option</span>
+          <span class="ch-stay__best">Best · no car needed</span>
           <p><strong>Neuenburg am Rhein</strong> (Germany) - just across the Rhine bridge from Chalampé.</p>
-          <p>If you stay in Neuenburg, <strong>we'll pick you up by car</strong> for the celebration. It's also where <strong>Monse's family will be based</strong>, so you'll be in good company.</p>
+          <p>If you're <strong>not renting a car</strong>, this is the best choice: we'll <strong>pick you up by car</strong> for the celebration, and it's where <strong>Monse's family will be based</strong>, so you'll be in good company.</p>
           <p>
             <a href="https://www.booking.com/searchresults.html?ss=Neuenburg+am+Rhein" target="_blank" rel="noopener">Browse hotels on Booking.com</a><br />
             <a href="https://www.google.com/maps/search/?api=1&query=hotels+in+Neuenburg+am+Rhein%2C+Germany" target="_blank" rel="noopener">See hotels on Google Maps</a>
           </p>
-          <p>Also possible: <strong>Mulhouse</strong> (France, ~15 min) or the villages of <strong>Ottmarsheim</strong> and <strong>Bantzenheim</strong> closer by. Tell us if you'd like a tip.</p>
         </div>
         <div class="ch-map ch-map--stay">
           <iframe src="https://maps.google.com/maps?q=hotels%20Neuenburg%20am%20Rhein%20Germany&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hotels in Neuenburg am Rhein, Germany"></iframe>
+        </div>
+      </div>
+
+      <!-- Option 2: villages - only if renting a car -->
+      <div class="ch-stay">
+        <div class="ch-stay__text">
+          <span class="ch-stay__best ch-stay__best--alt">Only if you rent a car</span>
+          <p>Prefer the French side? Stay in one of the villages right around Chalampé - <strong>Chalampé</strong>, <strong>Ottmarsheim</strong> or <strong>Rumersheim-le-Haut</strong>. Lovely and close, but you'll <strong>need a car</strong> to get around.</p>
+          <p>Look for a gîte or a room here:</p>
+          <p>
+            <a href="https://www.gites-de-france-alsace.com/" target="_blank" rel="noopener">Gîtes de France (Alsace)</a><br />
+            <a href="https://www.booking.com/searchresults.html?ss=Chalamp%C3%A9%2C+France" target="_blank" rel="noopener">Booking.com</a>
+          </p>
+        </div>
+        <div class="ch-map ch-map--stay">
+          <iframe src="https://maps.google.com/maps?q=Ottmarsheim%2068490%20France&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villages around Chalampé: Chalampé, Ottmarsheim, Rumersheim-le-Haut"></iframe>
         </div>
       </div>
     </section>
@@ -264,9 +285,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M6 3v8a2 2 0 002 2v8M8 3v6M18 3c-1.5 1-2 3-2 5v3h2v10"/></svg>
           </div>
           <h3>What to expect</h3>
-          <p>Relaxed and informal · no DJ, no classic wedding traditions. Just good drinks, food, a bit of music, and time together. Come as you are.</p>
-          <p>An intimate gathering, with part of Monse's family travelling all the way from Mexico to be here.</p>
-          <p>This is our civil wedding in France - the big celebration follows in Mexico in April 2027.</p>
+          <p>The big wedding - with all the fancy details - will be in <strong>Mexico, in April 2027</strong>.</p>
+          <p>Here in France, we're organising it ourselves to celebrate the civil ceremony: <strong>no DJ</strong>, just a couple of tables and a little decoration at <strong>Mikel's parents' home</strong>, with food lovingly prepared by his father for around <strong>50–60 of us</strong>.</p>
+          <p>Relaxed, warm and homemade - come as you are. Part of Monse's family is travelling all the way from Mexico to be here too.</p>
         </article>
 
         <!-- CONTACT -->
