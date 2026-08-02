@@ -16,7 +16,7 @@ const GIFT_IDS = ['sofa', 'honeymoon', 'kitchen', 'renovation', 'decoration'];
 const MAX_AMOUNT = 10000;
 
 export default async (req) => {
-  const store = getStore('contributions');
+  const store = getStore({ name: 'contributions', consistency: 'strong' });
 
   if (req.method === 'GET') {
     const totals = (await store.get('totals', { type: 'json' })) || {};
