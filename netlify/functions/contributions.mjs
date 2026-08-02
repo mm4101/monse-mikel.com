@@ -12,7 +12,7 @@
 
 import { getStore } from '@netlify/blobs';
 
-const GIFT_IDS = ['sofa', 'honeymoon', 'kitchen', 'renovation', 'decoration'];
+const GIFT_IDS = ['sofa', 'lamp', 'honeymoon', 'kitchen', 'renovation', 'decoration'];
 const MAX_AMOUNT = 10000;
 
 export default async (req) => {

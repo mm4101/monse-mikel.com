@@ -75,24 +75,36 @@
       <header class="registry__intro">
         <p class="page__label" data-i18n="reg_label">Registry</p>
         <h2 class="registry__title" data-i18n="reg_title">Choose a Gift</h2>
-        <p class="registry__lead" data-i18n="reg_lead">Pick something you'd like to help us with. Give any amount - the bar shows how close each gift is to being fully funded.</p>
+        <p class="registry__lead" data-i18n="reg_lead">Pick something you'd like to help us with. We're moving into our new apartment on October 1st, so quite a few upgrades are on the list 😉</p>
+        <p class="registry__lead" data-i18n="reg_lead2">Give any amount - the bar shows how close each gift is to being fully funded.</p>
       </header>
       <div class="registry__grid" id="registryGrid"></div>
       <p class="registry__note" data-i18n="reg_secure">Card payments are handled securely by Stripe. You can also use the bank transfer below.</p>
     </section>
 
-    <!-- Bank transfer details, at the bottom -->
-    <div class="container container--narrow">
+    <!-- Bank transfer + Revolut, at the bottom -->
+    <div class="container">
       <article class="gift__card">
-        <h3 data-i18n="gift2_title">Bank Transfer</h3>
-        <p data-i18n="gift2_desc">If you prefer a direct transfer, here are our details:</p>
-        <div class="gift__details">
-          <div><span data-i18n="gift_bank_currency">Currency</span><br>EUR (Euro)</div>
-          <div><span data-i18n="gift_bank_holder">Beneficiary</span><br>M MANGOLD &amp; L Cardenas Galindo</div>
-          <div><span data-i18n="gift_bank_iban">IBAN</span><br>DE62 1001 0178 7901 7242 09</div>
-          <div><span data-i18n="gift_bank_bic">BIC / SWIFT</span><br>REVODEB2</div>
-          <div><span data-i18n="gift_bank_name">Bank name &amp; address</span><br>Revolut Bank UAB, Zweigniederlassung Deutschland - FORA Linden Palais, Unter den Linden 40, 10117 Berlin, Germany</div>
-          <div><span data-i18n="gift_bank_ref">Reference</span><br><span data-i18n="gift_bank_ref_value">Monse &amp; Mikel · Wedding</span></div>
+        <div class="pay-split">
+          <div class="pay-split__col">
+            <h3 data-i18n="gift2_title">Bank Transfer</h3>
+            <p data-i18n="gift2_desc">If you prefer a direct transfer, here are our details:</p>
+            <div class="gift__details">
+              <div><span data-i18n="gift_bank_currency">Currency</span><br>EUR (Euro)</div>
+              <div><span data-i18n="gift_bank_holder">Beneficiary</span><br>M MANGOLD &amp; L Cardenas Galindo</div>
+              <div><span data-i18n="gift_bank_iban">IBAN</span><br>DE62 1001 0178 7901 7242 09</div>
+              <div><span data-i18n="gift_bank_bic">BIC / SWIFT</span><br>REVODEB2</div>
+              <div><span data-i18n="gift_bank_name">Bank name &amp; address</span><br>Revolut Bank UAB, Zweigniederlassung Deutschland - FORA Linden Palais, Unter den Linden 40, 10117 Berlin, Germany</div>
+              <div><span data-i18n="gift_bank_ref">Reference</span><br><span data-i18n="gift_bank_ref_value">Monse &amp; Mikel · Wedding</span></div>
+            </div>
+          </div>
+          <div class="pay-split__or" data-i18n="pay_or">or</div>
+          <div class="pay-split__col pay-split__revolut">
+            <h3>Revolut</h3>
+            <p data-i18n="revolut_desc">Scan the QR code with your phone camera, or tap the button to pay by card, Apple Pay or Google Pay.</p>
+            <img class="pay-split__qr" src="images/revolut-qr.png" alt="Revolut payment QR code">
+            <a class="btn btn--rosa pay-split__btn" href="https://revolut.me/mikelmangold" target="_blank" rel="noopener" data-i18n="revolut_btn">Pay with Revolut</a>
+          </div>
         </div>
       </article>
     </div>

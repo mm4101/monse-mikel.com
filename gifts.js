@@ -31,6 +31,14 @@ window.GIFTS = [
              de: 'Damit wir euch mit mehr Stil empfangen können.' },
   },
   {
+    id: 'lamp', emoji: '💡', img: 'images/living-room-lamp.jpg', imgFit: 'contain', imgBg: '#b3a294', goal: 300, raised: 0, link: '',
+    title: { en: 'A Living Room Lamp',    es: 'Una lámpara para el salón', fr: 'Une lampe pour le salon',  de: 'Eine Wohnzimmerlampe' },
+    desc:  { en: 'Warm light for cosy evenings in our new living room.',
+             es: 'Luz cálida para tardes acogedoras en nuestro nuevo salón.',
+             fr: 'Une lumière chaleureuse pour des soirées cosy dans notre nouveau salon.',
+             de: 'Warmes Licht für gemütliche Abende in unserem neuen Wohnzimmer.' },
+  },
+  {
     id: 'honeymoon', emoji: '🌴', img: 'images/honeymoon.jpg', goal: 3000, raised: 0, link: '',
     title: { en: 'Honeymoon Fund',        es: 'Fondo de luna de miel',    fr: 'Cagnotte lune de miel',    de: 'Flitterwochen-Fonds' },
     desc:  { en: 'Destination: China!',
@@ -143,8 +151,15 @@ window.GIFTS_UI = {
       const done = raised >= g.goal;
       const card = document.createElement('article');
       card.className = 'reg-card' + (done ? ' reg-card--done' : '');
+      // imgPos shifts the crop; imgFit:'contain' + imgBg letterboxes the full
+      // image on a matching background (for photos that must not be cropped)
+      const imgStyle = [
+        g.imgPos ? `object-position:center ${g.imgPos}` : '',
+        g.imgFit ? `object-fit:${g.imgFit}` : '',
+        g.imgBg ? `background:${g.imgBg}` : '',
+      ].filter(Boolean).join(';');
       const media = g.img
-        ? `<div class="reg-card__photo"><img src="${g.img}" alt="${g.title[lang]}" loading="lazy"${g.imgPos ? ` style="object-position:center ${g.imgPos}"` : ''}></div>`
+        ? `<div class="reg-card__photo"${g.imgBg ? ` style="background:${g.imgBg}"` : ''}><img src="${g.img}" alt="${g.title[lang]}" loading="lazy"${imgStyle ? ` style="${imgStyle}"` : ''}></div>`
         : `<div class="reg-card__emoji">${g.emoji}</div>`;
       card.innerHTML = `
         ${media}

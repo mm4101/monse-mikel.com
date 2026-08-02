@@ -8,6 +8,7 @@ const TOKEN = 'f24b40622e3d40992cc7c242f22eb54d';
 
 const GIFT_NAMES = {
   sofa: 'A New Sofa',
+  lamp: 'A Living Room Lamp',
   honeymoon: 'Honeymoon Fund',
   renovation: 'Flat Renovation',
   kitchen: 'Kitchen Essentials',
