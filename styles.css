@@ -737,8 +737,8 @@ html { scroll-behavior: smooth; }
 
 /* ====== RECOMMENDATIONS ====== */
 .recos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 32px; margin-top: 32px; }
-.reco { display: grid; grid-template-rows: auto auto; gap: 20px; }
-.reco__image { aspect-ratio: 4/3; }
+.reco { display: grid; grid-template-rows: auto auto; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 20px; }
+.reco__image { aspect-ratio: 4/3; width: 100%; max-width: 100%; }
 .reco__num { font-family: var(--serif); font-size: 22px; color: var(--wood); font-style: normal; }
 .reco__body { padding-top: 4px; }
 .reco h3 { font-family: var(--serif); font-size: clamp(28px, 3vw, 36px); line-height: 1.1; margin: 8px 0 12px; }
