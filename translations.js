@@ -46,9 +46,8 @@ const translations = {
     info_lead: "Everything you need to plan the trip. We can't wait to welcome you to Mexico.",
 
     info_when_title: "When",
-    info_when_p1: "Something will be communicated about Friday to some of our international guests. Stay tuned!",
+    info_when_p1: "<strong>Friday evening, April 9, 2027</strong> - Icebreaker with our international guests at the wedding venue. More info about this coming soon!",
     info_when_p2: "<strong>Saturday, April 10, 2027</strong> - Ceremony and celebration.",
-    info_when_p3: "<strong>Sunday, April 11, 2027</strong> - Farewell brunch.",
 
     info_where_title: "Where",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -63,7 +62,7 @@ const translations = {
     info_transport_p2: "By car to Quinta San Carlos: <strong>about 1 hour from GDL airport</strong> (~60 km), <strong>about 1h15 from Guadalajara center</strong> (~65 km). Uber and private taxis are also available.",
 
     info_stay_title: "Where to stay",
-    info_stay_p1: "Best option: book directly at <strong>Quinta San Carlos</strong> - 150+ rooms right at the venue, so you're on site for the full experience.",
+    info_stay_p1: "Best option: book directly at <strong>Quinta San Carlos</strong> from <strong>Thursday to Sunday</strong> - 150+ rooms right at the venue, so you're on site for the full experience.",
     info_stay_p2: "Arriving before Thursday? Enjoy <strong>Guadalajara</strong> first, then move to <strong>Lake Chapala</strong> (Ajijic, Jocotepec, Chapala) on Friday - about 1h15 by car from the city center.",
     info_stay_p3: "Arriving Thursday or Friday? Head straight from the airport to your accommodation near the venue.",
 
@@ -286,9 +285,8 @@ const translations = {
     info_lead: "Todo lo que necesitas para organizar el viaje. No vemos la hora de recibirte en México.",
 
     info_when_title: "Cuándo",
-    info_when_p1: "Algo se comunicará sobre el viernes a algunos de nuestros invitados internacionales. ¡Atentos!",
+    info_when_p1: "<strong>Viernes 9 de abril de 2027 por la tarde</strong> - Rompehielos con nuestros invitados internacionales en el lugar de la boda. ¡Pronto más información!",
     info_when_p2: "<strong>Sábado 10 de abril de 2027</strong> - Ceremonia y celebración.",
-    info_when_p3: "<strong>Domingo 11 de abril de 2027</strong> - Brunch de despedida.",
 
     info_where_title: "Dónde",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -303,7 +301,7 @@ const translations = {
     info_transport_p2: "En coche a Quinta San Carlos: <strong>alrededor de 1 hora desde el aeropuerto GDL</strong> (~60 km), <strong>1 h 15 desde el centro de Guadalajara</strong> (~65 km). También hay Uber y taxis privados.",
 
     info_stay_title: "Dónde alojarse",
-    info_stay_p1: "La mejor opción: reserva directamente en <strong>Quinta San Carlos</strong> - más de 150 habitaciones en el propio lugar, para vivir la experiencia completa.",
+    info_stay_p1: "La mejor opción: reserva directamente en <strong>Quinta San Carlos</strong> de <strong>jueves a domingo</strong> - más de 150 habitaciones en el propio lugar, para vivir la experiencia completa.",
     info_stay_p2: "¿Llegas antes del jueves? Disfruta primero de <strong>Guadalajara</strong> y múdate el viernes a la zona del <strong>Lago de Chapala</strong> (Ajijic, Jocotepec, Chapala) - a 1 h 15 en coche desde el centro.",
     info_stay_p3: "¿Llegas jueves o viernes? Ve directo del aeropuerto a tu alojamiento cerca del lugar de la boda.",
 
@@ -522,9 +520,8 @@ const translations = {
     info_lead: "Tout ce qu'il faut pour organiser le voyage. Nous avons hâte de vous accueillir au Mexique.",
 
     info_when_title: "Quand",
-    info_when_p1: "Quelque chose sera communiqué au sujet du vendredi à certains de nos invités internationaux. Restez à l'écoute !",
+    info_when_p1: "<strong>Vendredi 9 avril 2027 en soirée</strong> - Icebreaker avec nos invités internationaux sur le lieu du mariage. Plus d'infos très bientôt !",
     info_when_p2: "<strong>Samedi 10 avril 2027</strong> - Cérémonie et célébration.",
-    info_when_p3: "<strong>Dimanche 11 avril 2027</strong> - Brunch d'au revoir.",
 
     info_where_title: "Où",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -539,7 +536,7 @@ const translations = {
     info_transport_p2: "En voiture jusqu'à la Quinta San Carlos : <strong>environ 1 heure depuis l'aéroport GDL</strong> (~60 km), <strong>1h15 depuis le centre de Guadalajara</strong> (~65 km). Uber et taxis privés sont aussi disponibles.",
 
     info_stay_title: "Où dormir",
-    info_stay_p1: "La meilleure option : réservez directement à la <strong>Quinta San Carlos</strong> - plus de 150 chambres sur place, pour vivre l'expérience complète.",
+    info_stay_p1: "La meilleure option : réservez directement à la <strong>Quinta San Carlos</strong> du <strong>jeudi au dimanche</strong> - plus de 150 chambres sur place, pour vivre l'expérience complète.",
     info_stay_p2: "Vous arrivez avant jeudi ? Profitez d'abord de <strong>Guadalajara</strong>, puis installez-vous vendredi au bord du <strong>lac de Chapala</strong> (Ajijic, Jocotepec, Chapala) - à environ 1h15 de route du centre.",
     info_stay_p3: "Vous arrivez jeudi ou vendredi ? Allez directement de l'aéroport à votre hébergement près du lieu de la fête.",
 
@@ -758,9 +755,8 @@ const translations = {
     info_lead: "Alles, was ihr für die Reise braucht. Wir freuen uns darauf, euch in Mexiko willkommen zu heißen.",
 
     info_when_title: "Wann",
-    info_when_p1: "Zum Freitag wird einigen unserer internationalen Gäste noch etwas mitgeteilt. Bleibt gespannt!",
+    info_when_p1: "<strong>Freitagabend, 9. April 2027</strong> - Icebreaker mit unseren internationalen Gästen am Ort der Hochzeit. Mehr Infos dazu bald!",
     info_when_p2: "<strong>Samstag, 10. April 2027</strong> - Trauung und Feier.",
-    info_when_p3: "<strong>Sonntag, 11. April 2027</strong> - Abschieds-Brunch.",
 
     info_where_title: "Wo",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -775,7 +771,7 @@ const translations = {
     info_transport_p2: "Mit dem Auto zur Quinta San Carlos: <strong>ca. 1 Stunde vom Flughafen GDL</strong> (~60 km), <strong>ca. 1:15 Std. vom Zentrum Guadalajaras</strong> (~65 km). Uber und private Taxis sind ebenfalls verfügbar.",
 
     info_stay_title: "Unterkunft",
-    info_stay_p1: "Die beste Option: Bucht direkt in der <strong>Quinta San Carlos</strong> - über 150 Zimmer direkt am Veranstaltungsort, für das volle Erlebnis.",
+    info_stay_p1: "Die beste Option: Bucht direkt in der <strong>Quinta San Carlos</strong> von <strong>Donnerstag bis Sonntag</strong> - über 150 Zimmer direkt am Veranstaltungsort, für das volle Erlebnis.",
     info_stay_p2: "Ihr kommt vor Donnerstag an? Genießt zuerst <strong>Guadalajara</strong> und zieht am Freitag an den <strong>Chapala-See</strong> (Ajijic, Jocotepec, Chapala) um - ca. 1:15 Std. mit dem Auto vom Zentrum.",
     info_stay_p3: "Ihr kommt Donnerstag oder Freitag an? Fahrt vom Flughafen direkt zu eurer Unterkunft in der Nähe der Location.",
 
