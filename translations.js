@@ -76,6 +76,8 @@ const translations = {
 
     info_safe_title: "Your safety",
     info_safe_p1: "We've planned the weekend with safe transport, trusted accommodations, and on-site support. If anything comes up, we're a message away.",
+    info_post_title: "After the wedding",
+    info_post_p1: "As we will have a lot of international guests, we will also announce a <strong>post-wedding program</strong> for Sunday, Monday and Tuesday, and you are invited to join us - for instance a trip to <strong>Tequila</strong>. Let us know your interest and we will share further information.",
 
     // RSVP PAGE
     rsvp_open: "Trouble with the form? Open the RSVP page directly →",
@@ -315,6 +317,8 @@ const translations = {
 
     info_safe_title: "Tu seguridad",
     info_safe_p1: "Hemos planeado el fin de semana con transporte seguro, alojamientos de confianza y apoyo en el lugar. Si algo surge, estamos a un mensaje de distancia.",
+    info_post_title: "Después de la boda",
+    info_post_p1: "Como tendremos muchos invitados internacionales, también anunciaremos un <strong>programa post-boda</strong> para domingo, lunes y martes, y están invitados a acompañarnos - por ejemplo, una excursión a <strong>Tequila</strong>. Cuéntanos tu interés y te compartiremos más información.",
 
     rsvp_open: "¿Problemas con el formulario? Abre la página de RSVP directamente →",
     rsvp_label: "Por favor responde",
@@ -550,6 +554,8 @@ const translations = {
 
     info_safe_title: "Votre sécurité",
     info_safe_p1: "Nous avons organisé le week-end avec transport sûr, hébergements de confiance et soutien sur place. Si quelque chose se présente, nous sommes à un message près.",
+    info_post_title: "Après le mariage",
+    info_post_p1: "Comme nous aurons beaucoup d'invités internationaux, nous annoncerons aussi un <strong>programme post-mariage</strong> pour dimanche, lundi et mardi, et vous êtes invités à vous joindre à nous - par exemple une excursion à <strong>Tequila</strong>. Dites-nous votre intérêt et nous vous communiquerons plus d'informations.",
 
     rsvp_open: "Un souci avec le formulaire ? Ouvrez la page RSVP directement →",
     rsvp_label: "Merci de répondre",
@@ -785,6 +791,8 @@ const translations = {
 
     info_safe_title: "Eure Sicherheit",
     info_safe_p1: "Wir haben das Wochenende mit sicherem Transport, vertrauenswürdigen Unterkünften und Unterstützung vor Ort geplant. Falls etwas auftritt, sind wir nur eine Nachricht entfernt.",
+    info_post_title: "Nach der Hochzeit",
+    info_post_p1: "Da wir viele internationale Gäste haben werden, kündigen wir auch ein <strong>Programm nach der Hochzeit</strong> für Sonntag, Montag und Dienstag an - ihr seid herzlich eingeladen, zum Beispiel zu einem Ausflug nach <strong>Tequila</strong>. Sagt uns Bescheid, wenn ihr Interesse habt, und wir teilen weitere Infos.",
 
     rsvp_open: "Probleme mit dem Formular? Öffnet die RSVP-Seite direkt →",
     rsvp_label: "Bitte antworten",

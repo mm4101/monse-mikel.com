@@ -713,6 +713,17 @@ html { scroll-behavior: smooth; }
 .info-card p + p { margin-top: 12px; }
 .info-card strong { color: var(--forest); font-weight: 500; }
 
+.info-postnote {
+  margin-top: 48px;
+  background: rgba(184, 154, 111, 0.12);
+  border: 1px solid rgba(150, 120, 78, 0.18);
+  padding: 28px 32px;
+  text-align: center;
+}
+.info-postnote h4 { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--wood); margin-bottom: 10px; }
+.info-postnote p { color: var(--wood); font-size: 14px; line-height: 1.7; max-width: 640px; margin: 0 auto; }
+.info-postnote strong { color: var(--wood); font-weight: 600; }
+
 /* ====== RECOMMENDATIONS ====== */
 .recos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 32px; margin-top: 32px; }
 .reco { display: grid; grid-template-rows: auto auto; gap: 20px; }
