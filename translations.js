@@ -214,7 +214,7 @@ const translations = {
     reg_label: "Registry",
     reg_title: "Choose a Gift",
     reg_lead: "Pick something you'd like to help us with. Give any amount - the bar shows how close each gift is to being fully funded.",
-    reg_secure: "Card payments are handled securely by Stripe. You can also use the bank transfer below.",
+    reg_secure: "Card, Apple Pay and Google Pay payments are handled securely by Revolut. You can also use the bank transfer below.",
 
     gift1_title: "Honeymoon Fund",
     gift1_desc: "Help us start married life with a trip we'll never forget.",
@@ -443,7 +443,7 @@ const translations = {
     reg_label: "Lista de regalos",
     reg_title: "Elige un regalo",
     reg_lead: "Elige algo con lo que quieras ayudarnos. Da la cantidad que desees - la barra muestra cuánto falta para completar cada regalo.",
-    reg_secure: "Los pagos con tarjeta se procesan de forma segura con Stripe. También puedes usar la transferencia bancaria de abajo.",
+    reg_secure: "Los pagos con tarjeta, Apple Pay y Google Pay se procesan de forma segura con Revolut. También puedes usar la transferencia bancaria de abajo.",
 
     gift1_title: "Fondo Luna de Miel",
     gift1_desc: "Ayúdanos a comenzar la vida de casados con un viaje inolvidable.",
@@ -671,7 +671,7 @@ const translations = {
     reg_label: "Liste de cadeaux",
     reg_title: "Choisissez un cadeau",
     reg_lead: "Choisissez quelque chose pour nous aider. Donnez le montant que vous souhaitez - la barre indique où en est chaque cadeau.",
-    reg_secure: "Les paiements par carte sont sécurisés par Stripe. Vous pouvez aussi utiliser le virement bancaire ci-dessous.",
+    reg_secure: "Les paiements par carte, Apple Pay et Google Pay sont sécurisés par Revolut. Vous pouvez aussi utiliser le virement bancaire ci-dessous.",
 
     gift1_title: "Cagnotte Lune de Miel",
     gift1_desc: "Aidez-nous à commencer notre vie de mariés avec un voyage inoubliable.",
@@ -899,7 +899,7 @@ const translations = {
     reg_label: "Geschenkeliste",
     reg_title: "Wählt ein Geschenk",
     reg_lead: "Sucht euch etwas aus, womit ihr uns helfen möchtet. Gebt einen beliebigen Betrag - der Balken zeigt, wie weit jedes Geschenk finanziert ist.",
-    reg_secure: "Kartenzahlungen werden sicher über Stripe abgewickelt. Ihr könnt auch die Banküberweisung unten nutzen.",
+    reg_secure: "Karten-, Apple-Pay- und Google-Pay-Zahlungen werden sicher über Revolut abgewickelt. Ihr könnt auch die Banküberweisung unten nutzen.",
 
     gift1_title: "Flitterwochen-Kasse",
     gift1_desc: "Helft uns, das Eheleben mit einer unvergesslichen Reise zu beginnen.",

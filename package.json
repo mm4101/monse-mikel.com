@@ -1,0 +1,8 @@
+{
+  "name": "monse-mikel-wedding-site",
+  "private": true,
+  "description": "Static wedding site; package.json exists only for the Netlify Function dependencies.",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
