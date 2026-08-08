@@ -15,11 +15,32 @@ const GIFT_NAMES = {
   decoration: 'One Wedding Canvas',
 };
 
+const WHATSAPP_CHANNEL_NAMES = {
+  en: 'English',
+  es: 'Español',
+  fr: 'Français',
+};
+
 function doPost(e) {
   const data = JSON.parse(e.postData.contents);
   if (data.token !== TOKEN) {
     return ContentService.createTextOutput('forbidden');
   }
+
+  // WhatsApp channel interest sign-ups go to the "Request Whatsapp Channel" sheet.
+  if (data.kind === 'whatsapp') {
+    const waSheet = SpreadsheetApp.openById('1eWzsmlfw16wgJLtk71nkCrHXQEvQAo6SpqOFF6IV-No').getSheets()[0];
+    if (waSheet.getLastRow() === 0) {
+      waSheet.appendRow(['Date', 'Name', 'Channel']);
+    }
+    waSheet.appendRow([
+      new Date(data.at),
+      String(data.name).slice(0, 80),
+      WHATSAPP_CHANNEL_NAMES[data.channel] || String(data.channel),
+    ]);
+    return ContentService.createTextOutput('ok');
+  }
+
   const sheet = SpreadsheetApp.openById('1UwVc0TtwBT27rH2hjSyFdZ2OwJDveewrX-H0LlKt3Mo').getSheets()[0];
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(['Date', 'Name', 'Gift', 'Amount (€)']);

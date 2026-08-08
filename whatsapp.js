@@ -16,15 +16,19 @@
   ];
   const UI = {
     en: { interested: 'interested', btn: 'I’m interested', check: 'A quick check that you’re human:',
+          nameQ: 'Your full name:', nameMissing: 'Please enter your full name 😉',
           confirm: 'Confirm', wrong: 'Hmm, try again 😉', done: 'Noted - thank you!',
           already: 'You’re on the list ✓', fail: 'That didn’t go through - please try again later.' },
     es: { interested: 'interesados', btn: 'Me interesa', check: 'Una pequeña comprobación de que eres humano:',
+          nameQ: 'Tu nombre completo:', nameMissing: 'Escribe tu nombre completo 😉',
           confirm: 'Confirmar', wrong: 'Mmm, inténtalo otra vez 😉', done: '¡Anotado, gracias!',
           already: 'Estás en la lista ✓', fail: 'No se pudo registrar. Inténtalo más tarde.' },
     fr: { interested: 'intéressés', btn: 'Ça m’intéresse', check: 'Une petite vérification que vous êtes humain :',
+          nameQ: 'Votre nom complet :', nameMissing: 'Indiquez votre nom complet 😉',
           confirm: 'Confirmer', wrong: 'Hmm, réessayez 😉', done: 'C’est noté, merci !',
           already: 'Vous êtes sur la liste ✓', fail: 'Ça n’a pas fonctionné. Réessayez plus tard.' },
     de: { interested: 'interessiert', btn: 'Ich bin dabei', check: 'Ein kurzer Check, dass du ein Mensch bist:',
+          nameQ: 'Dein voller Name:', nameMissing: 'Bitte gib deinen vollen Namen ein 😉',
           confirm: 'Bestätigen', wrong: 'Hmm, versuch’s nochmal 😉', done: 'Notiert, danke!',
           already: 'Du stehst auf der Liste ✓', fail: 'Hat gerade nicht geklappt. Versuch es später noch mal.' },
   };
@@ -70,9 +74,11 @@
     <div class="wa-modal__overlay" data-close></div>
     <div class="wa-modal__box" role="dialog" aria-modal="true">
       <button class="wa-modal__close" data-close aria-label="Close">×</button>
-      <p class="wa-modal__q"></p>
+      <p class="wa-modal__q wa-modal__q--name"></p>
+      <input class="wa-modal__input wa-modal__name" type="text" autocomplete="name" maxlength="80">
+      <p class="wa-modal__q wa-modal__q--check"></p>
       <p class="wa-modal__sum"></p>
-      <input class="wa-modal__input" type="number" inputmode="numeric">
+      <input class="wa-modal__input wa-modal__answer" type="number" inputmode="numeric">
       <button class="btn btn--rosa wa-modal__confirm"></button>
       <p class="wa-modal__note"></p>
     </div>`;
@@ -86,18 +92,27 @@
     const a = 2 + Math.floor(Math.random() * 7);
     const b = 2 + Math.floor(Math.random() * 7);
     const answer = a + b;
-    modal.querySelector('.wa-modal__q').textContent = t.check;
+    modal.querySelector('.wa-modal__q--name').textContent = t.nameQ;
+    modal.querySelector('.wa-modal__q--check').textContent = t.check;
     modal.querySelector('.wa-modal__sum').textContent = a + ' + ' + b + ' = ?';
-    const input = modal.querySelector('.wa-modal__input');
+    const nameInput = modal.querySelector('.wa-modal__name');
+    const input = modal.querySelector('.wa-modal__answer');
     const btn = modal.querySelector('.wa-modal__confirm');
     const note = modal.querySelector('.wa-modal__note');
+    nameInput.value = '';
     input.value = '';
     note.textContent = '';
     btn.textContent = t.confirm;
     btn.disabled = false;
     modal.classList.add('open');
-    input.focus();
+    nameInput.focus();
     btn.onclick = () => {
+      const name = nameInput.value.trim();
+      if (name.length < 2) {
+        note.textContent = t.nameMissing;
+        nameInput.focus();
+        return;
+      }
       if (Math.round(Number(input.value)) !== answer) {
         note.textContent = t.wrong;
         input.value = '';
@@ -108,7 +123,7 @@
       fetch(API, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ channel: ch.id }),
+        body: JSON.stringify({ channel: ch.id, name }),
       })
         .then(r => { if (!r.ok) throw new Error('bad status'); return r.json(); })
         .then(counts => {
@@ -123,6 +138,7 @@
           btn.disabled = false;
         });
     };
+    nameInput.onkeydown = e => { if (e.key === 'Enter') input.focus(); };
     input.onkeydown = e => { if (e.key === 'Enter') btn.click(); };
   }
 
