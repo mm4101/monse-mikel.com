@@ -3,8 +3,16 @@
 // ============================================================
 
 const langButtons = document.querySelectorAll('[data-lang]');
-const savedLang = localStorage.getItem('wedding_lang') || (navigator.language || 'en').slice(0, 2);
-const initialLang = ['en', 'es', 'fr', 'de'].includes(savedLang) ? savedLang : 'en';
+const LANGS = ['en', 'es', 'fr', 'de'];
+// A ?lang= parameter wins, so a link shared with guests can force its own
+// language (e.g. /chalampe?lang=es#dress-code) no matter what the visitor's
+// phone is set to. An unrecognised value is ignored rather than falling back
+// to English, so a typo never overrides a saved choice.
+const urlLang = new URLSearchParams(location.search).get('lang');
+const savedLang = (LANGS.includes(urlLang) ? urlLang : null)
+  || localStorage.getItem('wedding_lang')
+  || (navigator.language || 'en').slice(0, 2);
+const initialLang = LANGS.includes(savedLang) ? savedLang : 'en';
 
 function setLanguage(lang) {
   if (!translations[lang]) return;
