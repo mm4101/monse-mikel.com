@@ -188,6 +188,14 @@
     .ch-pin__cap { font-family: var(--serif); font-size: 18px; color: var(--forest); margin-bottom: 10px; }
     .ch-dress-sub { font-size: 15px; }
     @media (max-width: 620px) { .ch-dress-pins { flex-direction: column; align-items: center; gap: 30px; } }
+    /* Weather note at the end of the dress code section */
+    .ch-weather {
+      display: flex; align-items: flex-start; gap: 14px; text-align: left;
+      max-width: 560px; margin: 34px auto 0; padding: 18px 22px;
+      background: var(--cream-warm); border: 1px solid rgba(150, 120, 78, 0.22); border-radius: 4px;
+    }
+    .ch-weather__icon { flex: 0 0 auto; width: 26px; height: 26px; color: var(--wood); margin-top: 1px; }
+    .ch-weather p { font-size: 14px; line-height: 1.6; margin: 0 !important; }
 
     /* Things to do around the wedding - three columns by country */
     .ch-todo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; align-items: start; }
@@ -474,6 +482,10 @@
           <p class="ch-accents__label" data-i18n-html="ch_dress_acc">Gold &amp; black<br /><span>accessories only</span></p>
         </div>
       </div>
+      <div class="ch-weather">
+        <svg class="ch-weather__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 14.8V5a2 2 0 10-4 0v9.8a4 4 0 104 0z"/><path d="M12 8v7"/></svg>
+        <p data-i18n-html="ch_dress_weather">One practical note: <strong>historically</strong>, early September in Chalampé is mild by day and cool once the sun goes down, around <strong>22 to 24 °C</strong> (72 to 75 °F) in the afternoon and <strong>10 to 11 °C</strong> (50 to 52 °F) at night. Bring a jacket, a wrap or a shawl for the evening. Fingers crossed for good weather!</p>
+      </div>
     </section>
 
     <!-- GOOD TO KNOW -->
@@ -746,6 +758,7 @@
           ch_dress_pin_m: "Wineyard Outfit \u00b7 Men",
           ch_dress_col: "For colours, pick any shade from our guest palette below, and add <strong>a touch of gold or black</strong> where it works, as accessories. (Claude christened these tones &quot;boho-western&quot;, a style it made up entirely 😅.)",
           ch_dress_fig: "Your colours",
+          ch_dress_weather: "One practical note: <strong>historically</strong>, early September in Chalampé is mild by day and cool once the sun goes down, around <strong>22 to 24 °C</strong> (72 to 75 °F) in the afternoon and <strong>10 to 11 °C</strong> (50 to 52 °F) at night. Bring a jacket, a wrap or a shawl for the evening. Fingers crossed for good weather!",
           ch_dress_acc: "Gold &amp; black<br /><span>accessories only</span>",
           ch_exp_h: "What to expect",
           ch_exp_1: "The big wedding - with all the fancy details - will be in <strong>Mexico, in April 2027</strong>.",
@@ -850,6 +863,7 @@
           ch_dress_pin_m: "Wineyard Outfit \u00b7 Hombres",
           ch_dress_col: "Para los colores, elige cualquier tono de la paleta de invitados de abajo y añade <strong>un toque de dorado o negro</strong> donde quede bien, como accesorios. (Claude bautizó estos tonos como &quot;boho-western&quot;, un estilo que se inventó por completo 😅.)",
           ch_dress_fig: "Tus colores",
+          ch_dress_weather: "Un apunte práctico: <strong>históricamente</strong>, a principios de septiembre Chalampé es templado de día y fresco en cuanto se pone el sol, unos <strong>22 a 24 °C</strong> (72 a 75 °F) por la tarde y <strong>10 a 11 °C</strong> (50 a 52 °F) por la noche. Trae una chaqueta, un chal o un rebozo para la noche. ¡Ojalá nos toque buen tiempo!",
           ch_dress_acc: "Dorado y negro<br /><span>solo accesorios</span>",
           ch_exp_h: "Qué esperar",
           ch_exp_1: "La gran boda - con todos los detalles especiales - será en <strong>México, en abril de 2027</strong>.",
@@ -954,6 +968,7 @@
           ch_dress_pin_m: "Wineyard Outfit \u00b7 Hommes",
           ch_dress_col: "Côté couleurs, choisissez n'importe quelle nuance de la palette ci-dessous et ajoutez <strong>une touche de doré ou de noir</strong> là où ça fonctionne, en accessoires. (C'est Claude qui a baptisé ces tons &quot;boho-western&quot;, un style qu'il a inventé de toutes pièces 😅.)",
           ch_dress_fig: "Vos couleurs",
+          ch_dress_weather: "Une note pratique : <strong>historiquement</strong>, début septembre, Chalampé est doux en journée et frais dès que le soleil se couche, environ <strong>22 à 24 °C</strong> (72 à 75 °F) l'après-midi et <strong>10 à 11 °C</strong> (50 à 52 °F) la nuit. Prévoyez une veste, une étole ou un châle pour la soirée. On croise les doigts pour le beau temps !",
           ch_dress_acc: "Doré & noir<br /><span>accessoires uniquement</span>",
           ch_exp_h: "À quoi s'attendre",
           ch_exp_1: "Le grand mariage - avec tous les détails en grand - aura lieu au <strong>Mexique, en avril 2027</strong>.",
@@ -1058,6 +1073,7 @@
           ch_dress_pin_m: "Wineyard Outfit \u00b7 Herren",
           ch_dress_col: "Bei den Farben: Wählt einen beliebigen Ton aus der Gäste-Palette unten und setzt <strong>einen Hauch von Gold oder Schwarz</strong> als Accessoires ein, wo es passt. (Claude hat diese Töne &quot;Boho-Western&quot; getauft, einen Stil, den es sich komplett ausgedacht hat 😅.)",
           ch_dress_fig: "Eure Farben",
+          ch_dress_weather: "Ein praktischer Hinweis: <strong>Historisch</strong> ist es Anfang September in Chalampé tagsüber mild und wird kühl, sobald die Sonne weg ist, nachmittags etwa <strong>22 bis 24 °C</strong> (72 bis 75 °F) und nachts <strong>10 bis 11 °C</strong> (50 bis 52 °F). Bringt eine Jacke, ein Tuch oder einen Schal für den Abend mit. Wir drücken die Daumen für gutes Wetter!",
           ch_dress_acc: "Gold & Schwarz<br /><span>nur Accessoires</span>",
           ch_exp_h: "Was euch erwartet",
           ch_exp_1: "Die große Hochzeit - mit allem Drum und Dran - findet in <strong>Mexiko im April 2027</strong> statt.",
