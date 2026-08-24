@@ -66,6 +66,30 @@
     .tip-card h3 { font-family: var(--serif); font-size: 26px; line-height: 1.15; color: var(--cream-warm); margin-bottom: 8px; }
     .tip-card p { color: rgba(236, 232, 224, 0.82); font-size: 15px; line-height: 1.65; }
 
+    /* Airport bus info box - light counterpart to the dark "top tip" banner */
+    .bus-card {
+      grid-column: 1 / -1;
+      display: flex; align-items: flex-start; gap: 26px;
+      background: var(--cream-warm);
+      border: 1px solid rgba(150, 120, 78, 0.28);
+      border-left: 3px solid var(--wood);
+      padding: 30px 34px;
+    }
+    .bus-card__icon { flex: 0 0 auto; width: 42px; height: 42px; color: var(--wood); }
+    .bus-card__icon svg { width: 100%; height: 100%; }
+    .bus-card h3 { font-family: var(--serif); font-size: 24px; line-height: 1.15; color: var(--forest); margin-bottom: 8px; }
+    .bus-card p { color: var(--forest-soft); font-size: 15px; line-height: 1.65; }
+    .bus-card__facts { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 34px; margin: 18px 0; padding: 0; }
+    .bus-card__facts li { display: flex; flex-direction: column; gap: 3px; }
+    .bus-card__facts span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--sage); }
+    .bus-card__facts strong { font-size: 15px; font-weight: 500; color: var(--forest); }
+    .bus-card__btn {
+      display: inline-block; margin-top: 4px; font-size: 14px; padding: 11px 20px;
+      border-radius: 999px; background: var(--wood); color: var(--cream-warm) !important;
+      border: 1px solid var(--wood); transition: opacity .2s ease;
+    }
+    .bus-card__btn:hover { opacity: .88; }
+
     /* Where to stay - text beside an embedded hotels map */
     .ch-staysec { max-width: 1100px; margin: 8px auto 0; padding: 0 24px; }
     .ch-stay { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 28px; }
@@ -116,6 +140,54 @@
     .ch-accents__swatch--gold { background: linear-gradient(135deg, #f4e2a8 0%, #d8b45e 38%, #a9822c 70%, #856421 100%); box-shadow: inset 0 3px 8px rgba(255,255,255,.45), inset 0 -3px 8px rgba(0,0,0,.25); }
     .ch-accents__swatch--black { background: radial-gradient(circle at 35% 30%, #4a4a4a, #131313 70%); margin-left: -14px; box-shadow: inset 0 2px 6px rgba(255,255,255,.15); }
     .ch-accents__label span { opacity: .7; }
+    /* Section jump bar */
+    .ch-jump {
+      position: sticky; top: var(--ch-navh, 61px); z-index: 60;
+      margin: 28px 0 0; padding: 10px 0;
+      background: rgba(230, 227, 222, 0.94);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(150, 120, 78, 0.16);
+      border-bottom: 1px solid rgba(150, 120, 78, 0.16);
+    }
+    .ch-jump__track {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+      max-width: 1100px; margin: 0 auto; padding: 0 20px;
+    }
+    .ch-jump__link {
+      flex: 0 0 auto; font-size: 13px; letter-spacing: .04em; line-height: 1;
+      padding: 9px 15px; border-radius: 999px; white-space: nowrap;
+      color: var(--forest-soft); border: 1px solid rgba(150, 120, 78, 0.28);
+      background: transparent; transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .ch-jump__link:hover { color: var(--cream-warm); background: var(--wood); border-color: var(--wood); }
+    .ch-jump__link.is-active { color: var(--cream-warm); background: var(--wood); border-color: var(--wood); }
+    .ch-anchor { scroll-margin-top: calc(var(--ch-navh, 61px) + var(--ch-jumph, 52px) + 18px); }
+    @media (max-width: 780px) {
+      .ch-jump { margin-top: 22px; padding: 9px 0; }
+      .ch-jump__track {
+        flex-wrap: nowrap; justify-content: flex-start;
+        overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity;
+      }
+      .ch-jump__track::-webkit-scrollbar { display: none; }
+      .ch-jump__link { scroll-snap-align: center; font-size: 13px; padding: 9px 14px; }
+      /* Fade the edges so it reads as a scrollable strip. */
+      .ch-jump {
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+      }
+    }
+
+    /* Dress code - embedded Pinterest boards */
+    .ch-dress-pins { display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 26px; margin: 4px 0 34px; }
+    /* min-height reserves the space the Pinterest widget takes once it loads,
+       so the late embed does not shift the page under an in-progress anchor jump. */
+    .ch-pin { margin: 0; max-width: 100%; min-height: 356px; min-width: 211px; }
+    .ch-pin > a { display: inline-block; text-decoration: none; }
+    .ch-pin > span { max-width: 100%; }
+    .ch-pin__cap { font-family: var(--serif); font-size: 18px; color: var(--forest); margin-bottom: 10px; }
+    .ch-dress-sub { font-size: 15px; }
+    @media (max-width: 620px) { .ch-dress-pins { flex-direction: column; align-items: center; gap: 30px; } }
 
     /* Things to do around the wedding - three columns by country */
     .ch-todo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; align-items: start; }
@@ -132,6 +204,7 @@
     @media (max-width: 900px) {
       .ch-stay { grid-template-columns: 1fr; gap: 22px; }
       .tip-card { flex-direction: column; text-align: center; padding: 28px 24px; gap: 18px; }
+      .bus-card { flex-direction: column; padding: 26px 22px; gap: 16px; }
     }
   </style>
 </head>
@@ -146,6 +219,7 @@
       </button>
       <div class="topnav__links">
         <a data-i18n='nav_home' data-page='index.html' href='/'>Home</a>
+        <a class='active' data-i18n='nav_chalampe' data-page='chalampe.html' href='/chalampe'>Chalampé</a>
         <a data-i18n='nav_flights' data-page='vuelos.html' href='/vuelos'>Flights</a>
         <a data-i18n='nav_info' data-page='informacion.html' href='/informacion'>Information</a>
         <a data-i18n='nav_rsvp' data-page='rsvp.html' href='/rsvp'>RSVP</a>
@@ -179,6 +253,18 @@
       <p class="page__lead" data-i18n-html="ch_lead">Mikel's hometown, and the village of our civil wedding. A small riverside village on the banks of the Rhine, where France meets Germany. We'll marry at the town hall on <strong>Saturday, 5 September 2026</strong>, then gather for the evening. Here's everything you need to join us.</p>
     </header>
 
+    <nav class="ch-jump" aria-label="Page sections">
+      <div class="ch-jump__track">
+        <a class="ch-jump__link" href="#programme" data-i18n="ch_jump_day">The day</a>
+        <a class="ch-jump__link" href="#village" data-i18n="ch_jump_village">The village</a>
+        <a class="ch-jump__link" href="#getting-there" data-i18n="ch_jump_travel">Getting there</a>
+        <a class="ch-jump__link" href="#stay" data-i18n="ch_jump_stay">Where to stay</a>
+        <a class="ch-jump__link" href="#dress-code" data-i18n="ch_jump_dress">Dress code</a>
+        <a class="ch-jump__link" href="#good-to-know" data-i18n="ch_jump_know">Good to know</a>
+        <a class="ch-jump__link" href="#things-to-do" data-i18n="ch_jump_todo">Things to do</a>
+      </div>
+    </nav>
+
     <div class="divider">
       <svg viewBox="0 0 180 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
         <line x1="0" y1="12" x2="68" y2="12"/>
@@ -192,7 +278,7 @@
     </div>
 
     <!-- PROGRAMME -->
-    <div class="container">
+    <div class="container ch-anchor" id="programme">
       <div class="info-grid">
 
         <!-- THE DAY (full-width timeline) -->
@@ -240,7 +326,7 @@
     </div>
 
     <!-- WHERE IS CHALAMPÉ? (embedded map) -->
-    <section class="ch-mapsec">
+    <section class="ch-mapsec ch-anchor" id="village">
       <h2 class="ch-secheading" data-i18n="ch_where_h">Where is Chalampé?</h2>
       <p class="ch-secsub" data-i18n="ch_where_sub">On the Rhine in Alsace, right on the French–German border.</p>
       <div class="ch-map" style="margin-top:24px">
@@ -249,7 +335,7 @@
     </section>
 
     <!-- GETTING THERE -->
-    <div class="container">
+    <div class="container ch-anchor" id="getting-there">
       <h2 class="ch-secheading" data-i18n="ch_get_h">Getting there</h2>
       <p class="ch-secsub" data-i18n="ch_get_sub">However you arrive, our honest advice is to rent a car.</p>
       <div class="ch-travel">
@@ -260,7 +346,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M2 12l8-3 4-5 2 1-2 5 7-2 1 2-7 4 2 5-2 1-4-4-8 3z"/></svg>
           </div>
           <h3 data-i18n="ch_plane_h">By plane</h3>
-          <p data-i18n-html="ch_plane_1">The closest airport is <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, about <strong>40 min by car</strong> from Chalampé.</p>
+          <p data-i18n-html="ch_plane_1">The closest airport is <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, about <strong>30 min by car</strong> from Chalampé.</p>
           <p data-i18n-html="ch_plane_2">Also within reach: <strong>Strasbourg (SXB)</strong> ~1h20 and <strong>Zürich (ZRH)</strong> ~1h15 by car.</p>
         </article>
 
@@ -283,7 +369,7 @@
           </div>
           <h3 data-i18n="ch_car_h">By car</h3>
           <p data-i18n-html="ch_car_1">Chalampé sits right on the Rhine - the German town of <strong>Neuenburg am Rhein</strong> is just across the bridge.</p>
-          <p data-i18n-html="ch_car_2">Roughly <strong>15 min from Mulhouse</strong> and <strong>40 min from Basel / the EuroAirport</strong>.</p>
+          <p data-i18n-html="ch_car_2">Roughly <strong>15 min from Mulhouse</strong>, <strong>30 min from the EuroAirport</strong> and <strong>40 min from Basel</strong>.</p>
         </article>
 
         <!-- TOP TIP: RENT A CAR (highlighted, full-width) -->
@@ -298,11 +384,30 @@
           </div>
         </article>
 
+        <!-- AIRPORT BUS TO NEUENBURG (info box, full-width) -->
+        <article class="bus-card">
+          <div class="bus-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M4 11h16"/><path d="M7 16v2M17 16v2"/><circle cx="8" cy="13.5" r="1"/><circle cx="16" cy="13.5" r="1"/></svg>
+          </div>
+          <div class="bus-card__body">
+            <h3 data-i18n="ch_bus_h">Arriving without a car?</h3>
+            <p data-i18n-html="ch_bus_0"><strong>Tell us your flight details</strong> and we'll do our best to come and pick you up at the airport ourselves. If that can't work out on the day, there's always the airport bus.</p>
+            <p data-i18n-html="ch_bus_1">The <strong>Freiburger Airportbus</strong> runs directly between the <strong>EuroAirport (Basel–Mulhouse)</strong> and <strong>Neuenburg am Rhein</strong>, the German town just across the bridge from Chalampé. It stops at <strong>Neuenburg &quot;Alter Zoll&quot;</strong>.</p>
+            <ul class="bus-card__facts">
+              <li><span data-i18n="ch_bus_f1t">Journey</span><strong data-i18n="ch_bus_f1">about 30 min</strong></li>
+              <li><span data-i18n="ch_bus_f2t">Fare</span><strong data-i18n="ch_bus_f2">17,99 € one way</strong></li>
+              <li><span data-i18n="ch_bus_f3t">Departures</span><strong data-i18n="ch_bus_f3">roughly hourly</strong></li>
+            </ul>
+            <p data-i18n-html="ch_bus_2">Book ahead on the operator's site. At the airport, the stop is on the <strong>French side</strong>.</p>
+            <p><a class="bus-card__btn" href="https://www.freiburger-reisedienst.de/index.php" target="_blank" rel="noopener" data-i18n="ch_bus_cta">Timetable &amp; booking ↗</a></p>
+          </div>
+        </article>
+
       </div>
     </div>
 
     <!-- WHERE TO STAY -->
-    <section class="ch-staysec">
+    <section class="ch-staysec ch-anchor" id="stay">
       <h2 class="ch-secheading" data-i18n="ch_stay_h">Where to stay</h2>
       <p class="ch-secsub" data-i18n="ch_stay_sub">Two options, depending on whether you'll have a car.</p>
 
@@ -344,13 +449,24 @@
     </section>
 
     <!-- DRESS CODE -->
-    <section class="ch-dresssec">
-      <h2 class="ch-secheading" data-i18n="ch_dress_h">Dress code</h2>
-      <p data-i18n-html="ch_dress_p">Formal attire, please - with one fun twist: pick any shade from our guest colour palette. Earthy, muted, boho-western tones. And feel free to add <strong>a touch of gold or black</strong> where it works - as accessories.</p>
+    <section class="ch-dresssec ch-anchor" id="dress-code">
+      <h2 class="ch-secheading" data-i18n="ch_dress_h">Dress code: Wineyard Outfit</h2>
+      <p data-i18n-html="ch_dress_p">Our dress code is the <strong>Wineyard Outfit</strong>: smart and put together, but relaxed, natural and made for a day outdoors. These two boards show exactly the look we have in mind.</p>
+      <div class="ch-dress-pins">
+        <figure class="ch-pin">
+          <figcaption class="ch-pin__cap" data-i18n="ch_dress_pin_w">Wineyard Outfit · Women</figcaption>
+          <a data-pin-do="embedBoard" data-pin-board-width="345" data-pin-scale-height="200" data-pin-scale-width="80" href="https://www.pinterest.com/mmangold10/wineyard-outfit-women/" target="_blank" rel="noopener">See the board on Pinterest ↗</a>
+        </figure>
+        <figure class="ch-pin">
+          <figcaption class="ch-pin__cap" data-i18n="ch_dress_pin_m">Wineyard Outfit · Men</figcaption>
+          <a data-pin-do="embedBoard" data-pin-board-width="345" data-pin-scale-height="200" data-pin-scale-width="80" href="https://www.pinterest.com/mmangold10/wineyard-outfit-men/" target="_blank" rel="noopener">See the board on Pinterest ↗</a>
+        </figure>
+      </div>
+      <p class="ch-dress-sub" data-i18n-html="ch_dress_col">For colours, pick any shade from our guest palette below, and add <strong>a touch of gold or black</strong> where it works, as accessories. (Claude christened these tones &quot;boho-western&quot;, a style it made up entirely 😅.)</p>
       <div class="ch-dress-visual">
         <figure class="ch-dress-fig">
           <img src="images/guest-color-palette.jpg" alt="Guest colour palette - earthy, muted boho-western tones: ivory, champagne, warm beige, taupe, soft stone, sage, eucalyptus, olive, dusty moss, dusty teal, muted turquoise, blue-green, smoky blue, camel, cognac, mocha, warm tan and soft blushes" loading="lazy" />
-          <figcaption data-i18n="ch_dress_fig">Your outfit</figcaption>
+          <figcaption data-i18n="ch_dress_fig">Your colours</figcaption>
         </figure>
         <div class="ch-accents">
           <div class="ch-accents__swatch ch-accents__swatch--gold"></div>
@@ -361,7 +477,7 @@
     </section>
 
     <!-- GOOD TO KNOW -->
-    <div class="container">
+    <div class="container ch-anchor" id="good-to-know">
       <div class="info-grid" style="margin-top:32px">
 
         <!-- WHAT TO EXPECT -->
@@ -393,7 +509,7 @@
     </div>
 
     <!-- THINGS TO DO -->
-    <div class="container">
+    <div class="container ch-anchor" id="things-to-do">
       <h2 class="ch-secheading" data-i18n="ch_todo_h">Before or after the wedding</h2>
       <p class="ch-secsub" data-i18n="ch_todo_sub">This corner of Europe is spectacular - if you're coming a few days early or staying on, here are some ideas.</p>
       <div class="ch-todo">
@@ -561,6 +677,13 @@
       var ch = {
         en: {
           ch_label: "Our civil wedding · Chalampé, Alsace",
+          ch_jump_day: "The day",
+          ch_jump_village: "The village",
+          ch_jump_travel: "Getting there",
+          ch_jump_stay: "Where to stay",
+          ch_jump_dress: "Dress code",
+          ch_jump_know: "Good to know",
+          ch_jump_todo: "Things to do",
           ch_lead: "Mikel's hometown, and the village of our civil wedding. A small riverside village on the banks of the Rhine, where France meets Germany. We'll marry at the town hall on <strong>Saturday, 5 September 2026</strong>, then gather for the evening. Here's everything you need to join us.",
           ch_day_h: "The day",
           ch_day_date: "<strong>Saturday, 5 September 2026</strong>",
@@ -580,7 +703,7 @@
           ch_get_h: "Getting there",
           ch_get_sub: "However you arrive, our honest advice is to rent a car.",
           ch_plane_h: "By plane",
-          ch_plane_1: "The closest airport is <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, about <strong>40 min by car</strong> from Chalampé.",
+          ch_plane_1: "The closest airport is <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, about <strong>30 min by car</strong> from Chalampé.",
           ch_plane_2: "Also within reach: <strong>Strasbourg (SXB)</strong> ~1h20 and <strong>Zürich (ZRH)</strong> ~1h15 by car.",
           ch_train_h: "By train",
           ch_train_0: "Closest stations, in order of preference:",
@@ -589,10 +712,21 @@
           ch_train_3: "<strong>3 · Basel</strong>, Switzerland - well connected internationally, ~40 min by car.",
           ch_car_h: "By car",
           ch_car_1: "Chalampé sits right on the Rhine - the German town of <strong>Neuenburg am Rhein</strong> is just across the bridge.",
-          ch_car_2: "Roughly <strong>15 min from Mulhouse</strong> and <strong>40 min from Basel / the EuroAirport</strong>.",
+          ch_car_2: "Roughly <strong>15 min from Mulhouse</strong>, <strong>30 min from the EuroAirport</strong> and <strong>40 min from Basel</strong>.",
           ch_tip_h: "Our top tip: rent a car",
           ch_tip_1: "However you arrive - plane, train or car - our honest advice is to <strong style='color:var(--wood-light)'>rent a car</strong>. It's by far the easiest way to reach Chalampé, and it lets you explore Alsace, the Black Forest and the Swiss border over a few days. Well worth it.",
           ch_tip_2: "You can pick one up in <strong style='color:var(--wood-light)'>Freiburg</strong>, right at the <strong style='color:var(--wood-light)'>EuroAirport (Basel–Mulhouse)</strong>, or in <strong style='color:var(--wood-light)'>Basel</strong> or <strong style='color:var(--wood-light)'>Mulhouse</strong> - with the usual companies like Sixt, Europcar and Enterprise.",
+          ch_bus_h: "Arriving without a car?",
+          ch_bus_0: "<strong>Tell us your flight details</strong> and we'll do our best to come and pick you up at the airport ourselves. If that can't work out on the day, there's always the airport bus.",
+          ch_bus_1: "The <strong>Freiburger Airportbus</strong> runs directly between the <strong>EuroAirport (Basel–Mulhouse)</strong> and <strong>Neuenburg am Rhein</strong>, the German town just across the bridge from Chalampé. It stops at <strong>Neuenburg &quot;Alter Zoll&quot;</strong>.",
+          ch_bus_f1t: "Journey",
+          ch_bus_f1: "about 30 min",
+          ch_bus_f2t: "Fare",
+          ch_bus_f2: "17,99 € one way",
+          ch_bus_f3t: "Departures",
+          ch_bus_f3: "roughly hourly",
+          ch_bus_2: "Book ahead on the operator's site. At the airport, the stop is on the <strong>French side</strong>.",
+          ch_bus_cta: "Timetable & booking \u2197",
           ch_stay_h: "Where to stay",
           ch_stay_sub: "Two options, depending on whether you'll have a car.",
           ch_stay_best: "Best · no car needed",
@@ -606,9 +740,12 @@
           ch_stay_v2: "Browse gîtes and rooms in the area on Gîtes de France or Booking.com →",
           ch_village_cap: "<strong>Rumersheim-le-Haut</strong> - one of the villages a five-minute drive from Chalampé, where Mikel's brother lives.",
           ch_book_h: "Find a gîte or a room",
-          ch_dress_h: "Dress code",
-          ch_dress_p: "Formal attire, please - with one fun twist: pick any shade from our guest colour palette. Earthy, muted, boho-western tones. And feel free to add <strong>a touch of gold or black</strong> where it works - as accessories.",
-          ch_dress_fig: "Your outfit",
+          ch_dress_h: "Dress code: Wineyard Outfit",
+          ch_dress_p: "Our dress code is the <strong>Wineyard Outfit</strong>: smart and put together, but relaxed, natural and made for a day outdoors. These two boards show exactly the look we have in mind.",
+          ch_dress_pin_w: "Wineyard Outfit \u00b7 Women",
+          ch_dress_pin_m: "Wineyard Outfit \u00b7 Men",
+          ch_dress_col: "For colours, pick any shade from our guest palette below, and add <strong>a touch of gold or black</strong> where it works, as accessories. (Claude christened these tones &quot;boho-western&quot;, a style it made up entirely 😅.)",
+          ch_dress_fig: "Your colours",
           ch_dress_acc: "Gold &amp; black<br /><span>accessories only</span>",
           ch_exp_h: "What to expect",
           ch_exp_1: "The big wedding - with all the fancy details - will be in <strong>Mexico, in April 2027</strong>.",
@@ -644,6 +781,13 @@
         },
         es: {
           ch_label: "Nuestra boda civil · Chalampé, Alsacia",
+          ch_jump_day: "El día",
+          ch_jump_village: "El pueblo",
+          ch_jump_travel: "Cómo llegar",
+          ch_jump_stay: "Dónde dormir",
+          ch_jump_dress: "Vestimenta",
+          ch_jump_know: "Info útil",
+          ch_jump_todo: "Qué hacer",
           ch_lead: "El pueblo natal de Mikel y el lugar de nuestra boda civil. Un pequeño pueblo a orillas del Rin, donde Francia se encuentra con Alemania. Nos casaremos en el ayuntamiento el <strong>sábado 5 de septiembre de 2026</strong> y luego celebraremos por la tarde. Aquí tienes todo lo que necesitas para acompañarnos.",
           ch_day_h: "El día",
           ch_day_date: "<strong>Sábado, 5 de septiembre de 2026</strong>",
@@ -663,7 +807,7 @@
           ch_get_h: "Cómo llegar",
           ch_get_sub: "Como quiera que llegues, nuestro consejo sincero es alquilar un coche.",
           ch_plane_h: "En avión",
-          ch_plane_1: "El aeropuerto más cercano es el <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, a unos <strong>40 min en coche</strong> de Chalampé.",
+          ch_plane_1: "El aeropuerto más cercano es el <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, a unos <strong>30 min en coche</strong> de Chalampé.",
           ch_plane_2: "También accesibles: <strong>Estrasburgo (SXB)</strong> ~1h20 y <strong>Zúrich (ZRH)</strong> ~1h15 en coche.",
           ch_train_h: "En tren",
           ch_train_0: "Estaciones más cercanas, por orden de preferencia:",
@@ -672,10 +816,21 @@
           ch_train_3: "<strong>3 · Basilea</strong>, Suiza - bien conectada internacionalmente, ~40 min en coche.",
           ch_car_h: "En coche",
           ch_car_1: "Chalampé está justo en el Rin - la ciudad alemana de <strong>Neuenburg am Rhein</strong> está al otro lado del puente.",
-          ch_car_2: "Aproximadamente <strong>15 min desde Mulhouse</strong> y <strong>40 min desde Basilea / el EuroAirport</strong>.",
+          ch_car_2: "Aproximadamente <strong>15 min desde Mulhouse</strong>, <strong>30 min desde el EuroAirport</strong> y <strong>40 min desde Basilea</strong>.",
           ch_tip_h: "Nuestro mejor consejo: alquila un coche",
           ch_tip_1: "Como quiera que llegues - avión, tren o coche - nuestro consejo sincero es <strong style='color:var(--wood-light)'>alquilar un coche</strong>. Es de lejos la forma más fácil de llegar a Chalampé y te permite explorar Alsacia, la Selva Negra y la frontera suiza durante unos días. Merece mucho la pena.",
           ch_tip_2: "Puedes recogerlo en <strong style='color:var(--wood-light)'>Freiburg</strong>, en el mismo <strong style='color:var(--wood-light)'>EuroAirport (Basilea–Mulhouse)</strong>, o en <strong style='color:var(--wood-light)'>Basilea</strong> o <strong style='color:var(--wood-light)'>Mulhouse</strong> - con las compañías habituales como Sixt, Europcar y Enterprise.",
+          ch_bus_h: "¿Llegas sin coche?",
+          ch_bus_0: "<strong>Dinos los datos de tu vuelo</strong> y haremos todo lo posible por ir a recogerte al aeropuerto. Y si por lo que sea no puede ser, siempre queda el bus.",
+          ch_bus_1: "El <strong>Freiburger Airportbus</strong> conecta directamente el <strong>EuroAirport (Basilea–Mulhouse)</strong> con <strong>Neuenburg am Rhein</strong>, el pueblo alemán justo al otro lado del puente desde Chalampé. Para en <strong>Neuenburg &quot;Alter Zoll&quot;</strong>.",
+          ch_bus_f1t: "Trayecto",
+          ch_bus_f1: "unos 30 min",
+          ch_bus_f2t: "Precio",
+          ch_bus_f2: "17,99 € por trayecto",
+          ch_bus_f3t: "Salidas",
+          ch_bus_f3: "aproximadamente cada hora",
+          ch_bus_2: "Reserva con antelación en la web del operador. En el aeropuerto, la parada está en el <strong>lado francés</strong>.",
+          ch_bus_cta: "Horarios y reservas \u2197",
           ch_stay_h: "Dónde alojarse",
           ch_stay_sub: "Dos opciones, según si tendrás coche.",
           ch_stay_best: "Mejor · sin coche",
@@ -689,9 +844,12 @@
           ch_stay_v2: "Busca gîtes y habitaciones en la zona en Gîtes de France o Booking.com →",
           ch_village_cap: "<strong>Rumersheim-le-Haut</strong> - uno de los pueblos a cinco minutos en coche de Chalampé, donde vive el hermano de Mikel.",
           ch_book_h: "Encuentra un gîte o una habitación",
-          ch_dress_h: "Código de vestimenta",
-          ch_dress_p: "Vestimenta formal, por favor - con un toque divertido: elige cualquier tono de nuestra paleta de colores para invitados. Tonos terrosos, apagados, estilo boho-western. Y añade <strong>un toque de dorado o negro</strong> donde quede bien - como accesorios.",
-          ch_dress_fig: "Tu look",
+          ch_dress_h: "Código de vestimenta: Wineyard Outfit",
+          ch_dress_p: "Nuestro código de vestimenta es el <strong>Wineyard Outfit</strong>: arreglado y elegante, pero relajado, natural y pensado para un día al aire libre. Estos dos tableros muestran exactamente el look que tenemos en mente.",
+          ch_dress_pin_w: "Wineyard Outfit \u00b7 Mujeres",
+          ch_dress_pin_m: "Wineyard Outfit \u00b7 Hombres",
+          ch_dress_col: "Para los colores, elige cualquier tono de la paleta de invitados de abajo y añade <strong>un toque de dorado o negro</strong> donde quede bien, como accesorios. (Claude bautizó estos tonos como &quot;boho-western&quot;, un estilo que se inventó por completo 😅.)",
+          ch_dress_fig: "Tus colores",
           ch_dress_acc: "Dorado y negro<br /><span>solo accesorios</span>",
           ch_exp_h: "Qué esperar",
           ch_exp_1: "La gran boda - con todos los detalles especiales - será en <strong>México, en abril de 2027</strong>.",
@@ -727,6 +885,13 @@
         },
         fr: {
           ch_label: "Notre mariage civil · Chalampé, Alsace",
+          ch_jump_day: "Le jour",
+          ch_jump_village: "Le village",
+          ch_jump_travel: "Y aller",
+          ch_jump_stay: "Où dormir",
+          ch_jump_dress: "Dress code",
+          ch_jump_know: "Bon à savoir",
+          ch_jump_todo: "À faire",
           ch_lead: "Le village natal de Mikel, et celui de notre mariage civil. Un petit village au bord du Rhin, là où la France rencontre l'Allemagne. Nous nous marierons à la mairie le <strong>samedi 5 septembre 2026</strong>, puis nous fêterons ça le soir. Voici tout ce qu'il faut pour nous rejoindre.",
           ch_day_h: "Le jour J",
           ch_day_date: "<strong>Samedi 5 septembre 2026</strong>",
@@ -746,7 +911,7 @@
           ch_get_h: "Comment venir",
           ch_get_sub: "Quel que soit votre moyen de transport, notre conseil sincère : louez une voiture.",
           ch_plane_h: "En avion",
-          ch_plane_1: "L'aéroport le plus proche est l'<strong>EuroAirport Bâle–Mulhouse–Fribourg (BSL / MLH)</strong>, à environ <strong>40 min en voiture</strong> de Chalampé.",
+          ch_plane_1: "L'aéroport le plus proche est l'<strong>EuroAirport Bâle–Mulhouse–Fribourg (BSL / MLH)</strong>, à environ <strong>30 min en voiture</strong> de Chalampé.",
           ch_plane_2: "Également accessibles : <strong>Strasbourg (SXB)</strong> ~1h20 et <strong>Zurich (ZRH)</strong> ~1h15 en voiture.",
           ch_train_h: "En train",
           ch_train_0: "Gares les plus proches, par ordre de préférence :",
@@ -755,10 +920,21 @@
           ch_train_3: "<strong>3 · Bâle</strong>, Suisse - bien reliée à l'international, ~40 min en voiture.",
           ch_car_h: "En voiture",
           ch_car_1: "Chalampé se trouve juste au bord du Rhin - la ville allemande de <strong>Neuenburg am Rhein</strong> est juste de l'autre côté du pont.",
-          ch_car_2: "Environ <strong>15 min de Mulhouse</strong> et <strong>40 min de Bâle / l'EuroAirport</strong>.",
+          ch_car_2: "Environ <strong>15 min de Mulhouse</strong>, <strong>30 min de l'EuroAirport</strong> et <strong>40 min de Bâle</strong>.",
           ch_tip_h: "Notre meilleur conseil : louez une voiture",
           ch_tip_1: "Quel que soit votre moyen de transport - avion, train ou voiture - notre conseil sincère est de <strong style='color:var(--wood-light)'>louer une voiture</strong>. C'est de loin le plus simple pour rejoindre Chalampé, et cela permet d'explorer l'Alsace, la Forêt-Noire et la frontière suisse pendant quelques jours. Ça vaut vraiment le coup.",
           ch_tip_2: "Vous pouvez en récupérer une à <strong style='color:var(--wood-light)'>Fribourg</strong>, directement à l'<strong style='color:var(--wood-light)'>EuroAirport (Bâle–Mulhouse)</strong>, ou à <strong style='color:var(--wood-light)'>Bâle</strong> ou <strong style='color:var(--wood-light)'>Mulhouse</strong> - avec les compagnies habituelles comme Sixt, Europcar et Enterprise.",
+          ch_bus_h: "Vous arrivez sans voiture ?",
+          ch_bus_0: "<strong>Dites-nous les détails de votre vol</strong> et nous ferons notre possible pour venir vous chercher à l'aéroport. Et si cela ne devait pas marcher, il reste toujours la navette.",
+          ch_bus_1: "Le <strong>Freiburger Airportbus</strong> relie directement l'<strong>EuroAirport (Bâle–Mulhouse)</strong> à <strong>Neuenburg am Rhein</strong>, la ville allemande juste de l'autre côté du pont depuis Chalampé. Arrêt à <strong>Neuenburg &quot;Alter Zoll&quot;</strong>.",
+          ch_bus_f1t: "Trajet",
+          ch_bus_f1: "environ 30 min",
+          ch_bus_f2t: "Tarif",
+          ch_bus_f2: "17,99 € l'aller",
+          ch_bus_f3t: "Départs",
+          ch_bus_f3: "environ toutes les heures",
+          ch_bus_2: "Réservez à l'avance sur le site de l'opérateur. À l'aéroport, l'arrêt se trouve côté <strong>français</strong>.",
+          ch_bus_cta: "Horaires et réservation \u2197",
           ch_stay_h: "Où loger",
           ch_stay_sub: "Deux options, selon que vous aurez une voiture ou non.",
           ch_stay_best: "Idéal · sans voiture",
@@ -772,9 +948,12 @@
           ch_stay_v2: "Cherchez des gîtes et des chambres dans la région sur Gîtes de France ou Booking.com →",
           ch_village_cap: "<strong>Rumersheim-le-Haut</strong> - l'un des villages à cinq minutes en voiture de Chalampé, où habite le frère de Mikel.",
           ch_book_h: "Trouver un gîte ou une chambre",
-          ch_dress_h: "Code vestimentaire",
-          ch_dress_p: "Tenue formelle, s'il vous plaît - avec une touche amusante : choisissez n'importe quelle nuance de notre palette de couleurs pour les invités. Des tons terreux, doux, esprit boho-western. Et ajoutez <strong>une touche de doré ou de noir</strong> là où ça fonctionne - en accessoires.",
-          ch_dress_fig: "Votre tenue",
+          ch_dress_h: "Code vestimentaire : Wineyard Outfit",
+          ch_dress_p: "Notre code vestimentaire, c'est le <strong>Wineyard Outfit</strong> : soigné et élégant, mais décontracté, naturel et fait pour une journée en plein air. Ces deux tableaux montrent exactement le look que nous avons en tête.",
+          ch_dress_pin_w: "Wineyard Outfit \u00b7 Femmes",
+          ch_dress_pin_m: "Wineyard Outfit \u00b7 Hommes",
+          ch_dress_col: "Côté couleurs, choisissez n'importe quelle nuance de la palette ci-dessous et ajoutez <strong>une touche de doré ou de noir</strong> là où ça fonctionne, en accessoires. (C'est Claude qui a baptisé ces tons &quot;boho-western&quot;, un style qu'il a inventé de toutes pièces 😅.)",
+          ch_dress_fig: "Vos couleurs",
           ch_dress_acc: "Doré & noir<br /><span>accessoires uniquement</span>",
           ch_exp_h: "À quoi s'attendre",
           ch_exp_1: "Le grand mariage - avec tous les détails en grand - aura lieu au <strong>Mexique, en avril 2027</strong>.",
@@ -810,6 +989,13 @@
         },
         de: {
           ch_label: "Unsere standesamtliche Hochzeit · Chalampé, Elsass",
+          ch_jump_day: "Der Tag",
+          ch_jump_village: "Das Dorf",
+          ch_jump_travel: "Anreise",
+          ch_jump_stay: "Übernachten",
+          ch_jump_dress: "Dresscode",
+          ch_jump_know: "Gut zu wissen",
+          ch_jump_todo: "Ausflüge",
           ch_lead: "Mikels Heimatdorf und der Ort unserer standesamtlichen Hochzeit. Ein kleines Dorf am Rhein, wo Frankreich auf Deutschland trifft. Wir heiraten am <strong>Samstag, 5. September 2026</strong> im Rathaus und feiern anschließend den Abend. Hier findest du alles, um dabei zu sein.",
           ch_day_h: "Der Tag",
           ch_day_date: "<strong>Samstag, 5. September 2026</strong>",
@@ -829,7 +1015,7 @@
           ch_get_h: "Anreise",
           ch_get_sub: "Wie auch immer ihr anreist - unser ehrlicher Tipp: mietet ein Auto.",
           ch_plane_h: "Mit dem Flugzeug",
-          ch_plane_1: "Der nächste Flughafen ist der <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, etwa <strong>40 Min mit dem Auto</strong> von Chalampé.",
+          ch_plane_1: "Der nächste Flughafen ist der <strong>EuroAirport Basel–Mulhouse–Freiburg (BSL / MLH)</strong>, etwa <strong>30 Min mit dem Auto</strong> von Chalampé.",
           ch_plane_2: "Ebenfalls erreichbar: <strong>Straßburg (SXB)</strong> ~1h20 und <strong>Zürich (ZRH)</strong> ~1h15 mit dem Auto.",
           ch_train_h: "Mit dem Zug",
           ch_train_0: "Nächste Bahnhöfe, nach Präferenz:",
@@ -838,10 +1024,21 @@
           ch_train_3: "<strong>3 · Basel</strong>, Schweiz - international gut angebunden, ~40 Min mit dem Auto.",
           ch_car_h: "Mit dem Auto",
           ch_car_1: "Chalampé liegt direkt am Rhein - die deutsche Stadt <strong>Neuenburg am Rhein</strong> ist gleich auf der anderen Seite der Brücke.",
-          ch_car_2: "Etwa <strong>15 Min von Mulhouse</strong> und <strong>40 Min von Basel / dem EuroAirport</strong>.",
+          ch_car_2: "Etwa <strong>15 Min von Mulhouse</strong>, <strong>30 Min vom EuroAirport</strong> und <strong>40 Min von Basel</strong>.",
           ch_tip_h: "Unser bester Tipp: mietet ein Auto",
           ch_tip_1: "Wie auch immer ihr anreist - Flugzeug, Zug oder Auto - unser ehrlicher Rat ist, ein <strong style='color:var(--wood-light)'>Auto zu mieten</strong>. Es ist bei Weitem der einfachste Weg nach Chalampé und ihr könnt ein paar Tage lang das Elsass, den Schwarzwald und die Schweizer Grenze erkunden. Es lohnt sich.",
           ch_tip_2: "Ihr könnt es in <strong style='color:var(--wood-light)'>Freiburg</strong>, direkt am <strong style='color:var(--wood-light)'>EuroAirport (Basel–Mulhouse)</strong> oder in <strong style='color:var(--wood-light)'>Basel</strong> oder <strong style='color:var(--wood-light)'>Mulhouse</strong> abholen - bei den üblichen Anbietern wie Sixt, Europcar und Enterprise.",
+          ch_bus_h: "Ohne Auto unterwegs?",
+          ch_bus_0: "<strong>Sagt uns eure Flugdaten</strong> und wir versuchen unser Bestes, euch selbst am Flughafen abzuholen. Und falls das doch nicht klappt, gibt es immer noch den Airportbus.",
+          ch_bus_1: "Der <strong>Freiburger Airportbus</strong> fährt direkt zwischen dem <strong>EuroAirport (Basel–Mulhouse)</strong> und <strong>Neuenburg am Rhein</strong>, der deutschen Stadt gleich über der Brücke von Chalampé. Haltestelle: <strong>Neuenburg &quot;Alter Zoll&quot;</strong>.",
+          ch_bus_f1t: "Fahrtzeit",
+          ch_bus_f1: "ca. 30 Min",
+          ch_bus_f2t: "Preis",
+          ch_bus_f2: "17,99 € pro Fahrt",
+          ch_bus_f3t: "Abfahrten",
+          ch_bus_f3: "etwa stündlich",
+          ch_bus_2: "Bitte vorab online buchen. Am Flughafen liegt die Haltestelle auf der <strong>französischen Seite</strong>.",
+          ch_bus_cta: "Fahrplan & Buchung \u2197",
           ch_stay_h: "Wo übernachten",
           ch_stay_sub: "Zwei Optionen, je nachdem ob ihr ein Auto habt.",
           ch_stay_best: "Am besten · kein Auto nötig",
@@ -855,9 +1052,12 @@
           ch_stay_v2: "Sucht Gîtes und Zimmer in der Umgebung auf Gîtes de France oder Booking.com →",
           ch_village_cap: "<strong>Rumersheim-le-Haut</strong> - eines der Dörfer fünf Autominuten von Chalampé entfernt, wo Mikels Bruder wohnt.",
           ch_book_h: "Findet ein Gîte oder ein Zimmer",
-          ch_dress_h: "Dresscode",
-          ch_dress_p: "Festliche Kleidung bitte - mit einem kleinen Twist: Wählt einen beliebigen Farbton aus unserer Gäste-Farbpalette. Erdige, gedämpfte Boho-Western-Töne. Und setzt gern <strong>einen Hauch von Gold oder Schwarz</strong> als Accessoires ein.",
-          ch_dress_fig: "Euer Outfit",
+          ch_dress_h: "Dresscode: Wineyard Outfit",
+          ch_dress_p: "Unser Dresscode ist das <strong>Wineyard Outfit</strong>: schick und gepflegt, aber entspannt, natürlich und gemacht für einen Tag draußen. Diese beiden Pinnwände zeigen genau den Look, den wir uns vorstellen.",
+          ch_dress_pin_w: "Wineyard Outfit \u00b7 Damen",
+          ch_dress_pin_m: "Wineyard Outfit \u00b7 Herren",
+          ch_dress_col: "Bei den Farben: Wählt einen beliebigen Ton aus der Gäste-Palette unten und setzt <strong>einen Hauch von Gold oder Schwarz</strong> als Accessoires ein, wo es passt. (Claude hat diese Töne &quot;Boho-Western&quot; getauft, einen Stil, den es sich komplett ausgedacht hat 😅.)",
+          ch_dress_fig: "Eure Farben",
           ch_dress_acc: "Gold & Schwarz<br /><span>nur Accessoires</span>",
           ch_exp_h: "Was euch erwartet",
           ch_exp_1: "Die große Hochzeit - mit allem Drum und Dran - findet in <strong>Mexiko im April 2027</strong> statt.",
@@ -902,5 +1102,104 @@
     })();
   </script>
   <script src="script.js"></script>
+  <!-- Pinterest board embeds (dress code section) -->
+  <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+  <!-- Section jump bar: sticky offsets + active-link highlighting -->
+  <script>
+    (function () {
+      var jump = document.querySelector('.ch-jump');
+      if (!jump) return;
+      var links = [].slice.call(jump.querySelectorAll('.ch-jump__link'));
+      var root = document.documentElement;
+
+      function measure() {
+        var nav = document.querySelector('.topnav');
+        root.style.setProperty('--ch-navh', (nav ? nav.offsetHeight : 61) + 'px');
+        root.style.setProperty('--ch-jumph', jump.offsetHeight + 'px');
+      }
+      measure();
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure);
+
+      // Keep the active chip visible when the track scrolls horizontally.
+      function reveal(link) {
+        var track = jump.querySelector('.ch-jump__track');
+        if (track.scrollWidth <= track.clientWidth) return;
+        var l = link.offsetLeft - (track.clientWidth - link.offsetWidth) / 2;
+        track.scrollTo({ left: Math.max(0, l), behavior: 'smooth' });
+      }
+
+      var sections = links
+        .map(function (a) {
+          var el = document.querySelector(a.getAttribute('href'));
+          return el ? { link: a, el: el } : null;
+        })
+        .filter(Boolean);
+      if (!sections.length) return;
+
+      // Anchor jumps are driven manually: lazy-loaded images and the Pinterest
+      // embeds keep growing above the target, so a plain #hash jump lands short.
+      // We scroll, then re-correct a few times while the page settles.
+      function offset() {
+        return (parseInt(getComputedStyle(root).getPropertyValue('--ch-navh')) || 61) +
+               (parseInt(getComputedStyle(root).getPropertyValue('--ch-jumph')) || 52) + 18;
+      }
+      function goTo(el, smooth) {
+        var y = el.getBoundingClientRect().top + window.scrollY - offset();
+        window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'auto' });
+      }
+      links.forEach(function (a) {
+        a.addEventListener('click', function (ev) {
+          var el = document.querySelector(a.getAttribute('href'));
+          if (!el) return;
+          ev.preventDefault();
+          history.replaceState(null, '', a.getAttribute('href'));
+          goTo(el, true);
+          [350, 700, 1100, 1600].forEach(function (d) {
+            setTimeout(function () {
+              var drift = el.getBoundingClientRect().top - offset();
+              if (Math.abs(drift) > 4) goTo(el, false);
+            }, d);
+          });
+        });
+      });
+
+      // Honour a #hash the visitor arrives with, once the page has settled.
+      if (location.hash) {
+        var landing = document.querySelector(location.hash);
+        if (landing) {
+          window.addEventListener('load', function () {
+            [0, 400, 900].forEach(function (d) { setTimeout(function () { goTo(landing, false); }, d); });
+          });
+        }
+      }
+
+      var ticking = false;
+      function update() {
+        ticking = false;
+        var line = (parseInt(getComputedStyle(root).getPropertyValue('--ch-navh')) || 61) +
+                   (parseInt(getComputedStyle(root).getPropertyValue('--ch-jumph')) || 52) + 24;
+        var current = null;
+        sections.forEach(function (s) {
+          if (s.el.getBoundingClientRect().top <= line) current = s;
+        });
+        // Past the end of the page, the last section wins.
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+          current = sections[sections.length - 1];
+        }
+        sections.forEach(function (s) {
+          var on = current === s;
+          if (on !== s.link.classList.contains('is-active')) {
+            s.link.classList.toggle('is-active', on);
+            if (on) reveal(s.link);
+          }
+        });
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

@@ -14,6 +14,7 @@ const translations = {
     nav_recos: "Recommendations",
     nav_flights: "Flights",
     nav_gifts: "Gifts",
+    nav_chalampe: "Chalampé",
 
     // Welcome
     welcome_kicker: "The wedding of",
@@ -262,6 +263,7 @@ const translations = {
     nav_recos: "Recomendaciones",
     nav_flights: "Vuelos",
     nav_gifts: "Regalos",
+    nav_chalampe: "Chalampé",
 
     welcome_kicker: "La boda de",
     welcome_date: "10 · 04 · 2027",
@@ -502,6 +504,7 @@ const translations = {
     nav_recos: "Recommandations",
     nav_flights: "Vols",
     nav_gifts: "Cadeaux",
+    nav_chalampe: "Chalampé",
 
     welcome_kicker: "Le mariage de",
     welcome_date: "10 · 04 · 2027",
@@ -742,6 +745,7 @@ const translations = {
     nav_recos: "Empfehlungen",
     nav_flights: "Flüge",
     nav_gifts: "Geschenke",
+    nav_chalampe: "Chalampé",
 
     welcome_kicker: "Die Hochzeit von",
     welcome_date: "10 · 04 · 2027",
