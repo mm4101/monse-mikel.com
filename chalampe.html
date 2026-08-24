@@ -1164,12 +1164,25 @@
         });
       });
 
-      // Honour a #hash the visitor arrives with, once the page has settled.
+      // Honour a #hash the visitor arrives with (e.g. a /chalampe#dress-code link
+      // shared with guests). The Pinterest embeds and lazy images settle late and
+      // push the target down, so we re-correct for a few seconds -- but abort the
+      // moment the visitor scrolls themselves, so we never yank the page from them.
       if (location.hash) {
         var landing = document.querySelector(location.hash);
         if (landing) {
+          var cancelled = false;
+          function cancel() { cancelled = true; }
+          ['wheel', 'touchstart', 'keydown'].forEach(function (e) {
+            window.addEventListener(e, cancel, { passive: true, once: true });
+          });
           window.addEventListener('load', function () {
-            [0, 400, 900].forEach(function (d) { setTimeout(function () { goTo(landing, false); }, d); });
+            [0, 300, 700, 1200, 2000, 3000, 4500].forEach(function (d) {
+              setTimeout(function () {
+                if (cancelled) return;
+                if (Math.abs(landing.getBoundingClientRect().top - offset()) > 4) goTo(landing, false);
+              }, d);
+            });
           });
         }
       }
