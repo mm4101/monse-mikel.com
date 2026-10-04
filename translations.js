@@ -86,7 +86,7 @@ const translations = {
     rsvp_title: "RSVP",
     rsvp_lead: "We can't wait to celebrate with you. Please confirm your presence below.",
     rsvp_placeholder: "Your HubSpot RSVP form will appear here. Paste the embed code in rsvp.html.",
-    rsvp_deadline: "Kindly respond by January 15, 2027.",
+    rsvp_deadline: "Please respond as soon as possible.",
 
     // RECOMMENDATIONS PAGE
     recos_label: "While you're here",
@@ -229,6 +229,15 @@ const translations = {
     wa_title: "A WhatsApp channel for our guests?",
     wa_lead: "We're thinking of creating dedicated WhatsApp channels - in English, Spanish and French - with updates about the wedding, gatherings and things to do around Lake Chapala. Nothing to join yet: tap + below to tell us you'd be interested, and we'll create the channels people actually want.",
 
+    // Guests by country (home)
+    countries_label: "From near and far",
+    countries_title: "How many have confirmed?",
+    countries_note: "4 guests hold dual nationality and are counted in both of their countries. Children are not included in this count.",
+    enter_cta: "Enter",
+    enter_hint: "Tap to enter - with music",
+    home_rsvp_title: "Haven't registered yet?",
+    home_rsvp_reminder: "If you're still deciding, please RSVP as soon as you can so we can finalise the numbers - we'd love to have you with us.",
+
     gift1_title: "Honeymoon Fund",
     gift1_desc: "Help us start married life with a trip we'll never forget.",
     gift1_cta: "Contribute",
@@ -330,7 +339,7 @@ const translations = {
     rsvp_title: "Confirmación",
     rsvp_lead: "No vemos la hora de celebrar contigo. Por favor confirma tu asistencia abajo.",
     rsvp_placeholder: "Tu formulario de HubSpot aparecerá aquí. Pega el código en rsvp.html.",
-    rsvp_deadline: "Por favor confirma antes del 15 de enero de 2027.",
+    rsvp_deadline: "Por favor responde lo antes posible.",
 
     recos_label: "Mientras estás aquí",
     recos_title: "Recomendaciones",
@@ -471,6 +480,15 @@ const translations = {
     wa_title: "¿Un canal de WhatsApp para nuestros invitados?",
     wa_lead: "Estamos pensando en crear canales de WhatsApp - en inglés, español y francés - con novedades de la boda, encuentros y planes alrededor del lago de Chapala. Aún no hay nada a lo que unirse: pulsa + abajo para decirnos que te interesa y crearemos los canales que de verdad se quieran.",
 
+    // Guests by country (home)
+    countries_label: "De cerca y de lejos",
+    countries_title: "¿Cuántos han confirmado?",
+    countries_note: "4 invitados tienen doble nacionalidad y se cuentan en sus dos países. Los niños no están incluidos en este recuento.",
+    enter_cta: "Entrar",
+    enter_hint: "Toca para entrar - con música",
+    home_rsvp_title: "¿Aún no te has registrado?",
+    home_rsvp_reminder: "Si todavía lo estás pensando, confirma cuanto antes para poder cerrar la lista - nos encantaría tenerte con nosotros.",
+
     gift1_title: "Fondo Luna de Miel",
     gift1_desc: "Ayúdanos a comenzar la vida de casados con un viaje inolvidable.",
     gift1_cta: "Contribuir",
@@ -571,7 +589,7 @@ const translations = {
     rsvp_title: "RSVP",
     rsvp_lead: "Nous avons hâte de célébrer avec vous. Veuillez confirmer votre présence ci-dessous.",
     rsvp_placeholder: "Votre formulaire HubSpot apparaîtra ici. Collez le code dans rsvp.html.",
-    rsvp_deadline: "Merci de répondre avant le 15 janvier 2027.",
+    rsvp_deadline: "Merci de répondre dès que possible.",
 
     recos_label: "Pendant votre séjour",
     recos_title: "Recommandations",
@@ -712,6 +730,15 @@ const translations = {
     wa_title: "Un canal WhatsApp pour nos invités ?",
     wa_lead: "Nous pensons créer des canaux WhatsApp dédiés - en anglais, espagnol et français - avec des nouvelles du mariage, des retrouvailles et des idées autour du lac de Chapala. Rien à rejoindre pour l'instant : appuyez sur + ci-dessous pour nous dire que cela vous intéresse, et nous créerons les canaux qui comptent vraiment.",
 
+    // Guests by country (home)
+    countries_label: "De près et de loin",
+    countries_title: "Combien ont confirmé ?",
+    countries_note: "4 invités ont une double nationalité et sont comptés dans leurs deux pays. Les enfants ne sont pas comptés ici.",
+    enter_cta: "Entrer",
+    enter_hint: "Entrez - avec de la musique",
+    home_rsvp_title: "Pas encore inscrit ?",
+    home_rsvp_reminder: "Si vous hésitez encore, merci de répondre dès que possible afin que nous puissions finaliser le nombre d'invités - nous serions ravis de vous compter parmi nous.",
+
     gift1_title: "Cagnotte Lune de Miel",
     gift1_desc: "Aidez-nous à commencer notre vie de mariés avec un voyage inoubliable.",
     gift1_cta: "Contribuer",
@@ -812,7 +839,7 @@ const translations = {
     rsvp_title: "Zusagen",
     rsvp_lead: "Wir freuen uns darauf, mit euch zu feiern. Bitte bestätigt eure Teilnahme unten.",
     rsvp_placeholder: "Euer HubSpot-Formular erscheint hier. Fügt den Embed-Code in rsvp.html ein.",
-    rsvp_deadline: "Bitte antwortet bis zum 15. Januar 2027.",
+    rsvp_deadline: "Bitte antwortet so bald wie möglich.",
 
     recos_label: "Während ihr hier seid",
     recos_title: "Empfehlungen",
@@ -952,6 +979,15 @@ const translations = {
     gmaps_soon: "📍 Bald verfügbar: eine Google-Maps-Liste mit all unseren Lieblingsorten, rechtzeitig zu eurem Besuch.",
     wa_title: "Ein WhatsApp-Kanal für unsere Gäste?",
     wa_lead: "Wir überlegen, eigene WhatsApp-Kanäle zu erstellen - auf Englisch, Spanisch und Französisch - mit Neuigkeiten zur Hochzeit, Treffen und Tipps rund um den Chapala-See. Noch nichts zum Beitreten: Tippt unten auf +, um uns euer Interesse zu zeigen, und wir erstellen die Kanäle, die wirklich gewünscht sind.",
+
+    // Guests by country (home)
+    countries_label: "Aus nah und fern",
+    countries_title: "Wie viele haben zugesagt?",
+    countries_note: "4 Gäste haben eine doppelte Staatsangehörigkeit und zählen in beiden Ländern. Kinder sind in dieser Zählung nicht enthalten.",
+    enter_cta: "Eintreten",
+    enter_hint: "Zum Eintreten tippen - mit Musik",
+    home_rsvp_title: "Noch nicht angemeldet?",
+    home_rsvp_reminder: "Wenn ihr noch überlegt, meldet euch bitte so bald wie möglich an, damit wir die Zahlen festlegen können - wir hätten euch sehr gerne dabei.",
 
     gift1_title: "Flitterwochen-Kasse",
     gift1_desc: "Helft uns, das Eheleben mit einer unvergesslichen Reise zu beginnen.",

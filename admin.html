@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Guest countries · admin</title>
+  <style>
+    :root { --wood:#96784E; --forest:#112917; --cream:#E6E3DE; --cream-warm:#ECE8E0; --rosa:#932E50; --sage:#838264; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream); color: var(--forest); font-family: 'Inter', -apple-system, system-ui, sans-serif; padding: 32px 18px 80px; }
+    .wrap { max-width: 640px; margin: 0 auto; }
+    h1 { font-weight: 600; font-size: 22px; margin: 0 0 4px; }
+    .sub { color: var(--sage); font-size: 13px; margin: 0 0 24px; }
+    .card { background: var(--cream-warm); border: 1px solid rgba(150,120,78,0.3); padding: 20px; margin-bottom: 24px; }
+    label { display: block; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--wood); margin: 0 0 6px; }
+    input { width: 100%; padding: 10px 12px; border: 1px solid var(--wood); background: #fff; font-size: 15px; color: var(--forest); outline: none; }
+    input:focus { border-color: var(--forest); }
+    .row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+    .row > div { flex: 1; min-width: 120px; }
+    .row .code { max-width: 110px; }
+    .row .count { max-width: 110px; }
+    button { font-family: inherit; cursor: pointer; border: 1px solid var(--wood); background: var(--wood); color: var(--cream); padding: 10px 18px; font-size: 14px; }
+    button:hover { background: var(--forest); border-color: var(--forest); }
+    button.ghost { background: transparent; color: var(--wood); }
+    button.danger { background: transparent; color: var(--rosa); border-color: var(--rosa); padding: 6px 12px; font-size: 13px; }
+    button.danger:hover { background: var(--rosa); color: #fff; }
+    .preview { display: flex; align-items: center; gap: 10px; margin-top: 10px; min-height: 28px; }
+    .preview img { width: 36px; height: 24px; object-fit: cover; border: 1px solid rgba(17,41,23,0.15); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(150,120,78,0.25); font-size: 15px; vertical-align: middle; }
+    th { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--wood); }
+    td img { width: 34px; height: 22px; object-fit: cover; border: 1px solid rgba(17,41,23,0.15); vertical-align: middle; }
+    .total { font-size: 14px; color: var(--sage); margin-top: 14px; }
+    .msg { min-height: 20px; font-size: 14px; margin-top: 12px; }
+    .msg.ok { color: #2e7d46; }
+    .msg.err { color: var(--rosa); }
+    .hint { font-size: 12px; color: var(--sage); margin-top: 6px; }
+    a.code-help { color: var(--wood); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Guest countries</h1>
+    <p class="sub">Maintain the "who's coming" strip on the home page. Changes are live immediately.</p>
+
+    <div class="card">
+      <label for="token">Admin token</label>
+      <input id="token" type="password" placeholder="Shared admin token" autocomplete="off" />
+      <p class="hint">Kept only in this tab. Needed to save changes (reading the list works without it).</p>
+    </div>
+
+    <div class="card">
+      <label>Headline (shown big on the home page)</label>
+      <div class="row">
+        <div>
+          <label for="total">Total confirmed guests</label>
+          <input id="total" type="number" min="0" placeholder="101" />
+        </div>
+        <div>
+          <label for="asof">As of (date)</label>
+          <input id="asof" type="date" />
+        </div>
+        <button id="saveMeta">Save headline</button>
+      </div>
+      <p class="hint">The big "guests confirmed" number and date. Leave total blank to just add up the countries below. Set independently of the per-country rows (handy when guests are counted once but dual nationals span two countries).</p>
+      <div class="msg" id="msgMeta"></div>
+    </div>
+
+    <div class="card">
+      <label>Add or update a country</label>
+      <div class="row">
+        <div class="code">
+          <label for="code">Code</label>
+          <input id="code" maxlength="2" placeholder="mx" autocomplete="off" />
+        </div>
+        <div>
+          <label for="name">Country name</label>
+          <input id="name" placeholder="Mexico" autocomplete="off" />
+        </div>
+        <div class="count">
+          <label for="count">Guests</label>
+          <input id="count" type="number" min="0" placeholder="0" />
+        </div>
+        <button id="save">Save</button>
+      </div>
+      <div class="preview" id="preview"></div>
+      <p class="hint">Code = 2-letter country code (<a class="code-help" href="https://flagcdn.com/en/codes.json" target="_blank" rel="noopener">list</a>): Mexico = mx, Germany = de, France = fr, USA = us, UK = gb. Set guests to 0 to remove a country.</p>
+      <div class="msg" id="msg"></div>
+    </div>
+
+    <div class="card">
+      <label>Current list</label>
+      <table>
+        <thead><tr><th>Flag</th><th>Country</th><th>Guests</th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="total" id="total-text"></p>
+    </div>
+  </div>
+
+  <script>
+    const API = '/api/attendance';
+    const $ = (id) => document.getElementById(id);
+    const tokenEl = $('token'), codeEl = $('code'), nameEl = $('name'), countEl = $('count');
+    const msgEl = $('msg'), rowsEl = $('rows'), totalTextEl = $('total-text'), previewEl = $('preview');
+    const totalEl = $('total'), asofEl = $('asof'), msgMetaEl = $('msgMeta');
+
+    // Remember the token for this tab only.
+    tokenEl.value = sessionStorage.getItem('attn_token') || '';
+    tokenEl.addEventListener('input', () => sessionStorage.setItem('attn_token', tokenEl.value));
+
+    function flag(code) { return 'https://flagcdn.com/' + encodeURIComponent(code) + '.svg'; }
+
+    codeEl.addEventListener('input', () => {
+      const c = codeEl.value.trim().toLowerCase();
+      previewEl.innerHTML = /^[a-z]{2}$/.test(c)
+        ? '<img src="' + flag(c) + '" alt="" onerror="this.style.display=\'none\'" /><span>' + c.toUpperCase() + '</span>'
+        : '';
+    });
+
+    function setMsg(text, ok) { msgEl.textContent = text; msgEl.className = 'msg ' + (ok ? 'ok' : 'err'); }
+
+    function renderList(data) {
+      const list = (data && data.countries) || [];
+      rowsEl.innerHTML = '';
+      list.forEach((c) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><img src="' + flag(c.code) + '" alt="" onerror="this.style.visibility=\'hidden\'" /></td>' +
+          '<td>' + c.name + ' <span style="color:#838264">(' + c.code + ')</span></td>' +
+          '<td>' + c.count + '</td>' +
+          '<td></td>';
+        const editBtn = document.createElement('button');
+        editBtn.className = 'ghost'; editBtn.textContent = 'Edit';
+        editBtn.onclick = () => { codeEl.value = c.code; nameEl.value = c.name; countEl.value = c.count; codeEl.dispatchEvent(new Event('input')); };
+        const delBtn = document.createElement('button');
+        delBtn.className = 'danger'; delBtn.textContent = 'Remove';
+        delBtn.onclick = () => save(c.code, c.name, 0);
+        const td = tr.lastElementChild;
+        td.appendChild(editBtn); td.appendChild(document.createTextNode(' ')); td.appendChild(delBtn);
+        rowsEl.appendChild(tr);
+      });
+      totalTextEl.textContent = list.length
+        ? ('Rows add up to ' + data.totalGuests + ' across ' + data.totalCountries + ' countries. Headline shows ' + (Number.isFinite(data.total) ? data.total : data.totalGuests) + '.')
+        : 'No countries yet.';
+      // Only fill the headline fields if the user isn't mid-edit.
+      if (document.activeElement !== totalEl) totalEl.value = Number.isFinite(data.total) ? data.total : '';
+      if (document.activeElement !== asofEl) asofEl.value = data.asOf || '';
+    }
+
+    function load() {
+      fetch(API).then((r) => r.json()).then(renderList).catch(() => setMsg('Could not load the list.', false));
+    }
+
+    $('saveMeta').onclick = () => {
+      const token = tokenEl.value.trim();
+      if (!token) { msgMetaEl.textContent = 'Enter the admin token first.'; msgMetaEl.className = 'msg err'; return; }
+      const totalRaw = totalEl.value.trim();
+      const payload = { admin: token, meta: true, total: totalRaw === '' ? '' : parseInt(totalRaw, 10), asOf: asofEl.value || '' };
+      msgMetaEl.textContent = 'Saving…'; msgMetaEl.className = 'msg ok';
+      fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) })
+        .then((r) => { if (!r.ok) throw new Error(r.status === 401 ? 'Wrong admin token.' : 'Save failed (' + r.status + ').'); return r.json(); })
+        .then((data) => { renderList(data); msgMetaEl.textContent = 'Saved ✓'; msgMetaEl.className = 'msg ok'; })
+        .catch((e) => { msgMetaEl.textContent = e.message; msgMetaEl.className = 'msg err'; });
+    };
+
+    function save(code, name, count) {
+      const token = tokenEl.value.trim();
+      if (!token) return setMsg('Enter the admin token first.', false);
+      setMsg('Saving…', true);
+      fetch(API, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ admin: token, code: code, name: name, count: count }),
+      }).then((r) => {
+        if (!r.ok) throw new Error(r.status === 401 ? 'Wrong admin token.' : 'Save failed (' + r.status + ').');
+        return r.json();
+      }).then((data) => {
+        renderList(data);
+        setMsg('Saved ✓', true);
+        if (count <= 0) { codeEl.value = ''; nameEl.value = ''; countEl.value = ''; previewEl.innerHTML = ''; }
+      }).catch((e) => setMsg(e.message, false));
+    }
+
+    $('save').onclick = () => {
+      const code = codeEl.value.trim().toLowerCase();
+      const name = nameEl.value.trim();
+      const count = parseInt(countEl.value, 10);
+      if (!/^[a-z]{2}$/.test(code)) return setMsg('Code must be 2 letters (e.g. mx).', false);
+      if (!Number.isFinite(count) || count < 0) return setMsg('Guests must be 0 or more.', false);
+      if (count > 0 && name.length < 2) return setMsg('Enter a country name.', false);
+      save(code, name, count);
+    };
+
+    load();
+  </script>
+</body>
+</html>

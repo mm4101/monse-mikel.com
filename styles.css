@@ -1049,3 +1049,100 @@ html { scroll-behavior: smooth; }
   .registry__title { font-size: 32px; }
   .reg-modal__box { padding: 40px 26px 30px; }
 }
+
+/* Guests by country - live "who's coming" strip (home) */
+.countries { padding: 64px 24px 40px; text-align: center; background: var(--cream); }
+.countries__divider { margin-bottom: 34px; color: var(--sage); }
+.countries__title { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 48px); color: var(--wood); margin: 12px 0 10px; }
+.countries__count { font-family: var(--serif); font-size: clamp(40px, 7vw, 72px); line-height: 1; color: var(--forest); margin: 6px 0 8px; }
+.countries__asof { font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin: 0 0 40px; }
+.countries__note { font-family: var(--sans); font-size: 13px; color: var(--sage); margin: 28px auto 0; max-width: 520px; }
+.countries__grid { display: flex; justify-content: center; align-items: stretch; gap: 18px; flex-wrap: wrap; max-width: 920px; margin: 0 auto; }
+.country {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  width: 132px; padding: 22px 16px 20px;
+  background: var(--cream-warm);
+  border: 1px solid rgba(150, 120, 78, 0.22);
+}
+.country__flag {
+  display: block; width: 54px; height: 36px; overflow: hidden;
+  border: 1px solid rgba(17, 41, 23, 0.12);
+  box-shadow: 0 2px 6px rgba(17, 41, 23, 0.12);
+}
+.country__flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* reserve two lines so one- and two-line names keep the counts on one level */
+.country__name { font-family: var(--serif); font-size: 17px; line-height: 1.2; color: var(--forest); text-align: center; min-height: 2.4em; display: flex; align-items: center; justify-content: center; }
+.country__count { font-family: var(--sans); font-size: 22px; font-weight: 500; color: var(--wood); margin-top: auto; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .countries__grid { gap: 12px; }
+  .country { width: calc(50% - 12px); max-width: 150px; }
+}
+
+/* Home RSVP invite (below the confirmed-guests strip) */
+.home-rsvp { padding: 20px 24px 72px; background: var(--cream); text-align: center; }
+.home-rsvp__divider { margin-bottom: 34px; color: var(--sage); }
+.home-rsvp__title { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 48px); color: var(--wood); margin: 12px 0 14px; }
+.home-rsvp__reminder { max-width: 620px; margin: 0 auto 36px; color: var(--forest-soft); font-size: 15px; line-height: 1.7; }
+
+/* Entrance overlay - editorial welcome, tap to enter + start music */
+.enter {
+  position: fixed; inset: 0; z-index: 2000; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  transition: opacity .7s ease, visibility .7s ease;
+}
+.enter--hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.enter__bg {
+  position: absolute; inset: -3%;
+  background: var(--wood) url('images/hero-guadalajara.jpg') center/cover no-repeat;
+  animation: kenburns 30s ease-in-out infinite alternate;
+}
+.enter__scrim {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 80% at 50% 35%, rgba(17,41,23,0.30), rgba(17,41,23,0.72) 85%),
+    linear-gradient(to bottom, rgba(17,41,23,0.55), rgba(17,41,23,0.68));
+}
+/* Papel picado banner (Mexican touch), ivory tissue on a fine string */
+.enter__papel {
+  position: absolute; top: 0; left: 0; right: 0; height: 42px;
+  border-top: 1px solid rgba(243,236,221,0.55);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='40' viewBox='0 0 56 40'%3E%3Cpath fill='%23F3ECDD' fill-rule='evenodd' d='M6 0 H50 V26 q-5.5 6 -11 0 q-5.5 6 -11 0 q-5.5 6 -11 0 q-5.5 6 -11 0 Z M28 7 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 M18 15 m-2 0 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0 M38 15 m-2 0 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0 Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x; background-position: top center; opacity: 0.92;
+}
+.enter__inner { position: relative; padding: 24px; color: var(--cream); }
+.enter__kicker { font-family: var(--sans); font-size: 12px; letter-spacing: 0.55em; text-transform: uppercase; color: var(--cream); opacity: 0.85; margin: 0 0 22px; padding-left: 0.55em; }
+.enter__names { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(50px, 11vw, 120px); line-height: 0.95; letter-spacing: -0.01em; color: var(--cream); margin: 0; }
+.enter__names em { font-style: italic; color: #E8A33D; font-weight: 400; }
+.enter__rule { display: block; width: 64px; height: 1px; background: #E8A33D; margin: 28px auto; }
+.enter__place { font-family: var(--serif); font-size: clamp(14px, 1.8vw, 18px); letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream); opacity: 0.9; margin: 0 0 44px; }
+.enter__btn { font-family: var(--sans); font-size: 13px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--cream); background: transparent; border: 1px solid rgba(230,227,222,0.7); padding: 17px 52px; cursor: pointer; transition: background .3s ease, color .3s ease, border-color .3s ease; }
+.enter__btn:hover { background: var(--cream); color: var(--forest); border-color: var(--cream); }
+.enter__hint { margin: 20px 0 0; font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); opacity: 0.7; }
+@media (prefers-reduced-motion: reduce) { .enter__bg { animation: none; } }
+
+/* Floating background-music toggle */
+.music-toggle {
+  position: fixed; bottom: 20px; right: 20px; z-index: 900;
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 1px solid var(--wood); background: var(--cream);
+  color: var(--wood); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 14px rgba(17, 41, 23, 0.18);
+  transition: transform .25s ease, background .25s ease, color .25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.music-toggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+/* show the muted (speaker-x) icon by default; the sound-on icon while playing */
+.music-toggle__on { display: none; }
+.music-toggle--playing .music-toggle__on { display: block; }
+.music-toggle--playing .music-toggle__off { display: none; }
+.music-toggle:hover { transform: scale(1.06); }
+.music-toggle--playing { background: var(--wood); color: var(--cream); }
+.music-toggle--playing::after {
+  content: ''; position: absolute; inset: -4px; border-radius: 50%;
+  border: 1px solid var(--wood); opacity: 0.5;
+  animation: musicPulse 1.8s ease-out infinite; pointer-events: none;
+}
+@keyframes musicPulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.5); opacity: 0; } }
+@media (max-width: 600px) { .music-toggle { bottom: 16px; right: 16px; width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .music-toggle--playing::after { animation: none; } }

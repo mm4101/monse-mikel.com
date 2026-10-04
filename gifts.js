@@ -23,7 +23,7 @@ window.PAY = {
 
 window.GIFTS = [
   {
-    id: 'sofa', emoji: '🛋️', img: 'images/sofa.jpg', goal: 1200, raised: 0, link: '',
+    id: 'sofa', emoji: '🛋️', img: 'images/sofa.jpg', goal: 1200, raised: 0, finalized: true, link: '',
     title: { en: 'A New Sofa',            es: 'Un sofá nuevo',            fr: 'Un nouveau canapé',        de: 'Ein neues Sofa' },
     desc:  { en: 'So we can welcome you with more class.',
              es: 'Para recibiros con más estilo.',
@@ -31,7 +31,7 @@ window.GIFTS = [
              de: 'Damit wir euch mit mehr Stil empfangen können.' },
   },
   {
-    id: 'lamp', emoji: '💡', img: 'images/living-room-lamp.jpg', imgFit: 'contain', imgBg: '#b3a294', goal: 300, raised: 0, link: '',
+    id: 'lamp', emoji: '💡', img: 'images/living-room-lamp.jpg', imgFit: 'contain', imgBg: '#b3a294', goal: 300, raised: 0, finalized: true, link: '',
     title: { en: 'A Living Room Lamp',    es: 'Una lámpara para el salón', fr: 'Une lampe pour le salon',  de: 'Eine Wohnzimmerlampe' },
     desc:  { en: 'Warm light for cosy evenings in our new living room.',
              es: 'Luz cálida para tardes acogedoras en nuestro nuevo salón.',
@@ -39,7 +39,7 @@ window.GIFTS = [
              de: 'Warmes Licht für gemütliche Abende in unserem neuen Wohnzimmer.' },
   },
   {
-    id: 'honeymoon', emoji: '🌴', img: 'images/honeymoon.jpg', goal: 3000, raised: 0, link: '',
+    id: 'honeymoon', emoji: '🌴', img: 'images/honeymoon.jpg', goal: 6500, raised: 3550, link: '',
     title: { en: 'Honeymoon Fund',        es: 'Fondo de luna de miel',    fr: 'Cagnotte lune de miel',    de: 'Flitterwochen-Fonds' },
     desc:  { en: 'Destination: China!',
              es: '¡Destino: China!',
@@ -55,7 +55,7 @@ window.GIFTS = [
              de: 'Wir renovieren unsere Wohnung, um sie in unser erstes gemeinsames Zuhause zu verwandeln - jeder Beitrag hilft bei Farbe, Böden und Reparaturen.' },
   },
   {
-    id: 'kitchen', emoji: '🍳', img: 'images/kitchen.jpg', goal: 500, raised: 0, link: '',
+    id: 'kitchen', emoji: '🍳', img: 'images/kitchen.jpg', goal: 500, raised: 0, finalized: true, link: '',
     title: { en: 'Kitchen Essentials',    es: 'Utensilios de cocina',     fr: 'Ustensiles de cuisine',    de: 'Küchenausstattung' },
     desc:  { en: 'A new dinner set and kitchen equipment for many home-cooked meals. We love the handmade stoneware from <a href="https://onomao.com" target="_blank" rel="noopener">onomao.com</a>.',
              es: 'Una nueva vajilla y equipamiento de cocina para muchas comidas caseras. Nos encanta la cerámica artesanal de <a href="https://onomao.com" target="_blank" rel="noopener">onomao.com</a>.',
@@ -146,9 +146,12 @@ window.GIFTS_UI = {
     const t = window.GIFTS_UI[lang];
     grid.innerHTML = '';
     window.GIFTS.forEach(g => {
-      const raised = raisedOf(g);
-      const pct = Math.min(100, Math.round((raised / g.goal) * 100));
-      const done = raised >= g.goal;
+      // `finalized` marks a gift as fully covered regardless of the running
+      // total - the bar fills, it reads as fully funded, and contributing closes.
+      const finalized = !!g.finalized;
+      const raised = finalized ? g.goal : raisedOf(g);
+      const pct = finalized ? 100 : Math.min(100, Math.round((raised / g.goal) * 100));
+      const done = finalized || raised >= g.goal;
       const card = document.createElement('article');
       card.className = 'reg-card' + (done ? ' reg-card--done' : '');
       // imgPos shifts the crop; imgFit:'contain' + imgBg letterboxes the full

@@ -25,6 +25,22 @@
 </head>
 <body>
 
+  <!-- ENTRANCE OVERLAY: the Enter tap starts the music (browsers require a gesture) -->
+  <noscript><style>#enterOverlay{display:none!important;}</style></noscript>
+  <div id="enterOverlay" class="enter" role="dialog" aria-label="Welcome">
+    <div class="enter__bg"></div>
+    <div class="enter__scrim"></div>
+    <div class="enter__papel" aria-hidden="true"></div>
+    <div class="enter__inner">
+      <p class="enter__kicker">Bienvenidos</p>
+      <h1 class="enter__names">Monse <em>&amp;</em> Mikel</h1>
+      <span class="enter__rule" aria-hidden="true"></span>
+      <p class="enter__place">Jalisco · México - 10 · 04 · 2027</p>
+      <button id="enterBtn" class="enter__btn" type="button" data-i18n="enter_cta">Enter</button>
+      <p class="enter__hint" data-i18n="enter_hint">Tap to enter - with music</p>
+    </div>
+  </div>
+
   <!-- TOP NAV -->
   <nav class="topnav">
     <div class="topnav__inner">
@@ -34,7 +50,6 @@
       </button>
       <div class="topnav__links">
         <a class='active' data-i18n='nav_home' data-page='index.html' href='/'>Home</a>
-        <a data-i18n='nav_chalampe' data-page='chalampe.html' href='/chalampe'>Chalampé</a>
         <a data-i18n='nav_flights' data-page='vuelos.html' href='/vuelos'>Flights</a>
         <a data-i18n='nav_info' data-page='informacion.html' href='/informacion'>Information</a>
         <a data-i18n='nav_rsvp' data-page='rsvp.html' href='/rsvp'>RSVP</a>
@@ -97,6 +112,62 @@
   </section>
 
   <!-- Botanical divider -->
+  <div class="divider divider--lg">
+    <svg viewBox="0 0 260 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+      <line x1="0" y1="16" x2="100" y2="16"/>
+      <line x1="160" y1="16" x2="260" y2="16"/>
+      <path d="M130 6 L130 26"/>
+      <path d="M130 11 C 125 10 120 12 118 16"/>
+      <path d="M130 11 C 135 10 140 12 142 16"/>
+      <path d="M130 18 C 125 17 120 19 118 23" opacity="0.6"/>
+      <path d="M130 18 C 135 17 140 19 142 23" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- GUESTS BY COUNTRY: live "who's coming" (admin-maintained) -->
+  <section class="countries" id="countries" hidden>
+    <p class="venue__label venue__label--center" data-i18n="countries_label">From near and far</p>
+    <h2 class="countries__title" data-i18n="countries_title">How many have confirmed?</h2>
+    <p class="countries__count" id="countriesCount"></p>
+    <p class="countries__asof" id="countriesAsof"></p>
+    <div class="countries__grid" id="countriesGrid"></div>
+    <p class="countries__note" id="countriesNote" data-i18n="countries_note">4 of our guests hold dual nationality.</p>
+  </section>
+
+  <!-- RSVP INVITE (home): register again + ASAP reminder for anyone still deciding -->
+  <section class="home-rsvp" id="home-rsvp">
+    <div class="divider divider--lg home-rsvp__divider">
+      <svg viewBox="0 0 180 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
+        <line x1="0" y1="12" x2="68" y2="12"/>
+        <line x1="112" y1="12" x2="180" y2="12"/>
+        <path d="M90 4 L90 20"/>
+        <path d="M90 8 C 86 7 82 9 80 12"/>
+        <path d="M90 8 C 94 7 98 9 100 12"/>
+        <path d="M90 14 C 86 13 82 15 80 18" opacity="0.6"/>
+        <path d="M90 14 C 94 13 98 15 100 18" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="venue__label venue__label--center" data-i18n="rsvp_label">Please respond</p>
+    <h2 class="home-rsvp__title" data-i18n="home_rsvp_title">Haven't registered yet?</h2>
+    <p class="home-rsvp__reminder" data-i18n="home_rsvp_reminder">If you're still deciding, please RSVP as soon as you can so we can finalise the numbers - we'd love to have you with us.</p>
+    <div class="container container--narrow">
+      <div class="rsvp-wrap rsvp-wrap--luma">
+        <iframe
+          src="https://luma.com/embed/event/evt-xOJuqX0aSGCWujB/simple"
+          class="luma-embed"
+          allow="fullscreen; payment"
+          aria-label="RSVP - Wedding Monse & Mikel on Luma"
+          frameborder="0"
+        ></iframe>
+        <p class="rsvp-fallback">
+          <a href="https://luma.com/shx73m6c" target="_blank" rel="noopener" data-i18n="rsvp_open">Trouble with the form? Open the RSVP page directly →</a>
+        </p>
+      </div>
+      <p class="rsvp-deadline" data-i18n="rsvp_deadline">Please respond as soon as possible.</p>
+    </div>
+  </section>
+
+  <!-- Botanical divider between the RSVP invite and the venue -->
   <div class="divider divider--lg">
     <svg viewBox="0 0 260 32" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round">
       <line x1="0" y1="16" x2="100" y2="16"/>
@@ -293,8 +364,26 @@
     </div>
   </footer>
 
+  <!-- Background music (self-hosted; starts on first interaction) -->
+  <audio id="bgMusic" src="music/our-song.mp3" loop preload="auto"></audio>
+  <button id="musicToggle" class="music-toggle" aria-label="Unmute music" aria-pressed="false" title="Music on / off">
+    <!-- sound on -->
+    <svg class="music-toggle__on" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+    </svg>
+    <!-- muted -->
+    <svg class="music-toggle__off" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  </button>
+
   <script src="translations.js"></script>
   <script src="script.js"></script>
+  <script src="countries.js"></script>
   <script src="whatsapp.js"></script>
+  <script src="music.js"></script>
 </body>
 </html>
