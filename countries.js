@@ -1,9 +1,11 @@
 // ============================================================
 //  Guests by country - a live, celebratory "who's coming" strip
 //  on the home page. RSVPs live in Luma, so Monse & Mikel keep
-//  this list up to date by hand via /admin; guests only read it.
-//  Data: GET /api/attendance (Netlify Function + Blobs).
+//  this list up to date by hand. The numbers below are the baked-in
+//  defaults that always show; if /admin has been used to set live
+//  figures in Netlify Blobs, those override the defaults.
 //  Flags: flagcdn.com, keyed by ISO 3166-1 alpha-2 country code.
+//  To update: edit DEFAULTS below (or use /admin for a no-deploy change).
 // ============================================================
 (function () {
   const section = document.getElementById('countries');
@@ -56,7 +58,43 @@
     ));
   }
 
-  let DATA = null;
+  // Baked-in defaults - shown straight from the deployed code, no setup needed.
+  // headline total is set by hand (guests counted once; 4 dual-nationals are
+  // counted in both their countries, so the rows sum to 113 while total = 109).
+  const DEFAULTS = {
+    total: 109,
+    asOf: '2026-10-04',
+    countries: [
+      { code: 'mx', name: 'Mexico', count: 75 },
+      { code: 'fr', name: 'France', count: 14 },
+      { code: 'us', name: 'United States', count: 6 },
+      { code: 'de', name: 'Germany', count: 5 },
+      { code: 'tw', name: 'Taiwan', count: 3 },
+      { code: 'hu', name: 'Hungary', count: 2 },
+      { code: 'in', name: 'India', count: 2 },
+      { code: 'pl', name: 'Poland', count: 4 },
+      { code: 'it', name: 'Italy', count: 1 },
+      { code: 'ma', name: 'Morocco', count: 1 },
+    ],
+  };
+
+  // Normalize a {countries, total, asOf} set the way the render expects.
+  function norm(src) {
+    const countries = (src.countries || [])
+      .filter((c) => c.count > 0)
+      .slice()
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+    const totalGuests = countries.reduce((s, c) => s + c.count, 0);
+    return {
+      countries,
+      totalCountries: countries.length,
+      totalGuests,
+      total: Number.isFinite(src.total) ? src.total : totalGuests,
+      asOf: src.asOf || null,
+    };
+  }
+
+  let DATA = norm(DEFAULTS);
 
   function render() {
     if (!DATA || !Array.isArray(DATA.countries) || DATA.countries.length === 0) {
@@ -93,10 +131,14 @@
     });
   }
 
+  // Show the defaults right away, then let live /admin data override if present.
+  render();
   fetch(API)
     .then((r) => (r.ok ? r.json() : null))
-    .then((d) => { DATA = d; render(); })
-    .catch(() => { section.hidden = true; });
+    .then((d) => {
+      if (d && Array.isArray(d.countries) && d.countries.length) { DATA = d; render(); }
+    })
+    .catch(() => { /* keep the baked-in defaults */ });
 
   // The language switcher rewrites the headline wording live.
   document.querySelectorAll('[data-lang]').forEach((b) => {
