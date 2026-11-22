@@ -59,22 +59,28 @@
   }
 
   // Baked-in defaults - shown straight from the deployed code, no setup needed.
-  // headline total is set by hand (guests counted once; 4 dual-nationals are
-  // counted in both their countries, so the rows sum to 113 while total = 109).
+  // Source: Notion "Guests list database", Confirmed Mexico = Yes.
+  // headline total = every confirmed guest counted once (136). Guests with
+  // several countries count in each, and 8 guests have no country set yet,
+  // so the rows sum to 133.
   const DEFAULTS = {
-    total: 109,
-    asOf: '2026-10-04',
+    total: 136,
+    asOf: '2026-11-22',
     countries: [
-      { code: 'mx', name: 'Mexico', count: 75 },
+      { code: 'mx', name: 'Mexico', count: 80 },
       { code: 'fr', name: 'France', count: 14 },
-      { code: 'us', name: 'United States', count: 6 },
-      { code: 'de', name: 'Germany', count: 5 },
+      { code: 'us', name: 'United States', count: 9 },
+      { code: 'de', name: 'Germany', count: 9 },
+      { code: 'pl', name: 'Poland', count: 6 },
       { code: 'tw', name: 'Taiwan', count: 3 },
+      { code: 'co', name: 'Colombia', count: 2 },
       { code: 'hu', name: 'Hungary', count: 2 },
       { code: 'in', name: 'India', count: 2 },
-      { code: 'pl', name: 'Poland', count: 4 },
-      { code: 'it', name: 'Italy', count: 1 },
+      { code: 'it', name: 'Italy', count: 2 },
+      { code: 'be', name: 'Belgium', count: 1 },
       { code: 'ma', name: 'Morocco', count: 1 },
+      { code: 'es', name: 'Spain', count: 1 },
+      { code: 'tr', name: 'Turkey', count: 1 },
     ],
   };
 

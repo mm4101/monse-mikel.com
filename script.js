@@ -1,6 +1,16 @@
 // ============================================================
-//  Wedding website — language switcher + nav toggle
+//  Wedding website - language switcher + nav toggle
 // ============================================================
+
+// Local preview: when a page is opened straight from disk (file://), the clean
+// links like /vuelos can't resolve, so point them at the .html files instead.
+// Netlify serves the clean URLs, so the live site is untouched.
+if (location.protocol === 'file:') {
+  document.querySelectorAll('a[href^="/"]').forEach(a => {
+    const m = a.getAttribute('href').match(/^\/([a-z-]*)(#.*)?$/);
+    if (m) a.setAttribute('href', (m[1] || 'index') + '.html' + (m[2] || ''));
+  });
+}
 
 const langButtons = document.querySelectorAll('[data-lang]');
 const LANGS = ['en', 'es', 'fr', 'de'];

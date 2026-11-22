@@ -47,8 +47,8 @@ const translations = {
     info_lead: "Everything you need to plan the trip. We can't wait to welcome you to Mexico.",
 
     info_when_title: "When",
-    info_when_p1: "<strong>Friday evening, April 9, 2027</strong> - Icebreaker with our international guests at the wedding venue. More info about this coming soon!",
     info_when_p2: "<strong>Saturday, April 10, 2027</strong> - Ceremony and celebration.",
+    info_when_p3: "<strong>Monday (April 12) or Tuesday (April 13)</strong> - Trip to the town of <strong>Tequila</strong>. Book your stay accordingly if you want to join us!",
 
     info_where_title: "Where",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -66,6 +66,7 @@ const translations = {
     info_stay_p1: "Best option: book directly at <strong>Quinta San Carlos</strong> from <strong>Thursday (April 8) to Sunday (April 11)</strong> - 150+ rooms right at the venue, so you're on site for the full experience.",
     info_stay_p2: "Arriving before Thursday (April 8)? Enjoy <strong>Guadalajara</strong> first, then move to <strong>Lake Chapala</strong> (Ajijic, Jocotepec, Chapala) on Friday (April 9) - about 1h15 by car from the city center.",
     info_stay_p3: "Arriving Thursday (April 8) or Friday (April 9)? Head straight from the airport to your accommodation near the venue.",
+    info_stay_p4: "Would you like to stay at the wedding venue? Send us a WhatsApp message and we'll help with your request - scan a code or tap a name.",
 
     info_pass_title: "Passport & visa",
     info_pass_p1: "A valid passport is required. Most EU, US, and many other nationalities don't need a visa for short stays - please verify based on your country.",
@@ -79,6 +80,7 @@ const translations = {
     info_safe_p1: "We've planned the weekend with safe transport, trusted accommodations, and on-site support. If anything comes up, we're a message away.",
     info_post_title: "After the wedding",
     info_post_p1: "As we will have a lot of international guests, we will also announce a <strong>post-wedding program</strong> for Sunday (April 11), Monday (April 12) and Tuesday (April 13), and you are invited to join us - for instance a trip to <strong>Tequila</strong>. Let us know your interest and we will share further information.",
+    info_post_p2: "Up for <strong>Tequila</strong>? Join our WhatsApp group in your language and post it there - that's where we'll plan the trip together.",
 
     // RSVP PAGE
     rsvp_open: "Trouble with the form? Open the RSVP page directly →",
@@ -119,7 +121,9 @@ const translations = {
     flight0_desc: "Cancún has the most direct flights from Europe - Edelweiss from Zurich, Condor and Discover from Frankfurt, Air France from Paris. From there it's a domestic hop to Guadalajara (about 3h), or start with a few days at the beach.",
     flight0_meta: "Most nonstops from Europe · combine with a beach stay",
     plan_title: "Travel with us - Mikel's family plan",
-    plan_desc: "Mikel's family lands in Cancún on Monday, April 5 and stays at a resort (probably in Cancún) until Thursday, April 8. On Thursday evening (April 8) they fly to Guadalajara for the wedding weekend. On Tuesday, April 13 they return to Cancún and explore the Yucatán region until flying home on Wednesday, April 21. If you'd like to book the same flights and join us, these are the ones (Mikel is not 100% sure he'll take this exact flight himself, but potentially yes):",
+    plan_desc: "Mikel's family flights below are still correct, but the plan in between has changed: they now arrive in Guadalajara on Thursday (April 8) and stay a full week before heading back to Cancún, in the Quintana Roo region. Key dates:",
+    plan_dates: "<li><strong>Monday, April 5</strong> - land in Cancún</li><li><strong>Thursday, April 8</strong> - fly from Cancún to Guadalajara</li><li><strong>Saturday, April 10</strong> - the wedding 🎉</li><li><strong>Monday (April 12) or Tuesday (April 13)</strong> - trip to Tequila</li><li><strong>Thursday, April 15</strong> - fly back to Cancún after 7 days in Guadalajara</li><li><strong>Thursday (April 15) to Wednesday (April 21)</strong> - Cancún and the Quintana Roo region</li><li><strong>Wednesday, April 21</strong> - fly home from Cancún</li>",
+    plan_flights_intro: "If you'd like to book the same flights and join us, these are the ones (Mikel is not 100% sure he'll take this exact flight himself, but potentially yes):",
     plan_flights: "<strong>Outbound · Mon, Apr 5, 2027:</strong> Zurich → Frankfurt (LH1181, 08:15–09:20) · Frankfurt → Cancún (LH4368, 11:00–16:05)<br><strong>Return · Wed, Apr 21, 2027:</strong> Cancún → Montreal (AC1883, 09:30–14:50) · Montreal → Zurich (LX87, 16:40–06:10 next day)",
     visa_title: "Visas & transit",
     visa_desc: "Most European passports don't need a visa for Mexico - but if you connect through the United States you'll need an ESTA (apply online before flying). Some nationalities do need a visa for Mexico and/or a US transit visa: please check with the authorities in your own country well in advance.",
@@ -226,8 +230,13 @@ const translations = {
     revolut_btn: "Pay with Revolut",
     wa_label: "Stay in the loop",
     gmaps_soon: "📍 Coming soon: a Google Maps list with all our personal favourites, ready for when you're here.",
-    wa_title: "A WhatsApp channel for our guests?",
-    wa_lead: "We're thinking of creating dedicated WhatsApp channels - in English, Spanish and French - with updates about the wedding, gatherings and things to do around Lake Chapala. Nothing to join yet: tap + below to tell us you'd be interested, and we'll create the channels people actually want.",
+    wa_title: "Join our WhatsApp groups",
+    wa_lead: "We'll share and coordinate the whole program on site - before and after the wedding - in our WhatsApp groups, so make sure to join us there! Pick the group in your language: scan the code with your phone camera, or tap the button if you're already on your phone.",
+    wa_join: "Join the group",
+    wa_scan: "Point your phone camera at a code - no app needed to scan.",
+    wa_world_desc: "In English · for everyone",
+    wa_fr_desc: "En français · for our French guests",
+    wa_latam_desc: "En español · Mexico & Spain",
 
     // Guests by country (home)
     countries_label: "From near and far",
@@ -301,8 +310,8 @@ const translations = {
     info_lead: "Todo lo que necesitas para organizar el viaje. No vemos la hora de recibirte en México.",
 
     info_when_title: "Cuándo",
-    info_when_p1: "<strong>Viernes 9 de abril de 2027 por la tarde</strong> - Rompehielos con nuestros invitados internacionales en el lugar de la boda. ¡Pronto más información!",
     info_when_p2: "<strong>Sábado 10 de abril de 2027</strong> - Ceremonia y celebración.",
+    info_when_p3: "<strong>Lunes 12 o martes 13 de abril</strong> - Excursión al pueblo de <strong>Tequila</strong>. ¡Reserva tu estancia en consecuencia si quieres acompañarnos!",
 
     info_where_title: "Dónde",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -320,6 +329,7 @@ const translations = {
     info_stay_p1: "La mejor opción: reserva directamente en <strong>Quinta San Carlos</strong> de <strong>jueves 8 a domingo 11 de abril</strong> - más de 150 habitaciones en el propio lugar, para vivir la experiencia completa.",
     info_stay_p2: "¿Llegas antes del jueves 8? Disfruta primero de <strong>Guadalajara</strong> y múdate el viernes 9 a la zona del <strong>Lago de Chapala</strong> (Ajijic, Jocotepec, Chapala) - a 1 h 15 en coche desde el centro.",
     info_stay_p3: "¿Llegas jueves 8 o viernes 9? Ve directo del aeropuerto a tu alojamiento cerca del lugar de la boda.",
+    info_stay_p4: "¿Te gustaría alojarte en el lugar de la boda? Escríbenos por WhatsApp y te ayudamos con tu solicitud - escanea un código o toca un nombre.",
 
     info_pass_title: "Pasaporte y visa",
     info_pass_p1: "Se requiere pasaporte válido. La mayoría de nacionalidades europeas, estadounidenses y muchas otras no necesitan visa para estancias cortas - verifica según tu país.",
@@ -333,6 +343,7 @@ const translations = {
     info_safe_p1: "Hemos planeado el fin de semana con transporte seguro, alojamientos de confianza y apoyo en el lugar. Si algo surge, estamos a un mensaje de distancia.",
     info_post_title: "Después de la boda",
     info_post_p1: "Como tendremos muchos invitados internacionales, también anunciaremos un <strong>programa post-boda</strong> para el domingo 11, el lunes 12 y el martes 13 de abril, y están invitados a acompañarnos - por ejemplo, una excursión a <strong>Tequila</strong>. Cuéntanos tu interés y te compartiremos más información.",
+    info_post_p2: "¿Te apuntas a <strong>Tequila</strong>? Únete a nuestro grupo de WhatsApp en tu idioma y cuéntalo ahí - ahí organizaremos juntos la excursión.",
 
     rsvp_open: "¿Problemas con el formulario? Abre la página de RSVP directamente →",
     rsvp_label: "Por favor responde",
@@ -371,7 +382,9 @@ const translations = {
     flight0_desc: "Cancún tiene la mayor cantidad de vuelos directos desde Europa - Edelweiss desde Zúrich, Condor y Discover desde Fráncfort, Air France desde París. Desde ahí hay un vuelo nacional a Guadalajara (unas 3h), o empieza con unos días de playa.",
     flight0_meta: "Más vuelos directos desde Europa · combínalo con playa",
     plan_title: "Viaja con nosotros - el plan de la familia de Mikel",
-    plan_desc: "La familia de Mikel aterriza en Cancún el lunes 5 de abril y se queda en un resort (probablemente en Cancún) hasta el jueves 8. El jueves 8 por la tarde vuelan a Guadalajara para el fin de semana de la boda. El martes 13 regresan a Cancún y exploran la región de Yucatán hasta el vuelo de vuelta el miércoles 21 de abril. Si quieres reservar los mismos vuelos y acompañarnos, son estos (Mikel no está 100% seguro de tomar exactamente este vuelo, pero potencialmente sí):",
+    plan_desc: "Los vuelos de la familia de Mikel siguen siendo los mismos, pero el plan intermedio ha cambiado: ahora llegan a Guadalajara el jueves 8 de abril y se quedan una semana entera antes de volver a Cancún, en la región de Quintana Roo. Fechas clave:",
+    plan_dates: "<li><strong>Lunes 5 de abril</strong> - llegada a Cancún</li><li><strong>Jueves 8 de abril</strong> - vuelo de Cancún a Guadalajara</li><li><strong>Sábado 10 de abril</strong> - la boda 🎉</li><li><strong>Lunes 12 o martes 13 de abril</strong> - excursión a Tequila</li><li><strong>Jueves 15 de abril</strong> - vuelta a Cancún tras 7 días en Guadalajara</li><li><strong>Del jueves 15 al miércoles 21 de abril</strong> - Cancún y la región de Quintana Roo</li><li><strong>Miércoles 21 de abril</strong> - vuelo de regreso desde Cancún</li>",
+    plan_flights_intro: "Si quieres reservar los mismos vuelos y acompañarnos, son estos (Mikel no está 100% seguro de tomar exactamente este vuelo, pero potencialmente sí):",
     plan_flights: "<strong>Ida · lun 5 abr 2027:</strong> Zúrich → Fráncfort (LH1181, 08:15–09:20) · Fráncfort → Cancún (LH4368, 11:00–16:05)<br><strong>Vuelta · mié 21 abr 2027:</strong> Cancún → Montreal (AC1883, 09:30–14:50) · Montreal → Zúrich (LX87, 16:40–06:10 del día siguiente)",
     visa_title: "Visas y tránsito",
     visa_desc: "La mayoría de los pasaportes europeos no necesitan visa para México - pero si haces escala en Estados Unidos necesitarás una ESTA (solicítala en línea antes de volar). Algunas nacionalidades sí necesitan visa para México y/o visa de tránsito por EE. UU.: consulta con las autoridades de tu propio país con tiempo.",
@@ -477,8 +490,13 @@ const translations = {
     revolut_btn: "Pagar con Revolut",
     wa_label: "Mantente al día",
     gmaps_soon: "📍 Muy pronto: una lista de Google Maps con todos nuestros favoritos, lista para cuando vengáis.",
-    wa_title: "¿Un canal de WhatsApp para nuestros invitados?",
-    wa_lead: "Estamos pensando en crear canales de WhatsApp - en inglés, español y francés - con novedades de la boda, encuentros y planes alrededor del lago de Chapala. Aún no hay nada a lo que unirse: pulsa + abajo para decirnos que te interesa y crearemos los canales que de verdad se quieran.",
+    wa_title: "Únete a nuestros grupos de WhatsApp",
+    wa_lead: "Compartiremos y coordinaremos todo el programa en el lugar - antes y después de la boda - en nuestros grupos de WhatsApp, ¡así que únete! Elige el grupo en tu idioma: escanea el código con la cámara de tu teléfono, o pulsa el botón si ya estás en el móvil.",
+    wa_join: "Unirme al grupo",
+    wa_scan: "Apunta la cámara de tu teléfono al código - no necesitas ninguna app.",
+    wa_world_desc: "En inglés · para todos",
+    wa_fr_desc: "En francés · para nuestros invitados franceses",
+    wa_latam_desc: "En español · México y España",
 
     // Guests by country (home)
     countries_label: "De cerca y de lejos",
@@ -551,8 +569,8 @@ const translations = {
     info_lead: "Tout ce qu'il faut pour organiser le voyage. Nous avons hâte de vous accueillir au Mexique.",
 
     info_when_title: "Quand",
-    info_when_p1: "<strong>Vendredi 9 avril 2027 en soirée</strong> - Icebreaker avec nos invités internationaux sur le lieu du mariage. Plus d'infos très bientôt !",
     info_when_p2: "<strong>Samedi 10 avril 2027</strong> - Cérémonie et célébration.",
+    info_when_p3: "<strong>Lundi 12 ou mardi 13 avril</strong> - Excursion dans la ville de <strong>Tequila</strong>. Réservez votre séjour en conséquence si vous voulez vous joindre à nous !",
 
     info_where_title: "Où",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -570,6 +588,7 @@ const translations = {
     info_stay_p1: "La meilleure option : réservez directement à la <strong>Quinta San Carlos</strong> du <strong>jeudi 8 au dimanche 11 avril</strong> - plus de 150 chambres sur place, pour vivre l'expérience complète.",
     info_stay_p2: "Vous arrivez avant le jeudi 8 ? Profitez d'abord de <strong>Guadalajara</strong>, puis installez-vous le vendredi 9 au bord du <strong>lac de Chapala</strong> (Ajijic, Jocotepec, Chapala) - à environ 1h15 de route du centre.",
     info_stay_p3: "Vous arrivez le jeudi 8 ou le vendredi 9 ? Allez directement de l'aéroport à votre hébergement près du lieu de la fête.",
+    info_stay_p4: "Vous souhaitez loger sur le lieu du mariage ? Écrivez-nous sur WhatsApp et nous vous aiderons avec votre demande - scannez un code ou touchez un nom.",
 
     info_pass_title: "Passeport et visa",
     info_pass_p1: "Un passeport valide est requis. La plupart des ressortissants UE, américains et bien d'autres n'ont pas besoin de visa pour les courts séjours - vérifiez selon votre nationalité.",
@@ -583,6 +602,7 @@ const translations = {
     info_safe_p1: "Nous avons organisé le week-end avec transport sûr, hébergements de confiance et soutien sur place. Si quelque chose se présente, nous sommes à un message près.",
     info_post_title: "Après le mariage",
     info_post_p1: "Comme nous aurons beaucoup d'invités internationaux, nous annoncerons aussi un <strong>programme post-mariage</strong> pour le dimanche 11, le lundi 12 et le mardi 13 avril, et vous êtes invités à vous joindre à nous - par exemple une excursion à <strong>Tequila</strong>. Dites-nous votre intérêt et nous vous communiquerons plus d'informations.",
+    info_post_p2: "Partant pour <strong>Tequila</strong> ? Rejoignez notre groupe WhatsApp dans votre langue et dites-le-nous là-bas - c'est là que nous organiserons l'excursion ensemble.",
 
     rsvp_open: "Un souci avec le formulaire ? Ouvrez la page RSVP directement →",
     rsvp_label: "Merci de répondre",
@@ -621,7 +641,9 @@ const translations = {
     flight0_desc: "Cancún offre le plus de vols directs depuis l'Europe - Edelweiss depuis Zurich, Condor et Discover depuis Francfort, Air France depuis Paris. Ensuite, un vol intérieur vers Guadalajara (env. 3h), ou commencez par quelques jours de plage.",
     flight0_meta: "Le plus de vols directs depuis l'Europe · à combiner avec la plage",
     plan_title: "Voyagez avec nous - le plan de la famille de Mikel",
-    plan_desc: "La famille de Mikel atterrit à Cancún le lundi 5 avril et séjourne dans un resort (probablement à Cancún) jusqu'au jeudi 8. Le jeudi 8 au soir, ils s'envolent pour Guadalajara pour le week-end du mariage. Le mardi 13, ils retournent à Cancún et explorent la région du Yucatán jusqu'au vol retour le mercredi 21 avril. Si vous souhaitez réserver les mêmes vols et nous accompagner, les voici (Mikel n'est pas sûr à 100% de prendre exactement ce vol, mais potentiellement oui) :",
+    plan_desc: "Les vols de la famille de Mikel ci-dessous restent valables, mais le programme entre les deux a changé : ils arrivent désormais à Guadalajara le jeudi 8 avril et y restent une semaine entière avant de retourner à Cancún, dans la région du Quintana Roo. Dates clés :",
+    plan_dates: "<li><strong>Lundi 5 avril</strong> - arrivée à Cancún</li><li><strong>Jeudi 8 avril</strong> - vol de Cancún à Guadalajara</li><li><strong>Samedi 10 avril</strong> - le mariage 🎉</li><li><strong>Lundi 12 ou mardi 13 avril</strong> - excursion à Tequila</li><li><strong>Jeudi 15 avril</strong> - retour à Cancún après 7 jours à Guadalajara</li><li><strong>Du jeudi 15 au mercredi 21 avril</strong> - Cancún et la région du Quintana Roo</li><li><strong>Mercredi 21 avril</strong> - vol retour depuis Cancún</li>",
+    plan_flights_intro: "Si vous souhaitez réserver les mêmes vols et nous accompagner, les voici (Mikel n'est pas sûr à 100% de prendre exactement ce vol, mais potentiellement oui) :",
     plan_flights: "<strong>Aller · lun 5 avr 2027 :</strong> Zurich → Francfort (LH1181, 08:15–09:20) · Francfort → Cancún (LH4368, 11:00–16:05)<br><strong>Retour · mer 21 avr 2027 :</strong> Cancún → Montréal (AC1883, 09:30–14:50) · Montréal → Zurich (LX87, 16:40–06:10 le lendemain)",
     visa_title: "Visas et transit",
     visa_desc: "La plupart des passeports européens n'ont pas besoin de visa pour le Mexique - mais si vous transitez par les États-Unis, il vous faudra un ESTA (à demander en ligne avant le vol). Certaines nationalités ont besoin d'un visa pour le Mexique et/ou d'un visa de transit américain : renseignez-vous auprès des autorités de votre propre pays suffisamment à l'avance.",
@@ -727,8 +749,13 @@ const translations = {
     revolut_btn: "Payer avec Revolut",
     wa_label: "Restez informés",
     gmaps_soon: "📍 Bientôt : une liste Google Maps avec toutes nos adresses préférées, prête pour votre venue.",
-    wa_title: "Un canal WhatsApp pour nos invités ?",
-    wa_lead: "Nous pensons créer des canaux WhatsApp dédiés - en anglais, espagnol et français - avec des nouvelles du mariage, des retrouvailles et des idées autour du lac de Chapala. Rien à rejoindre pour l'instant : appuyez sur + ci-dessous pour nous dire que cela vous intéresse, et nous créerons les canaux qui comptent vraiment.",
+    wa_title: "Rejoignez nos groupes WhatsApp",
+    wa_lead: "Nous partagerons et coordonnerons tout le programme sur place - avant et après le mariage - dans nos groupes WhatsApp, alors rejoignez-nous ! Choisissez le groupe dans votre langue : scannez le code avec l'appareil photo de votre téléphone, ou appuyez sur le bouton si vous êtes déjà sur votre téléphone.",
+    wa_join: "Rejoindre le groupe",
+    wa_scan: "Visez le code avec l'appareil photo de votre téléphone - aucune appli nécessaire.",
+    wa_world_desc: "En anglais · pour tout le monde",
+    wa_fr_desc: "En français · pour nos invités français",
+    wa_latam_desc: "En espagnol · Mexique et Espagne",
 
     // Guests by country (home)
     countries_label: "De près et de loin",
@@ -801,8 +828,8 @@ const translations = {
     info_lead: "Alles, was ihr für die Reise braucht. Wir freuen uns darauf, euch in Mexiko willkommen zu heißen.",
 
     info_when_title: "Wann",
-    info_when_p1: "<strong>Freitagabend, 9. April 2027</strong> - Icebreaker mit unseren internationalen Gästen am Ort der Hochzeit. Mehr Infos dazu bald!",
     info_when_p2: "<strong>Samstag, 10. April 2027</strong> - Trauung und Feier.",
+    info_when_p3: "<strong>Montag (12. April) oder Dienstag (13. April)</strong> - Ausflug in die Stadt <strong>Tequila</strong>. Plant euren Aufenthalt entsprechend, wenn ihr mitkommen wollt!",
 
     info_where_title: "Wo",
     info_where_p1: "<strong>Quinta San Carlos</strong> · San Pedro Tesistán, Jocotepec.",
@@ -820,6 +847,7 @@ const translations = {
     info_stay_p1: "Die beste Option: Bucht direkt in der <strong>Quinta San Carlos</strong> von <strong>Donnerstag, 8. bis Sonntag, 11. April</strong> - über 150 Zimmer direkt am Veranstaltungsort, für das volle Erlebnis.",
     info_stay_p2: "Ihr kommt vor Donnerstag (8. April) an? Genießt zuerst <strong>Guadalajara</strong> und zieht am Freitag (9. April) an den <strong>Chapala-See</strong> (Ajijic, Jocotepec, Chapala) um - ca. 1:15 Std. mit dem Auto vom Zentrum.",
     info_stay_p3: "Ihr kommt Donnerstag (8. April) oder Freitag (9. April) an? Fahrt vom Flughafen direkt zu eurer Unterkunft in der Nähe der Location.",
+    info_stay_p4: "Ihr möchtet direkt am Hochzeitsort übernachten? Schreibt uns per WhatsApp und wir helfen euch mit eurer Anfrage - Code scannen oder auf einen Namen tippen.",
 
     info_pass_title: "Reisepass & Visum",
     info_pass_p1: "Ein gültiger Reisepass ist erforderlich. Die meisten EU- und US-Bürger sowie viele andere brauchen für Kurzaufenthalte kein Visum - bitte je nach Land prüfen.",
@@ -833,6 +861,7 @@ const translations = {
     info_safe_p1: "Wir haben das Wochenende mit sicherem Transport, vertrauenswürdigen Unterkünften und Unterstützung vor Ort geplant. Falls etwas auftritt, sind wir nur eine Nachricht entfernt.",
     info_post_title: "Nach der Hochzeit",
     info_post_p1: "Da wir viele internationale Gäste haben werden, kündigen wir auch ein <strong>Programm nach der Hochzeit</strong> für Sonntag (11. April), Montag (12. April) und Dienstag (13. April) an - ihr seid herzlich eingeladen, zum Beispiel zu einem Ausflug nach <strong>Tequila</strong>. Sagt uns Bescheid, wenn ihr Interesse habt, und wir teilen weitere Infos.",
+    info_post_p2: "Lust auf <strong>Tequila</strong>? Tretet unserer WhatsApp-Gruppe in eurer Sprache bei und schreibt es dort - dort planen wir den Ausflug gemeinsam.",
 
     rsvp_open: "Probleme mit dem Formular? Öffnet die RSVP-Seite direkt →",
     rsvp_label: "Bitte antworten",
@@ -871,7 +900,9 @@ const translations = {
     flight0_desc: "Nach Cancún gibt es die meisten Direktflüge aus Europa - Edelweiss ab Zürich, Condor und Discover ab Frankfurt, Air France ab Paris. Von dort ist es ein Inlandsflug nach Guadalajara (ca. 3h), oder ihr startet mit ein paar Tagen am Strand.",
     flight0_meta: "Meiste Nonstop-Flüge aus Europa · mit Strandurlaub kombinierbar",
     plan_title: "Reist mit uns - der Plan von Mikels Familie",
-    plan_desc: "Mikels Familie landet am Montag, 5. April in Cancún und bleibt bis Donnerstag, 8. April in einem Resort (wahrscheinlich in Cancún). Am Donnerstagabend (8. April) fliegen sie nach Guadalajara zum Hochzeitswochenende. Am Dienstag, 13. April geht es zurück nach Cancún, um die Region Yucatán zu erkunden - bis zum Heimflug am Mittwoch, 21. April. Wer dieselben Flüge buchen und sich anschließen möchte: Hier sind sie (Mikel ist nicht 100% sicher, ob er genau diesen Flug nimmt, aber potenziell ja):",
+    plan_desc: "Die Flüge von Mikels Familie unten stimmen weiterhin, aber der Plan dazwischen hat sich geändert: Sie kommen jetzt am Donnerstag (8. April) in Guadalajara an und bleiben eine ganze Woche, bevor es zurück nach Cancún in die Region Quintana Roo geht. Die wichtigsten Daten:",
+    plan_dates: "<li><strong>Montag, 5. April</strong> - Landung in Cancún</li><li><strong>Donnerstag, 8. April</strong> - Flug von Cancún nach Guadalajara</li><li><strong>Samstag, 10. April</strong> - die Hochzeit 🎉</li><li><strong>Montag (12. April) oder Dienstag (13. April)</strong> - Ausflug nach Tequila</li><li><strong>Donnerstag, 15. April</strong> - nach 7 Tagen in Guadalajara zurück nach Cancún</li><li><strong>Donnerstag (15. April) bis Mittwoch (21. April)</strong> - Cancún und die Region Quintana Roo</li><li><strong>Mittwoch, 21. April</strong> - Heimflug ab Cancún</li>",
+    plan_flights_intro: "Wer dieselben Flüge buchen und sich anschließen möchte: Hier sind sie (Mikel ist nicht 100% sicher, ob er genau diesen Flug nimmt, aber potenziell ja):",
     plan_flights: "<strong>Hinflug · Mo, 5. Apr 2027:</strong> Zürich → Frankfurt (LH1181, 08:15–09:20) · Frankfurt → Cancún (LH4368, 11:00–16:05)<br><strong>Rückflug · Mi, 21. Apr 2027:</strong> Cancún → Montreal (AC1883, 09:30–14:50) · Montreal → Zürich (LX87, 16:40–06:10 am Folgetag)",
     visa_title: "Visa & Transit",
     visa_desc: "Die meisten europäischen Pässe brauchen kein Visum für Mexiko - aber wer über die USA fliegt, braucht ein ESTA (vor dem Abflug online beantragen). Einige Nationalitäten benötigen ein Visum für Mexiko und/oder ein US-Transitvisum: erkundigt euch rechtzeitig bei den Behörden eures eigenen Landes.",
@@ -977,8 +1008,13 @@ const translations = {
     revolut_btn: "Mit Revolut zahlen",
     wa_label: "Bleibt auf dem Laufenden",
     gmaps_soon: "📍 Bald verfügbar: eine Google-Maps-Liste mit all unseren Lieblingsorten, rechtzeitig zu eurem Besuch.",
-    wa_title: "Ein WhatsApp-Kanal für unsere Gäste?",
-    wa_lead: "Wir überlegen, eigene WhatsApp-Kanäle zu erstellen - auf Englisch, Spanisch und Französisch - mit Neuigkeiten zur Hochzeit, Treffen und Tipps rund um den Chapala-See. Noch nichts zum Beitreten: Tippt unten auf +, um uns euer Interesse zu zeigen, und wir erstellen die Kanäle, die wirklich gewünscht sind.",
+    wa_title: "Tretet unseren WhatsApp-Gruppen bei",
+    wa_lead: "Das ganze Programm vor Ort - vor und nach der Hochzeit - teilen und koordinieren wir in unseren WhatsApp-Gruppen, also tretet unbedingt bei! Wählt die Gruppe in eurer Sprache: Scannt den Code mit der Handykamera oder tippt auf den Button, wenn ihr schon am Handy seid.",
+    wa_join: "Gruppe beitreten",
+    wa_scan: "Einfach die Handykamera auf einen Code richten - keine App nötig.",
+    wa_world_desc: "Auf Englisch · für alle",
+    wa_fr_desc: "Auf Französisch · für unsere französischen Gäste",
+    wa_latam_desc: "Auf Spanisch · Mexiko & Spanien",
 
     // Guests by country (home)
     countries_label: "Aus nah und fern",

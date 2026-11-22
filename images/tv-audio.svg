@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4DCCF"/><stop offset="1" stop-color="#D3C7B6"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B89A6F"/><stop offset="1" stop-color="#96784E"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9A86B"/><stop offset="0.45" stop-color="#C7705A"/><stop offset="0.62" stop-color="#5A4A5E"/><stop offset="1" stop-color="#1F2A30"/>
+    </linearGradient>
+    <linearGradient id="spk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8C8F8E"/><stop offset="0.5" stop-color="#D9DAD7"/><stop offset="1" stop-color="#7D807F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#F4D9B4" stop-opacity="0.55"/><stop offset="1" stop-color="#F4D9B4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="340" fill="url(#wall)"/>
+  <ellipse cx="300" cy="140" rx="260" ry="150" fill="url(#glow)"/>
+  <rect y="268" width="600" height="72" fill="url(#floor)"/>
+  <g stroke="#8A6C44" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="290" x2="600" y2="290"/><line x1="0" y1="314" x2="600" y2="314"/>
+  </g>
+  <!-- rug -->
+  <ellipse cx="300" cy="300" rx="210" ry="22" fill="#ECE8E0" opacity="0.55"/>
+  <!-- TV on a tripod stand -->
+  <g>
+    <line x1="300" y1="200" x2="262" y2="296" stroke="#2A2A2A" stroke-width="5" stroke-linecap="round"/>
+    <line x1="300" y1="200" x2="338" y2="296" stroke="#2A2A2A" stroke-width="5" stroke-linecap="round"/>
+    <line x1="300" y1="200" x2="300" y2="292" stroke="#2A2A2A" stroke-width="5" stroke-linecap="round"/>
+    <rect x="184" y="72" width="232" height="136" rx="5" fill="#141414"/>
+    <rect x="191" y="79" width="218" height="122" rx="2" fill="url(#screen)"/>
+    <!-- lake sunset on screen -->
+    <circle cx="300" cy="135" r="15" fill="#F6D29A" opacity="0.9"/>
+    <path d="M191 150 C 230 138 260 146 300 140 C 345 134 375 146 409 140 L409 201 L191 201 Z" fill="#33414A"/>
+    <path d="M191 158 C 240 150 270 156 300 152 C 340 148 370 156 409 152" fill="none" stroke="#F6D29A" stroke-width="1.5" opacity="0.5"/>
+    <path d="M191 79 L260 79 L205 201 L191 201 Z" fill="#fff" opacity="0.06"/>
+  </g>
+  <!-- left speaker -->
+  <g>
+    <rect x="96" y="118" width="40" height="160" rx="20" fill="url(#spk)"/>
+    <rect x="102" y="134" width="28" height="118" rx="14" fill="#5E4A33" opacity="0.85"/>
+    <g fill="#3E2F20" opacity="0.5"><circle cx="116" cy="150" r="2"/><circle cx="116" cy="162" r="2"/><circle cx="116" cy="174" r="2"/><circle cx="116" cy="186" r="2"/><circle cx="116" cy="198" r="2"/><circle cx="116" cy="210" r="2"/><circle cx="116" cy="222" r="2"/><circle cx="116" cy="234" r="2"/></g>
+    <rect x="110" y="278" width="12" height="14" fill="#2A2A2A"/>
+  </g>
+  <!-- right speaker -->
+  <g>
+    <rect x="464" y="118" width="40" height="160" rx="20" fill="url(#spk)"/>
+    <rect x="470" y="134" width="28" height="118" rx="14" fill="#5E4A33" opacity="0.85"/>
+    <g fill="#3E2F20" opacity="0.5"><circle cx="484" cy="150" r="2"/><circle cx="484" cy="162" r="2"/><circle cx="484" cy="174" r="2"/><circle cx="484" cy="186" r="2"/><circle cx="484" cy="198" r="2"/><circle cx="484" cy="210" r="2"/><circle cx="484" cy="222" r="2"/><circle cx="484" cy="234" r="2"/></g>
+    <rect x="478" y="278" width="12" height="14" fill="#2A2A2A"/>
+  </g>
+  <!-- sound waves -->
+  <g fill="none" stroke="#96784E" stroke-width="2" stroke-linecap="round" opacity="0.55">
+    <path d="M150 170 q10 28 0 56"/><path d="M162 160 q16 38 0 76"/>
+    <path d="M450 170 q-10 28 0 56"/><path d="M438 160 q-16 38 0 76"/>
+  </g>
+  <!-- plant -->
+  <g>
+    <path d="M548 292 h28 l-4 -30 h-20 z" fill="#ECE8E0" stroke="#B89A6F"/>
+    <g fill="#5F7A5A"><ellipse cx="552" cy="236" rx="7" ry="20" transform="rotate(-25 552 236)"/><ellipse cx="572" cy="232" rx="7" ry="22" transform="rotate(20 572 232)"/><ellipse cx="562" cy="226" rx="6" ry="24"/></g>
+  </g>
+  <!-- record player hint on the left -->
+  <g>
+    <rect x="22" y="250" width="52" height="42" fill="#D6CCBC" stroke="#B89A6F"/>
+    <circle cx="48" cy="246" r="14" fill="#1C1C1C"/><circle cx="48" cy="246" r="4" fill="#932E50"/>
+  </g>
+</svg>

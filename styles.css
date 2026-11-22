@@ -1008,15 +1008,26 @@ html { scroll-behavior: smooth; }
 .wachannels__logo { display: block; width: 46px; height: 46px; margin: 14px auto 6px; fill: #25d366; opacity: 0.9; }
 .wachannels__title { font-family: var(--serif); font-size: clamp(32px, 5vw, 48px); color: var(--wood); margin: 12px 0 18px; }
 .wachannels__lead { max-width: 680px; margin: 0 auto 52px; color: var(--forest-soft); font-size: 15px; line-height: 1.7; }
-.wachannels__grid { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
-.wa-card { width: 230px; padding: 38px 26px 30px; background: var(--cream); border: 1px solid rgba(150, 120, 78, 0.22); }
-.wa-card__name { font-family: var(--serif); font-size: 26px; color: var(--forest); margin-bottom: 22px; }
-.wa-card__plus { width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--wood); background: transparent; font-family: var(--serif); font-size: 30px; line-height: 1; color: var(--wood); cursor: pointer; transition: all .25s ease; }
-.wa-card__plus:hover:not(:disabled) { background: var(--wood); color: var(--cream); transform: scale(1.06); }
-.wa-card--done .wa-card__plus { background: var(--wood); color: var(--cream); cursor: default; }
-.wa-card__count { margin-top: 20px; font-family: var(--sans); font-size: 14px; color: var(--forest-soft); }
-.wa-card__count strong { color: var(--wood); font-size: 18px; font-weight: 500; }
-.wa-card__hint { margin-top: 6px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.06em; color: var(--sage); }
+.wachannels__grid { display: flex; justify-content: center; align-items: stretch; gap: 28px; flex-wrap: wrap; max-width: 920px; margin: 0 auto; }
+.wachannels__emblem { display: block; width: 250px; height: auto; margin: 18px auto 4px; }
+.wachannels__emblem + .wachannels__logo { width: 30px; height: 30px; margin-top: 4px; }
+.wa-bubble path { stroke: var(--cream); stroke-width: 2; }
+.wa-bubble text { font-family: var(--serif); font-size: 19px; fill: var(--cream); text-anchor: middle; dominant-baseline: middle; }
+.wa-bubble--en path { fill: var(--forest); }
+.wa-bubble--es path { fill: var(--wood); }
+.wa-bubble--fr path { fill: var(--rosa); }
+.wa-group { display: flex; flex-direction: column; align-items: center; width: 260px; padding: 34px 24px 30px; background: var(--cream-warm); border: 1px solid rgba(150, 120, 78, 0.22); }
+.wa-group__badge { width: 64px; height: 64px; margin-bottom: 16px; filter: drop-shadow(0 2px 5px rgba(17, 41, 23, 0.15)); }
+.wa-group__badge--world { width: 82px; height: 82px; margin: -9px 0 7px; }
+.wa-group__name { font-family: var(--serif); font-weight: 400; font-size: 26px; color: var(--forest); margin-bottom: 6px; }
+.wa-group__lang { font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; color: var(--sage); line-height: 1.5; margin-bottom: 20px; min-height: 3em; }
+.wa-group__qr { display: block; padding: 10px; background: #fff; border: 1px solid rgba(150, 120, 78, 0.25); transition: transform .25s ease; }
+.wa-group__qr:hover { transform: scale(1.03); }
+.wa-group__qr img { display: block; width: 170px; height: 170px; }
+.wa-group__btn { display: inline-block; margin-top: 22px; padding: 11px 22px; border: 1px solid var(--wood); color: var(--wood); font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all .25s ease; }
+.wa-group__btn:hover { background: var(--wood); color: var(--cream); }
+.wachannels__hint { margin-top: 30px; font-family: var(--sans); font-size: 13px; color: var(--sage); }
+@media (max-width: 600px) { .wa-group { width: 100%; max-width: 320px; } }
 /* Human-check dialog */
 .wa-modal { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px; }
 .wa-modal.open { display: flex; }
@@ -1146,3 +1157,28 @@ html { scroll-behavior: smooth; }
 @keyframes musicPulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.5); opacity: 0; } }
 @media (max-width: 600px) { .music-toggle { bottom: 16px; right: 16px; width: 48px; height: 48px; } }
 @media (prefers-reduced-motion: reduce) { .music-toggle--playing::after { animation: none; } }
+
+/* Where to stay: WhatsApp QR codes for Monse and Mikel */
+.stay-contact { display: flex; gap: 22px; margin: 4px 0 18px; flex-wrap: wrap; }
+.stay-contact__item { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; }
+.stay-contact__item img { width: 110px; height: 110px; padding: 6px; background: #fff; border: 1px solid rgba(150, 120, 78, 0.25); transition: transform .25s ease; }
+.stay-contact__item:hover img { transform: scale(1.04); }
+.stay-contact__name { font-family: var(--serif); font-size: 17px; color: var(--forest); }
+.stay-contact__name { display: flex; align-items: center; gap: 7px; }
+
+/* After the wedding: Tequila interest via the WhatsApp groups */
+.info-postnote .info-postnote__cta { margin-top: 16px; }
+.post-groups { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; margin-top: 20px; }
+.post-groups__item { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; }
+.post-groups__item img { width: 100px; height: 100px; padding: 6px; background: #fff; border: 1px solid rgba(150, 120, 78, 0.25); transition: transform .25s ease; }
+.post-groups__item:hover img { transform: scale(1.04); }
+.post-groups__name { font-family: var(--serif); font-size: 16px; color: var(--forest); }
+.post-groups__meta { display: flex; align-items: center; gap: 7px; }
+.post-groups__wa { width: 18px; height: 18px; fill: #25d366; }
+.post-groups__flags { font-size: 18px; line-height: 1; }
+
+/* Flights: key dates of Mikel's family plan */
+.flight-plan__dates { list-style: none; margin: 14px 0 18px; padding: 0; }
+.flight-plan__dates li { position: relative; padding: 7px 0 7px 22px; border-bottom: 1px solid rgba(150, 120, 78, 0.15); line-height: 1.5; }
+.flight-plan__dates li:last-child { border-bottom: none; }
+.flight-plan__dates li::before { content: ""; position: absolute; left: 4px; top: 15px; width: 7px; height: 7px; border-radius: 50%; background: var(--wood); }

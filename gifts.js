@@ -39,6 +39,14 @@ window.GIFTS = [
              de: 'Warmes Licht für gemütliche Abende in unserem neuen Wohnzimmer.' },
   },
   {
+    id: 'tv-audio', emoji: '📺', img: 'images/tv-audio.svg', goal: 1700, raised: 0, link: '',
+    title: { en: 'TV & Sound System',     es: 'Televisión y equipo de sonido', fr: 'Télévision et système audio', de: 'Fernseher & Soundsystem' },
+    desc:  { en: 'A TV on a stand and a proper sound set-up for movie nights in our flat. We love the speakers from <a href="https://www.bang-olufsen.com/en/de/speakers" target="_blank" rel="noopener">Bang &amp; Olufsen</a> and a TV with a stand like <a href="https://www.amazon.de/-/en/dp/B0H3NXCF7W" target="_blank" rel="noopener">this one</a>.',
+             es: 'Una tele con soporte y un buen equipo de sonido para noches de cine en nuestro piso. Nos encantan los altavoces de <a href="https://www.bang-olufsen.com/en/de/speakers" target="_blank" rel="noopener">Bang &amp; Olufsen</a> y una tele con un soporte como <a href="https://www.amazon.de/-/en/dp/B0H3NXCF7W" target="_blank" rel="noopener">este</a>.',
+             fr: 'Une télévision sur pied et un vrai système audio pour nos soirées cinéma à la maison. Nous adorons les enceintes <a href="https://www.bang-olufsen.com/en/de/speakers" target="_blank" rel="noopener">Bang &amp; Olufsen</a> et une télé avec un pied comme <a href="https://www.amazon.de/-/en/dp/B0H3NXCF7W" target="_blank" rel="noopener">celui-ci</a>.',
+             de: 'Ein Fernseher mit Standfuß und ein richtiges Soundsystem für Filmabende in unserer Wohnung. Wir lieben die Lautsprecher von <a href="https://www.bang-olufsen.com/en/de/speakers" target="_blank" rel="noopener">Bang &amp; Olufsen</a> und einen Fernseher mit einem Standfuß wie <a href="https://www.amazon.de/-/en/dp/B0H3NXCF7W" target="_blank" rel="noopener">diesem hier</a>.' },
+  },
+  {
     id: 'honeymoon', emoji: '🌴', img: 'images/honeymoon.jpg', goal: 6500, raised: 3550, link: '',
     title: { en: 'Honeymoon Fund',        es: 'Fondo de luna de miel',    fr: 'Cagnotte lune de miel',    de: 'Flitterwochen-Fonds' },
     desc:  { en: 'Destination: China!',
